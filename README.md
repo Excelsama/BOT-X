@@ -246,7 +246,7 @@ Copy the JSON down and paste in repl then fill the vars
 <h2 align="center">TEAM-BLADE
 </h2>
 
-https://github.com/Bladeh4x
+https://github.com/Bladeh4x https://github.com/ahil15
  
  
   </div>
@@ -261,4 +261,4 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ"><img a
 
 ## License
 
-The Xlicon made available under the [GPL-3 license](https://github.com/Bladeh4x/BLADE-MD/blob/main/LICENESB8e
+The Xlicon made available under the [GPL-3 license](https://github.com/Bladeh4x/BLADE-MD/blob/main/LICENES 
