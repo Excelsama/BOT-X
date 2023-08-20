@@ -1,14 +1,14 @@
 {
-  "name": "XLICON MD",
+  "name": "BLADE MD",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
   "logo": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "Xlicon Bot", "Xlicon","Xlicon MD","theme bot","multi device","baileys","Profilecorruptederror"],
+  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "blade Bot", "blade","blade MD","theme bot","multi device","baileys","alex tv"],
   "success_url": "/",
   "stack": "container",
 "env": {
   "OWNER_NAME": {
   "description": "BOT OWNER NAME",
-      "value": "SalmanYt"
+      "value": "alexdavid"
   },
   "ALIVE_MESSAGE": {
     "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
@@ -65,10 +65,10 @@
   },
   "OWNER_NUMBER": {
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-       "value": "911"
+       "value": "234"
   },
    "SESSION_ID": {
-    "description": "Please put your Session ID that u scanned from the bot.... If u haven't scanned go to XLICON-MD Github Repo U can find the Scanner Option"
+    "description": "Please put your Session ID that u scanned from the bot.... If u haven't scanned go to BLADE-MD Github Repo U can find the Scanner Option"
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
@@ -94,7 +94,7 @@
   },
   "PACK_AUTHOR": {
     "description": "PUT STICKER AUTHER NAME",
-    "value": "XLICON"
+    "value": "BLADE"
   },
   "PACK_NAME": {
     "description": "PUT STICKER PACK NAME",
