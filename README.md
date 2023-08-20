@@ -246,9 +246,7 @@ Copy the JSON down and paste in repl then fill the vars
 <h2 align="center">TEAM-BLADE
 </h2>
 
- [![SalmanYtOfficial](https://github.com/salmanytofficial.png?size=100)](https://github.com/salmanytofficial)  [![ProfileCorruptedError](https://github.com/ahil15.png?size=100)](https://github.com/ahil15)  [![KALINDU-LK](https://github.com/KALINDU-LK.png?size=100)](https://github.com/KALINDU-LK)  [![SUHAIL TECH ](https://github.com/suhailtechinfo.png?size=100)](https://github.com/suhailtechinfo) 
- 
- [SalmanYtOfficial](https://github.com/salmanytoffcial) | [ProfileCorruptedError](https://github.com/ahil15) | [SUHAIL TECH](https://github.com/suhailtechinfo) | [KALINDU-LK](https://github.com/KALINDU-LK)
+https://github.com/Bladeh4x
  
  
   </div>
