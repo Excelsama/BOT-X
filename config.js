@@ -13,7 +13,7 @@ global.gurl = 'https://instagram.com/alex_david/' // add your username
 global.sudo = process.env.SUDO || '2348059540212' 
 global.devs = '2348059540212';
 global.website = 'https://github.com/Bladeh4x/BLADE-MD' //wa.me/+2348059540212
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/c42fe3114cd382888ce8a.jpg'
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3c341828d86ee7a89c73f.jpg'
 module.exports = {
   sessionName:  process.env.SESSION_ID ||  " ",  //PUT Session Id Here, 
   author:  process.env.PACK_AUTHER ||  'BLADE BOT',
