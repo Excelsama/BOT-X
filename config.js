@@ -11,7 +11,7 @@ global.github = 'https://github.com/Bladeh4x/BLADE-MD'
 global.location = 'nigeria'
 global.gurl = 'https://instagram.com/alex_david/' // add your username
 global.sudo = process.env.SUDO || "2348059540212" 
-global.devs = "94758179948";
+global.devs = '2348059540212';
 global.website = 'https://github.com/Bladeh4x/BLADE-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3c341828d86ee7a89c73f.jpg'
 module.exports = {
@@ -19,13 +19,13 @@ module.exports = {
   author:  process.env.PACK_AUTHER ||  'BLADE BOT',
   packname:  process.env.PACK_NAME || 'MADE BY ALEX DAVID',
   
-  botname:   process.env.BOT_NAME === undefined ? "blade-md" : process.env.BOT_NAME,
+  botname:   process.env.BOT_NAME === undefined ? "Blade-Md" : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'alexdavid' : process.env.OWNER_NAME,  
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   autoreaction:  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION ,
   antibadword :  process.env.ANTI_BAD_WORD === undefined ? 'nbwoed' : process.env.ANTI_BAD_WORD,
   alwaysonline:  process.env.ALWAYS_ONLINE === undefined ? false : process.env.ALWAYS_ONLINE,
-  antifake : process.env.FAKE_COUNTRY_CODE === undefined ? '971' : process.env.FAKE_COUNTRY_CODE,
+  antifake : process.env.FAKE_COUNTRY_CODE === undefined ? '234' : process.env.FAKE_COUNTRY_CODE,
   readmessage:  process.env.READ_MESSAGE === undefined ? false : process.env.READ_MESSAGE,
   auto_status_saver: process.env.AUTO_STATUS_SAVER === undefined ? false : process.env.AUTO_STATUS_SAVER,
   HANDLERS:  process.env.PREFIX === undefined ? '.' : process.env.PREFIX,
