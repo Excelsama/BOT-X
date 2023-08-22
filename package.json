@@ -1,13 +1,13 @@
 {
-               "name": "blade-md",
+               "name": "BLADE-MD",
                "version": "0.0.7",
                "description": "Multi device whatsapp bot by alexdavid.",
                "main": "lib/client.js",
                "type": "commonjs",
                "license": "GPL-3.0",
                "scripts": {
-                  "start": "pm2 start lib/client.js --deep-monitoring --attach --name blade-md",
-                  "stop": "pm2 stop blade-md"
+                  "start": "pm2 start lib/client.js --deep-monitoring --attach --name BLADE-MD",
+                  "stop": "pm2 stop BLADE-MD"
                },
                "author": "alexdavid",
                "dependencies": {
