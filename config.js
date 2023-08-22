@@ -19,7 +19,7 @@ module.exports = {
   author:  process.env.PACK_AUTHER ||  'BLADE BOT',
   packname:  process.env.PACK_NAME || 'MADE BY ALEX DAVID',
   
-  botname:   process.env.BOT_NAME === undefined ? "Blade-Md" : process.env.BOT_NAME,
+  botname:   process.env.BOT_NAME === undefined ? "BLADE-MD" : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'alexdavid' : process.env.OWNER_NAME,  
   auto_read_status :  process.env.AUTO_READ_STATUS === undefined ? false : process.env.AUTO_READ_STATUS,
   autoreaction:  process.env.AUTO_REACTION  === undefined ? false : process.env.AUTO_REACTION ,
