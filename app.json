@@ -1,5 +1,5 @@
 {
-  "name": "BLADE MD",
+  "name": "BLADE-MD",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
   "logo": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg",
   "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "blade Bot", "blade","BLADE-MD","theme bot","multi device","baileys","alex tv"],
@@ -94,11 +94,11 @@
   },
   "PACK_AUTHOR": {
     "description": "PUT STICKER AUTHER NAME",
-    "value": "BLADE"
+    "value": "false"
   },
   "PACK_NAME": {
     "description": "PUT STICKER PACK NAME",
-    "value": "Wa-BOT"
+    "value": "false"
   },
   "heroku": {
     "description": "Weather it is on heroku or not",
