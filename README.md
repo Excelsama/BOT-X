@@ -31,7 +31,7 @@
 </p>
 
 # ```Scan QR Here```
-<a href="https://replit.com/@Bladeh4x/BLADE-MD-QR-V4?v=1"><img src="https://i.ibb.co/Lvpp8Hw/images.jpg" align="center" width="90" /> </a>
+<a href="https://replit.com/@Bladeh4x/BLADE-MD-V1?v=1"><img src="https://i.ibb.co/Lvpp8Hw/images.jpg" align="center" width="90" /> </a>
 <div align="center">
   <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Impact&weight=200&size=15&pause=1000&color=F70000&width=300&height=100&lines=CLICK+THE+SCANNER+LOGO+TO+SCAN" alt="Typing SVG" /></a>
    
