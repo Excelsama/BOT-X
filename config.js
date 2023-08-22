@@ -8,14 +8,14 @@ global.mongodb = process.env.MONGODB_URI || "mongodb+srv://ahil1:787191784abhi@a
 global.port= process.env.PORT || 5000
 global.email = 'maxdavid126@gmail.com'
 global.github = 'https://github.com/Bladeh4x/BLADE-MD'
-global.location = 'nigeria'
+global.location = 'Lahore parkistan'
 global.gurl = 'https://instagram.com/alex_david/' // add your username
 global.sudo = process.env.SUDO || "2348059540212" 
 global.devs = '2348059540212';
 global.website = 'https://github.com/Bladeh4x/BLADE-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3c341828d86ee7a89c73f.jpg'
 module.exports = {
-  sessionName:  process.env.SESSION_ID ||  " ",  //PUT Session Id Here, 
+  sessionName: process.env.SESSION_ID || '',      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'BLADE BOT',
   packname:  process.env.PACK_NAME || 'MADE BY ALEX DAVID',
   
