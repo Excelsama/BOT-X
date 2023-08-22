@@ -6,8 +6,8 @@
                "type": "commonjs",
                "license": "GPL-3.0",
                "scripts": {
-                  "start": "pm2 start lib/client.js --deep-monitoring --attach --name BLADE-MD",
-                  "stop": "pm2 stop BLADE-MD"
+                  "start": "pm2 start lib/client.js --deep-monitoring --attach --name blade-md",
+                  "stop": "pm2 stop blade-md"
                },
                "author": "alexdavid",
                "dependencies": {
