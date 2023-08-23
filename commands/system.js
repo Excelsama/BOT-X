@@ -1,4 +1,4 @@
-/**
+l/**
  Copyright (C) 2023.
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
@@ -220,7 +220,7 @@ cmd({
             desc: "is bot alive??"
         },
         async(Void, citel, text, isAdmins) => {
-            let alivemessage = Config.ALIVE_MESSAGE || `*A bot made by Team .blade*`
+            let alivemessage = Config.ALIVE_MESSAGE || `*A bot made by Team .𝙱𝙻𝙰𝙳𝙴*`
             const alivtxt = `
 *Hello, ${citel.pushName},*
 _This is  ${tlang().title}._
