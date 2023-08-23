@@ -248,7 +248,7 @@ Copy the JSON down and paste in repl then fill the vars
 
 [![Bladeh4x](https://github.com/Bladeh4x.png?size=200)](https://github.com/Bladeh4x) | 
  https://github.com/ahil15
- https://github.com/Mulandii
+ [![Mulandii](https://github.com/Mulandii.png?size=200)](https://github.com/Mulandii) | 
  
   </div>
 
