@@ -4,9 +4,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : XLICON-MD
- * @author : SalmaytOfficial <https://github.com/Salmanytofficial>
- * @description : XLICON , A Multi-functional whatsapp bot.
+ * @project_name : BLADE-MD
+ * @author : SalmaytOfficial <https://github.com/Bladeh4x>
+ * @description : BLADE , A Multi-functional whatsapp bot.
  * @version 0.0.6
  *
  */
@@ -22,7 +22,7 @@ cmd({
     },
     async(Void, citel) => {
         if(!citel.quoted) return citel.reply('Please quote any text to get link.')
-        let data = await pastebin.createPaste(citel.quoted.text, "XLICON-Pastebin")
+        let data = await pastebin.createPaste(citel.quoted.text, "BLADE-Pastebin")
         citel.reply('_Here is your link._\n'+data)
     }
 );
