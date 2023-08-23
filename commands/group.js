@@ -3,9 +3,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : Xlicon-MD
- * @author : salmanytofficial <https://github.com/salmanytofficial>
- * @description : Xlicon,A Multi-functional whatsapp bot.
+ * @project_name : Blade-MD
+ * @author : salmanytofficial <https://github.com/Bladeh4x>
+ * @description : Bladeh4x,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
 
