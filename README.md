@@ -246,7 +246,8 @@ Copy the JSON down and paste in repl then fill the vars
 <h2 align="center">TEAM-BLADE
 </h2>
 
-https://github.com/Bladeh4x https://github.com/ahil15
+[![Bladeh4x](https://github.com/Bladeh4x.png?size=200)](https://github.com/Bladeh4x) | 
+ https://github.com/ahil15
  https://github.com/Mulandii
  
   </div>
