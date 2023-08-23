@@ -247,7 +247,7 @@ Copy the JSON down and paste in repl then fill the vars
 </h2>
 
 https://github.com/Bladeh4x https://github.com/ahil15
- 
+ https://github.com/Mulandii
  
   </div>
 
