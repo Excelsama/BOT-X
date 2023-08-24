@@ -436,7 +436,7 @@ cmd({
 		let buttonMessage = {
                         video: fs.readFileSync(`./${randomName}`),
                         mimetype: 'video/mp4',
-                        caption: "  •xʟɪᴄᴏɴ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
+                        caption: "  •ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
                     }
                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
@@ -455,7 +455,7 @@ cmd({
                     listSerch.push({
 				    title: i.title,
 				    rowId: `${prefix}ytvideo ${i.url}`,
-				    description: `*•xʟɪᴄᴏɴ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•* / ${i.timestamp}`
+				    description: `*•ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•* / ${i.timestamp}`
 		    		   })
             }
             const sections = [{
