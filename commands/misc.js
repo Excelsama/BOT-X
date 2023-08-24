@@ -347,7 +347,7 @@ async(Void, citel, text) => {
          async(Void, citel, text) => {
 
 if (!citel.quoted) return citel.reply (`*Please Reply to User With Name*`);
-if ( !text ) return citel.reply( `Please Give Me User Name, \n *Example : ${prefix}vcard Profile Corrupted Error* `)
+if ( !text ) return citel.reply( `Please Give Me User Name, \n *Example : ${prefix}vcard alex tv* `)
 var words = text.split(" ");
 if (words.length >3) {   text= words.slice(0, 3).join(' ')  }
 // citel.reply(text);
@@ -711,7 +711,7 @@ const buffer = await sticker.toBuffer();
                      break
                  default:
                      {
-                        if (chatbott.worktype == "false") return await citel.reply(`*Blade Chatbot Status : False* \n*Xlicon Chatbot Disabled Yet, _To Enable Type : .chatbot on_*`)
+                        if (chatbott.worktype == "false") return await citel.reply(`*Blade Chatbot Status : False* \n*blade Chatbot Disabled Yet, _To Enable Type : .chatbot on_*`)
                         else return await citel.reply("*Chatbot Status : True* \n*Chatbot Enabled Yet, _To Disable Type : .chatbot off_*")
                         /*
                             let buttons = [{  buttonId: `${prefix}chatbot on`,   buttonText: {   displayText: "Turn On" },  type: 1, },
