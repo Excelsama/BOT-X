@@ -683,7 +683,7 @@ const buffer = await sticker.toBuffer();
  
 
  cmd({
-             pattern: "Blade",
+             pattern: "chatbot",
              alias : ["chatbot"],
              desc: "activates and deactivates chatbot.\nuse buttons to toggle.",
              category: "misc",
@@ -697,22 +697,22 @@ const buffer = await sticker.toBuffer();
              {
                  case "on":
                      {
-                         if (chatbott.worktype == "true") return citel.reply("*Blade was already enabled.*")
+                         if (chatbott.worktype == "true") return citel.reply("*chatbot was already enabled.*")
                          await chatbot.updateOne({ id: 'chatbot' }, { worktype: "true" })
-                         return await citel.reply('*Blade Activated successfully.*')   
+                         return await citel.reply('*chatbot Activated successfully.*')   
                      }
                      break
                  case "off":
                      {
-                                if (chatbott.worktype == "false") return citel.reply("*Blade was already disabled.*")
+                                if (chatbott.worktype == "false") return citel.reply("*chatbot was already disabled.*")
                                 await chatbot.updateOne({ id: 'chatbot' }, { worktype: "false" })
-                                return await citel.reply('*Blade deactivated successfully.*')
+                                return await citel.reply('*chatbot deactivated successfully.*')
                      }
                      break
                  default:
                      {
-                        if (chatbott.worktype == "false") return await citel.reply(`*Blade Chatbot Status : False* \n*Xlicon Chatbot Disabled Yet, _To Enable Type : .Xlicon on_*`)
-                        else return await citel.reply("*Blade Chatbot Status : True* \n*Blade Chatbot Enabled Yet, _To Disable Type : .blade off_*")
+                        if (chatbott.worktype == "false") return await citel.reply(`*Blade Chatbot Status : False* \n*Xlicon Chatbot Disabled Yet, _To Enable Type : .chatbot on_*`)
+                        else return await citel.reply("*Chatbot Status : True* \n*Chatbot Enabled Yet, _To Disable Type : .chatbot off_*")
                         /*
                             let buttons = [{  buttonId: `${prefix}chatbot on`,   buttonText: {   displayText: "Turn On" },  type: 1, },
                                           {   buttonId: `${prefix}chatbot off`,  buttonText: { displayText: "Turn Off" },   type: 1, }];
