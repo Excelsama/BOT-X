@@ -436,7 +436,7 @@ cmd({
 		let buttonMessage = {
                         video: fs.readFileSync(`./${randomName}`),
                         mimetype: 'video/mp4',
-                        caption: "  •xʟɪᴄᴏɴ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
+                        caption: "  •Blade-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
                     }
                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
@@ -455,7 +455,7 @@ cmd({
                     listSerch.push({
 				    title: i.title,
 				    rowId: `${prefix}ytvideo ${i.url}`,
-				    description: `*•xʟɪᴄᴏɴ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•* / ${i.timestamp}`
+				    description: `*•Blade271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•* / ${i.timestamp}`
 		    		   })
             }
             const sections = [{
@@ -516,7 +516,7 @@ async(Void, citel, text) => {
             {
                 let yts = require("secktor-pack");
                 let search = await yts(text);
-                let buttonMessage = 
+                let buttonMessage = blade-mutidevice
 				{
 				    audio: fs.readFileSync(`./${randomName}`),
 				    mimetype: 'audio/mpeg',
@@ -592,10 +592,10 @@ cmd({
             try {
                 let anu = await pinterest(text)
                 let result = anu[Math.floor(Math.random() * anu.length)]
-                let buttonMessage = {
+                let buttonMessage = { blade mutidevice
                     image: { url: result },
                     caption: Config.caption ,
-                    //footer: tlang().footer,
+                    
                     headerType: 4,
                     contextInfo: {
                         externalAdReply: {
@@ -604,7 +604,7 @@ cmd({
                             thumbnail: log0,
                             mediaType: 2,
                             mediaUrl: ``,
-                            sourceUrl: `youtube.com/c/SuhailTechInfo`
+                            sourceUrl: `
                         }
                     }
                 }
@@ -946,8 +946,8 @@ cmd({
 
 
 
-// By @•xʟɪᴄᴏɴ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•
-// https://wa.me/8801853262586
+// By @•blade-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•
+// https://wa.me/2348059540212
 // https://www.youtube.com/@suhailtechinfo0
 
 
