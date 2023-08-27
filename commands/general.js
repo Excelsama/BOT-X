@@ -132,7 +132,7 @@ cmd({
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://api.github.com/repos/salmanytofficial/XLICON-MD')
+        let { data } = await axios.get('https://api.github.com/repos/Bladeh4x/BLADE-MD')
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
