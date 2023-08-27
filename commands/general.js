@@ -3,9 +3,9 @@
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : XLICON-MD
- * @author : salmanytofficial <https://github.com/salmanytofficial>
- * @description : XLICON, A Multi-functional whatsapp bot.
+ * @project_name : BLADE-MD
+ * @author : salmanytofficial <https://github.com/Bladeh4x>
+ * @description : BLADE, A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
 
@@ -37,7 +37,7 @@ cmd({
     alias :['gpt'],
     desc: "chat with an AI(GPT)",
     category: "AI",
-    use: '<Hii,Xlicon>',
+    use: '<Hii,blade>',
     filename: __filename,
 },
 async(Void, citel,text) => {
@@ -136,8 +136,8 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* https://github.com/salmanytofficial/XLICON-MD
-*Group:* https://chat.whatsapp.com/ESB8e9HAS2wGlwBvzGYnLx
+*🍁 Repo:* https://github.com/Bladeh4x/BLADE-MD
+*Group:* https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ
 *Deploy Your Own:*-
 citel-x.herokuapp.com`
         let buttonMessaged = {
@@ -147,7 +147,7 @@ citel-x.herokuapp.com`
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: "XLICON-Repo",
+                    title: "BLADE-Repo",
                     body: "Easy to Use",
                     thumbnail: log0,
                     mediaType: 4,
@@ -218,7 +218,7 @@ cmd({
 async(Void, citel,text,{isCreator}) => {
 
 if(!isCreator) return citel.reply(tlang().owner);
-let str="*All available themes in XLICON*"
+let str="*All available themes in BLADE*"
 str+=`  \n1. GOJO\n2. ADAM\n3. AYANOKOJI\n4. DEKU\n5. RENGOKU\n6. GENOS\n7. GABIMARU\n8. GOKU\n9. ERENJAEGER\n10. LUFFY\n11. NARUTO\n12. NEZUKO\n13. PARKER\n14. ZEROTWO\n15. MAKIMA\n16. THOMAS\n17. PATRICK\n\n these are the themes of XLICON Userbot.\_Reply ${prefix}setvar THEME:ZEROTWO`
 return citel.reply(str)
     
