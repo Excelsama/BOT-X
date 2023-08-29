@@ -1,8 +1,8 @@
 {
   "name": "BLADE-MD",
   "description": "A Whatsapp md bot built in NodeJs to make experience better",
-  "logo": "https://telegra.ph/file/3f3ae4aace2d012c11509.jpg",
-  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "blade Bot", "blade","BLADE-MD","theme bot","multi device","baileys","alex tv"],
+  "logo": "https://telegra.ph/file/3c341828d86ee7a89c73f.jpg",
+  "keywords": ["nodejs", "bot", "whatsapp bot", "Zero-Two", "blade Bot", "blade","BLADE-MD","theme bot","multi device","baileys","Alex tv"],
   "success_url": "/",
   "stack": "container",
 "env": {
@@ -12,19 +12,24 @@
   },
   "ALIVE_MESSAGE": {
     "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
-     "required" :false
+     "required" :true
     },
     "AUTO_STATUS_SAVER": {
       "description": "Automatically saves status of every person and sends in log number.",
        "required" :false
+       },
+  "AUTO_READ_STATUS": {
+    "description": "Fill the value true if you want bot view your Statuses.",
+    "required" :false,
+    "value": "false"
       },
     "HEROKU_API_KEY": {
     "description": "Put HEROKU API KEY",
-     "required" :false
+     "required" :true
     },
   "HEROKU_APP_NAME": {
     "description": "Put HEROKU APP NAME same as above.",
-     "required" :false
+     "required" :true
     },
    "THUMB_IMAGE": {
     "description": "THUMBNAIL for bot.",
@@ -36,7 +41,7 @@
     },
    "ANTILINK_VALUES": {
     "description": "Put words for antilink",
-     "value": "chat.whatsapp.com,fb.com,instagram.com",
+     "value": "chat.whatsapp.com",
      "required" :false
     },
      "ANTILINK_ACTION": {
@@ -65,19 +70,19 @@
   },
   "OWNER_NUMBER": {
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-       "value": ""
+       "value": "Put Owner Number here"
   },
    "SESSION_ID": {
     "description": "Please put your Session ID that u scanned from the bot.... If u haven't scanned go to BLADE-MD Github Repo U can find the Scanner Option"
   },
     "OPENAI_API_KEY": {
-    "description": "Please put your OPENAI api key here.Get it from beta.openai.com ",
-       "value": "Replace Me(optional)",
+    "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
+       "value": "https://gurugpt.cyclic.app/dalle?prompt=elon%20musk&model=art",
        "required" :false
   },
   "MONGODB_URI": {
     "description": "A secret String for Mongodb Connection.(Required),change for better experience",
-    "value": "mongodb+srv://ahil1:787191784abhi@ahil1.kzr1tt3.mongodb.net/?retrywrites=true&w=majority"
+    "value": "PUT YOUR MONGO URL HERE"
   },
     "THEME": {
     "description": "Put the theme name you want to use. Avilable themes are GOJO,ZEROTWO,NEZUKO,LUFFY,GOKU and many more..",
@@ -94,11 +99,11 @@
   },
   "PACK_AUTHOR": {
     "description": "PUT STICKER AUTHER NAME",
-    "value": "false"
+    "value": "BLADE"
   },
   "PACK_NAME": {
     "description": "PUT STICKER PACK NAME",
-    "value": "false"
+    "value": "Wa-BOT"
   },
   "heroku": {
     "description": "Weather it is on heroku or not",
