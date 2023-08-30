@@ -9,7 +9,7 @@
   </p>
   <p align="center"> 
   <a href="https://github.com/Bladeh4x/BLADE-MD/stargazers">
-    <img src="https://img.shields.io/github/stars/Bladeh4xl/BLADE-MD?style=social">
+    <img src="https://img.shields.io/github/stars/Bladeh4x/BLADE-MD?style=social">
 
  <p align="center">
   <a href="https://github.com/Bladeh4x/BLADE-MD/fork">
