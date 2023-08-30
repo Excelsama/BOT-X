@@ -7,9 +7,13 @@
       <div align="center">
 <a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Impact&size=50&pause=1000&color=000000&center=true&width=910&height=100&lines=THIS IS+BLADE-MD ;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+THE TEAM BLADE ;PUBLIC+RELESED+DATE;2023/08/21; THIS +BOT IS+BASED+FROM; OF SECKTOR-MD;SO FULL+SCRIPT+CREDIT+GOES+TO;TEAM SECKTOR." alt="Typing SVG" /></a>
   </p>
-  <br>
+  <p align="center"> 
+  <a href="https://github.com/Bladeh4x/BLADE-MD/stargazers">
+    <img src="https://img.shields.io/github/stars/Bladeh4xl/BLADE-MD?style=social">
 
-</p>
+ <p align="center">
+  <a href="https://github.com/Bladeh4x/BLADE-MD/fork">
+    <img src="https://img.shields.io/github/forks/Bladeh4x/BLADE-MD?label=Fork&style=social">
   
   # ```Tap Here For Help``` 
   
@@ -24,10 +28,7 @@
   
     My email Adress : maxdavid126@gmail.com
      
- </p>
-  <a href="https://github.com/Bladeh4x/BLADE-MD/fork" target="blank"><img align="center" src="https://i.imgur.com/cxaSEWe.png" alt="Deploy bot" height="80" width="200" /></a>
-  <div>
-<br>
+  <div><br>
 </p>
 
 ## Deployment Methods
