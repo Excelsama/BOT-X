@@ -163,7 +163,8 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
  # BLADE MD SUPPORT
  
  <details close>
-<summary> JOIN OUR WHATSAPP GROUP AND SUPPORT OUR YOUTUBE CHANNEL</summary>
+<summary> JOIN OUR WHATSAPP GROUP AND SUPPORT OUR YOUTUBE
+  CHANNEL</summary>
  
 <br><br>   
 
@@ -179,7 +180,7 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
  
    <p align="left">  
   <a href="https://youtube.com/@blade444">
-    <img alt="Xlicon docs" height="100" src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg">
+    <img alt="blade docs" height="100" src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg">
     <h1 align="left">Tap on above Image</h1>
   </a>
 </p>
