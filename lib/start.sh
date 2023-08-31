@@ -1,5 +1,5 @@
 while true
 do
-echo "Starting BLADE-MD..."
+echo "Starting suhail-md..."
 node lib/client.js
 done
