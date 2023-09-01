@@ -44,12 +44,12 @@ const fs = require('fs-extra')
 const {plugins, isUrl, plugindb, remove,smd , tlang  , Config } = require('../lib')
 
 //---------------------------------------------------------------------------
-smd({pattern: "plugins",alias :['plugin'],category: "owner",desc: "Shows list of all externally installed modules", filename: __filename },async(Aviator, msg, text, { isCreator }) => {
+cmd({pattern: "plugins",alias :['plugin'],category: "owner",desc: "Shows list of all externally installed modules", filename: __filename },async(Aviator, msg, text, { isCreator }) => {
   if (!isCreator) return msg.send(tlang().owner);
   let res = await plugins('plugins' ,text);
   return await msg.send(!res?`*_There's no plugin install in ${Config.botname}_*`: !text?`*All Installed Modules are:-*\n\n${res}`:res  )})
 //---------------------------------------------------------------------------
-smd({ pattern: "remove",alias :['uninstall'],category: "owner", desc: "removes external modules.", filename: __filename },
+cmd({ pattern: "remove",alias :['uninstall'],category: "owner", desc: "removes external modules.", filename: __filename },
     async(Aviator, msg, text,{ isCreator}) => { 
       if (!isCreator) return msg.reply(tlang().owner);
       if(!text) return await msg.reply("*_Uhh Please, Provide Me Plugin Name_*");
@@ -61,6 +61,6 @@ smd({ pattern: "remove",alias :['uninstall'],category: "owner", desc: "removes e
         const { exec } = require("child_process"); exec('pm2 restart all') ;
       }catch (e) {return await msg.send("*_Plugin Not Found In Mongodb Server_*")} });
 //---------------------------------------------------------------------------
-smd({ pattern: "install",category: "owner", desc: "Installs external modules..",filename: __filename},async(Aviator, msg, text, {isCreator}) => {if (!isCreator) return msg.reply(tlang().owner);let url = text ? text : msg.quoted && msg.quoted.text ? msg.quoted.text : '';if(!url.toLowerCase().includes("https")) return await msg.send("*_Uhh Please, Provide Me Plugin Url_*");await msg.reply( await plugins('install' ,url , __dirname ) ) ;});
+cmd({ pattern: "install",category: "owner", desc: "Installs external modules..",filename: __filename},async(Aviator, msg, text, {isCreator}) => {if (!isCreator) return msg.reply(tlang().owner);let url = text ? text : msg.quoted && msg.quoted.text ? msg.quoted.text : '';if(!url.toLowerCase().includes("https")) return await msg.send("*_Uhh Please, Provide Me Plugin Url_*");await msg.reply( await plugins('install' ,url , __dirname ) ) ;});
 
 
