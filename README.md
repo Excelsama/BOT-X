@@ -15,7 +15,7 @@
   <a href="https://github.com/Bladeh4x/BLADE-MD/fork">
     <img src="https://img.shields.io/github/forks/Bladeh4x/BLADE-MD?label=Fork&style=social">
   
-  # ```Tap Here For Help``` 
+  # ```Tap Here For Help```  
   
   <p align="left">
   <a href="https://wa.me/2348059540212?text=Hello%20alex~tv%20...%20I%20need%20some%20help%20in%20blade%20md">
