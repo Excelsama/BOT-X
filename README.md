@@ -163,7 +163,7 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
  # BLADE MD SUPPORT
  
  <details close>
-<summary> JOIN OUR WHATSAPP GROUP AND SUPPORT OUR YOUTUBE
+<summary> JOIN OUR WHATSAPP GROUP
   CHANNEL</summary>
  
 <br><br>   
@@ -171,6 +171,10 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
 <p align="center"> 
  
   <a aria-label="Join our chats" href="https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ" target="_blank">
+   
+<img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
+
+  <a aria-label="Join our chats" href="FLHNgJ19pZG48S7l6ucSn8" target="_blank">
    
 <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
