@@ -138,9 +138,10 @@ cmd({
 *🍽️ Forks:* ${data.forks_count} forks
 *🍁 Repo:* https://github.com/Bladeh4x/BLADE-MD
 *Group:* https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ
-*public group:* https://chat.whatsapp.com/FLHNgJ19pZG48S7l6ucSn8
+*public grp:* https://chat.whatsapp.com/FLHNgJ19pZG48S7l6ucSn8
 *scan Qr:* https://replit.com/@Bladeh4x/BLADE-MD-V1?v=1
-*youtube tutorial:* https://youtu.be/YLG9OYERa5I?si=1e5cbrtKVc8aL5BI
+*youtube:*-
+https://youtu.be/YLG9OYERa5I?si=1e5cbrtKVc8aL5BI
 *Deploy Your Own:*-
 https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FBladeh4x%2FBLADE-MD&template=https%3A%2F%2Fgithub.com%2FBladeh4x%2FBLADE-MD`
         let buttonMessaged = {
