@@ -77,7 +77,7 @@
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
-       "value": "https://gurugpt.cyclic.app/dalle?prompt=elon%20musk&model=art",
+       "value": "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",
        "required" :false
   },
   "MONGODB_URI": {
@@ -99,11 +99,11 @@
   },
   "PACK_AUTHOR": {
     "description": "PUT STICKER AUTHER NAME",
-    "value": "BLADE"
+    "value": "blade"
   },
   "PACK_NAME": {
     "description": "PUT STICKER PACK NAME",
-    "value": "Wa-BOT"
+    "value": "md"
   },
   "heroku": {
     "description": "Weather it is on heroku or not",
