@@ -106,7 +106,7 @@
     "value": "md"
   },
   "heroku": {
-    "description": "Weather it is on heroku or not",
+    "description": "Weather it is on heroku or not", 
      "value": "true",
      "required": false 
   }
