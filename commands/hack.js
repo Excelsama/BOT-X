@@ -22,51 +22,51 @@ citel.reply("```Injecting malware```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n 0%```")
+citel.reply("```hacking into device \n 0%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ 10%```")
+citel.reply("```transfering photos \n █ 10%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ 20%```")
+citel.reply("```transfer successful \n █ █ 20%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ 30%```")
+citel.reply("```transfering videos \n █ █ █ 30%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ 40%```")
+citel.reply("```transfer successful \n █ █ █ █ 40%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ 50%```")
+citel.reply("```transfering audio \n █ █ █ █ █ 50%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ █ 60%```")
+citel.reply("```transfer successful \n █ █ █ █ █ █ 60%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ █ █ 70%```")
+citel.reply("```transfering hidden files \n █ █ █ █ █ █ █ 70%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ █ █ █ 80%```")
+citel.reply("```transfer successful \n █ █ █ █ █ █ █ █ 80%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ █ █ █ █ 90%```")
+citel.reply("```transfering whatsapp chat \n █ █ █ █ █ █ █ █ █ 90%```")
 
 await sleep(1000)
 
-citel.reply("```Injecting malware \n █ █ █ █ █ █ █ █ █ █ 100%```")
+citel.reply("```transfer successful \n █ █ █ █ █ █ █ █ █ █ 100%```")
 
 await sleep(1000)
 
-citel.reply("```System hyjacking on process.. \n Conecting to Server error to find 404 ```")
+citel.reply("```System hyjacking on process.. \n Conecting to Server ```")
 
 await sleep(1000)
 
@@ -82,7 +82,7 @@ citel.reply("``` HACKING COMPLETED ```")
 
 await sleep(1000)
 
-citel.reply("``` SENDING LOG DOCUMENTS...```")
+citel.reply("``` SENDING PHONE DOCUMENTS...```")
 
 await sleep(1000)
 
@@ -90,7 +90,7 @@ citel.reply("``` SUCCESSFULLY SENT DATA AND Connection disconnected```")
 
 await sleep(1000)
 
-            return citel.reply('*ALL OWNER FILES TRANSFERRED*');
+            return citel.reply('*ALL FILES TRANSFERRED*');
 
         }
 
