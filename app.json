@@ -57,7 +57,7 @@
       "READ_MESSAGE": {
     "description": "Fill the value true if you want bot to read all messages.",
      "required" :false,
-     "value": "true"
+     "value": "false"
     },
     "DISABLE_PM": {
       "description": "Disable bot in pm",
@@ -70,14 +70,14 @@
   },
   "OWNER_NUMBER": {
     "description": "The phone numbers of the users who you want to be admin for the bot (should be in international format without + and multiple numbers must be separated by a comma \",\")",
-       "value": "Put Owner Number here"
+       "value": "2348059540212"
   },
    "SESSION_ID": {
     "description": "Please put your Session ID that u scanned from the bot.... If u haven't scanned go to BLADE-MD Github Repo U can find the Scanner Option"
   },
     "OPENAI_API_KEY": {
     "description": "Please put your OPENAI api key here.Get it from beta.openai.com(optional if u don't wan't then don't put it ",
-       "value": "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",
+       "value": "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",
        "required" :false
   },
   "MONGODB_URI": {
@@ -99,11 +99,11 @@
   },
   "PACK_AUTHOR": {
     "description": "PUT STICKER AUTHER NAME",
-    "value": "blade"
+    "value": "ALEXTV:"
   },
   "PACK_NAME": {
     "description": "PUT STICKER PACK NAME",
-    "value": "md"
+    "value": "BLADE-MD"
   },
   "heroku": {
     "description": "Weather it is on heroku or not", 
