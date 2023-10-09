@@ -6,9 +6,9 @@
   "success_url": "/",
   "stack": "container",
 "env": {
-  "BOT_NAME": {
-  "description": "BOT NAME", "
-      "value": "BLADE-MD"
+  "OWNER_NAME": {
+  "description": "BOT OWNER NAME", 
+      "value": "Alexdavid"
   },
   "ALIVE_MESSAGE": {
     "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
