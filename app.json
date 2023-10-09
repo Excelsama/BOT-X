@@ -7,7 +7,7 @@
   "stack": "container",
 "env": {
   "BOT_NAME": {
-  "description": "BOT NAME", DO NOT CHANGE THIS",
+  "description": "BOT NAME", "DO NOT CHANGE THIS",
       "value": "BLADE MD"
   },
   "ALIVE_MESSAGE": {
