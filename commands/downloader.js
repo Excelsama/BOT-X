@@ -65,7 +65,8 @@ cmd({
  
  })
 //---------------------------------------------------------------------------
-/*cmd({
+/*
+cmd({
             pattern: "Fb",
             desc: "Downloads fb videos  .",
             category: "downloader",
