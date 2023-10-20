@@ -65,7 +65,7 @@ cmd({
  
  })
 //---------------------------------------------------------------------------
-/cmd({
+/*cmd({
             pattern: "Fb",
             desc: "Downloads fb videos  .",
             category: "downloader",
@@ -236,22 +236,24 @@ let vurl=info.video.url_video;
 
 })
 
-//---------------------------------------------------------------------------
+//-------------------------------------------------------------------------l--
 
 cmd({
-            pattern: "apk",
+            
+	
+	pattern: "apk",
             desc: "Downloads apks  .",
             category: "downloader",
             filename: __filename,
             use: '<add sticker url.>',
         },
 
-        async(Void, citel, text) => {
+        async(Suhail, citel, text) => {
         if(!text )return citel.reply("*_Give me App Name_*");
 
 	const getRandom = (ext) => { return `${Math.floor(Math.random() * 10000)}${ext}`; };
 	let randomName = getRandom(".apk");
-	const filePath = `./${randomName}`;     // fs.createWriteStream(`./${randomName}`)
+	const filePath = `./temp/${randomName}`;     // fs.createWriteStream(`./${randomName}`)
         const {  search , download } = require('aptoide-scraper')
 	let searc = await search(text);          //console.log(searc);
 	let data={};
@@ -274,33 +276,16 @@ axios.get(url, { responseType: 'stream' })
   .then(response => {
     const writer = fs.createWriteStream(filePath);
     response.data.pipe(writer);
-
-    return new Promise((resolve, reject) => {
-      writer.on('finish', resolve);
-      writer.on('error', reject);
-    });
-  }).then(() => {
-	
-	let buttonMessage = {
-                        document: fs.readFileSync(filePath),
-                        mimetype: 'application/vnd.android.package-archive',
-                        fileName: data.name+`.apk`,
-                        caption : inf
-                        
-                    }
-                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
-
-    console.log('File downloaded successfully');
-
-  
-    fs.unlink(filePath, (err) => {
-      if (err) { console.error('Error deleting file:', err); } else { console.log('File deleted successfully'); } });
+    return new Promise((resolve, reject) => {writer.on('finish', resolve);writer.on('error', reject);});
+  }).then(() => {	
+	let buttonMessage = {document: fs.readFileSync(filePath),mimetype: 'application/vnd.android.package-archive',fileName: data.name+`.apk`,caption : inf}
+    Suhail.bot.sendMessage(citel.chat, buttonMessage, { quoted: citel })
+    console.log('Apk File downloaded successfully');  
+    try{ fs.unlink(filePath); }catch{}
   }) .catch(error => {
-	fs.unlink(filePath)
+	try{ fs.unlink(filePath); }catch{}
     return citel.send('*_Apk not Found, Sorry_*')//:', error.message);
   });
-	
-	
 	
 	
 	
