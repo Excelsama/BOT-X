@@ -1,17 +1,11 @@
 /**
-██╗███████╗██╗   ██╗██╗  ██╗██╗   ██╗    ███╗   ███╗██████╗ 
-██║╚══███╔╝██║   ██║██║ ██╔╝██║   ██║    ████╗ ████║██╔══██╗
-██║  ███╔╝ ██║   ██║█████╔╝ ██║   ██║    ██╔████╔██║██║  ██║
-██║ ███╔╝  ██║   ██║██╔═██╗ ██║   ██║    ██║╚██╔╝██║██║  ██║
-██║███████╗╚██████╔╝██║  ██╗╚██████╔╝    ██║ ╚═╝ ██║██████╔╝
-╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝ ╚═════╝     ╚═╝     ╚═╝╚═════╝ 
 
  Copyright (C) 2023.
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
  It is supplied in the hope that it may be useful.
- * @project_name : IZUKU-Md
- * @author : excel <https://github.com/excelottah6>
+ * @project_name : blade-md
+ * @author : excel <https://github.com/bladeh4x
  * @description : Secktor,A Multi-functional whatsapp bot.
  * @version 0.0.6
  **/
@@ -35,7 +29,7 @@ cmd({
                 citel.reply("Link Invalid, Please Send a valid whatsapp Group Link!");
             let result = text.split(" ")[0].split("https://chat.whatsapp.com/")[1];
             await Void.groupAcceptInvite(result)
-                .then((res) => citel.reply("😁Joined Group"))
+                .then((res) => citel.reply("✅Joined Group"))
                 .catch((err) => citel.reply("Error in Joining Group"));
 
         }
@@ -95,10 +89,10 @@ cmd({
         filename: __filename,
     },
     async(Void, citel, text) => {
-        citel.reply(`*Check your DM I LEFT SOMETHING THERE🤭 ${tlang().greet}*`);
+        citel.reply(`*Check your message🤭 ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: MAC-Support*\n*Group Link:* https://chat.whatsapp.com/IpDbNkTpz1l520HHFuS7B7`,
+            caption: `*Group Name: blade-Support*\n*Group Link:* https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ`,
         });
 
     }
@@ -181,7 +175,7 @@ cmd({
 ➲ *Author:* ${citel.pushName} 👾
 `
         for (let mem of participants) {
-            textt += ` ⚡️ @${mem.id.split("@")[0]}\n`;
+            textt += ` ❇️ @${mem.id.split("@")[0]}\n`;
         }
         Void.sendMessage(citel.chat, {
             text: textt,
@@ -486,7 +480,7 @@ cmd({
 \n\n`
             for (let i = 0; i < fetchlb.length; i++) {
                 const lvpoints = fetchlb[i].level
-                var role = "OMEGA✨";
+                var role = "Legend✨";
                 if (lvpoints <= 2) {
                     var role = "🏳Citizen";
                 } else if (lvpoints <= 4) {
