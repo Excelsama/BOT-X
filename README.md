@@ -5,7 +5,7 @@
     <img alt=Support height="250" src="https://telegra.ph/file/362dd0f0cb45468934804.jpg"> 
     </p>
       <div align="center">
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Impact&size=50&pause=1000&color=000000&center=true&width=910&height=100&lines=THIS IS+BLADE-MD ;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+THE TEAM BLADE ;PUBLIC+RELESED+DATE;2023/08/21;." alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Impact&size=50&pause=1000&color=000000&center=true&width=910&height=100&lines=THIS IS+BLADE-MD ;MULTI+DEVICE+WHATSAPP+BOT;CREATED+BY+ TEAM BLADE ;PUBLIC+RELESED+DATE;2023/08/21;." alt="Typing SVG" /></a>
   </p>
   <p align="center"> 
   <a href="https://github.com/Bladeh4x/BLADE-MD/stargazers">
@@ -254,7 +254,6 @@ Copy the JSON down and paste in repl then fill the vars
 
 [![Bladeh4x](https://github.com/Bladeh4x.png?size=200)](https://github.com/Bladeh4x) | 
  [![ahil15](https://github.com/ahil15.png?size=200)](https://github.com/ahil15) |
- [![Mulandii](https://github.com/Mulandii.png?size=200)](https://github.com/Mulandii) | 
  
   </div>
 
@@ -268,4 +267,4 @@ SUPPORT GROUP: <a href="https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ"><img a
 
 ## License
 
-The Xlicon made available under the [GPL-3 license](https://github.com/Bladeh4x/BLADE-MD/blob/main/LICENES 
+The blade available under the [GPL-3 license](https://github.com/Bladeh4x/BLADE-MD/blob/main/LICENES 
