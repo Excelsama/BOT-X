@@ -33,7 +33,7 @@
 
 ## Deployment Methods
 ---
-1. ***Get [`SESSION ID`](https://replit.com/@Bladeh4x/BLADE-MD-V2-1?v=1)  by scanning QR code. `Whatapp>Three dots>Linked Devices`***
+1. ***Get [`SESSION ID`](https://blade-md-qr.onrender.com)  by scanning QR code. `Whatapp>Three dots>Linked Devices`***
 ##
    
 # ```EXTERNAL STUFF AND API```
