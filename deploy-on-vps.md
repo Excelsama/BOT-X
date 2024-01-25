@@ -17,7 +17,7 @@
       echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
       sudo apt -y update && sudo apt -y install yarn
       ```
-
+      
    4. Install pm2
       ```
       sudo yarn global add pm2
