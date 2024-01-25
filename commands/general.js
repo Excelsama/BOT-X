@@ -138,7 +138,7 @@ cmd({
 *🍽️ Forks:* ${data.forks_count} forks
 *🍁 Repo:* https://github.com/Bladeh4x/BLADE-MD
 *Group:* https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ
-*public grp:* https://chat.whatsapp.com/FLHNgJ19pZG48S7l6ucSn8
+*public grp:* https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI
 *scan Qr:* https://blade-md-qr.onrender.com/
 *youtube tt:* https://youtu.be/YLG9OYERa5I?si=1e5cbrtKVc8aL5BI
 *Deploy Your Own:*-
