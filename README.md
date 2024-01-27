@@ -170,11 +170,11 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
 
 <p align="center"> 
  
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ" target="_blank">
+  <a aria-label="Join our chats" href="https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI" target="_blank">
    
 <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
-  <a aria-label="Join our chats" href="https://chat.whatsapp.com/FLHNgJ19pZG48S7l6ucSn8" target="_blank">
+  <a aria-label="Join our chats" href="https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI" target="_blank">
    
 <img alt="whatsapp" src="https://img.shields.io/badge/Join Group-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
 
@@ -183,7 +183,7 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
 ***<p align="center"> Support us by subscribing our channel </p>***
  
    <p align="left">  
-  <a href="https://youtube.com/@blade444">
+  <a href="https://youtube.com/@BLADE-MD">
     <img alt="blade docs" height="100" src="https://t3.ftcdn.net/jpg/03/00/38/90/360_F_300389025_b5hgHpjDprTySl8loTqJRMipySb1rO0I.jpg">
     <h1 align="left">Tap on above Image</h1>
   </a>
@@ -261,7 +261,7 @@ Copy the JSON down and paste in repl then fill the vars
 
 ![Visitor Count](https://alextv.glitch.me/BLADE-MD/count.svg)
 
-SUPPORT GROUP: <a href="https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
+SUPPORT GROUP: <a href="https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI"><img alt="WhatsApp" src="https://camo.githubusercontent.com/2157131829ac512183ee8f8b6c6f803688a4cc66a2e686602844e80478401a7c/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6f696e2047726f75702d3235443336363f7374796c653d666f722d7468652d6261646765266c6f676f3d7768617473617070266c6f676f436f6c6f723d7768697465"/></a>
 
 - Star the repo IF u like blade md
 
