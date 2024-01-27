@@ -137,7 +137,7 @@ cmd({
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
 *🍁 Repo:* https://github.com/Bladeh4x/BLADE-MD
-*Group:* https://chat.whatsapp.com/ErxOiX1qQgk9phDJhnUiDQ
+*Group:* https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI
 *public grp:* https://chat.whatsapp.com/HTTzf69NNqWEU2v2yc7r0E
 *scan Qr:* https://blade-md-qr.onrender.com/
 *youtube tt:* https://youtu.be/YLG9OYERa5I?si=1e5cbrtKVc8aL5BI
