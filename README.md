@@ -1,4 +1,6 @@
-
+ Fork the repo
+    <br>
+<a href="https://github.com/Bladeh4x/BLADE-MD/fork"><img title="XLICON-1.0" src="https://img.shields.io/badge/FORK BLADE-1.0-h?color=black&style=for-the-badge&logo=stackshare"></a>
 </p>
 <p align="center">
   <a href="https://chat.whatsapp.com/ESB8e9HAS2wGlwBvzGYnLx">
