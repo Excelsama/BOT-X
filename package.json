@@ -1,0 +1,83 @@
+{
+  "name": "blade-md",
+  "version": "0.0.7",
+  "description": "Multi device whatsapp bot by alex tv.",
+  "main": "lib/client.js",
+  "type": "commonjs",
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "pm2 start lib/client.js --deep-monitoring --attach --name blade",
+    "stop": "pm2 stop blade"
+  },
+  "author": "sampandey",
+  "dependencies": {
+    "@adiwajshing/keyed-db": "^0.2.4",
+    "@hapi/boom": "^9.1.4",
+    "@sampandey001/baileys": "latest",
+    "aptoide-scraper":"^1.0.1",
+    "@shineiichijo/marika": "^2.0.3",
+    "anime-character-random": "latest",
+    "async-g-i-s": "^1.4.0",
+    "awesome-phonenumber": "^3.3.0",
+    "axios": "^0.24.0",
+    "cache-manager": "^5.3.0",
+    "chalk": "^4.1.2",
+    "cheerio": "^1.0.0-rc.10",
+    "child_process": "^1.0.2",
+    "crypto-js": "latest",
+    "discord-mongoose-economy": "^1.2.0",
+    "discord-xp": "^1.1.16",
+    "dotenv": "^16.0.0",
+    "express": "^4.18.1",
+    "fb-info-video": "^1.0.2",
+    "ffmpeg": "^0.0.4",
+    "file-type": "^16.5.3",
+    "fluent-ffmpeg": "^2.1.2",
+    "form-data": "^4.0.0",
+    "fs-extra": "^10.1.0",
+    "google-it": "^1.6.2",
+    "google-tts-api": "^2.0.2",
+    "heroku-client": "3.1.0",
+    "human-readable": "^0.2.1",
+    "jimp": "^0.16.1",
+    "jsdom": "^16.4.0",
+    "koyeb-api-client": "latest",
+    "mailist": "^1.0.3",
+    "moment-timezone": "^0.5.34",
+    "mongoose": "^6.2.1",
+    "mumaker": "^2.0.0",
+    "node-cron": "^3.0.0",
+    "node-fetch": "^2.6.1",
+    "node-schedule": "^2.1.1",
+    "node-webpmux": "^3.1.0",
+    "openai": "4.25.0",
+    "pastebin-js": "latest",
+    "path": "^0.12.7",
+    "pm2": "^5.3.1",
+    "request": "^2.88.2",
+    "secktor-pack": "latest",
+    "simple-git": "^3.16.1",
+    "soundcloud-downloader": "^1.0.0",
+    "tiktok-scraper": "^1.4.36",
+    "translatte": "^3.0.1",
+    "util": "^0.12.4",
+    "vz-tiktok-downloader": "^2.2.5",
+    "wa-sticker-formatter": "^4.3.2",
+    "ytdl-secktor": "latest"
+  },
+  "directories": {
+    "lib": "lib",
+    "assets": "lib/assets"
+  },
+  "devDependencies": {
+    "pino": "^7.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bladeh4x/BLADE-MD.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bladeh4x/BLADE-MD/issues"
+  },
+  "homepage": "https://github.com/Bladeh4x/BLADE-MD#readme"
+}
