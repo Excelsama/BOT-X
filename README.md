@@ -161,7 +161,12 @@ mongodb://usrdhz7ejxwayzvw69qm:fRuJImqP1BOZyGk9fD6@bupt7kruqljyivftjl4i-mongodb.
 </details>
 
 <br>
-https://www.buymeacoffee.com/bladehx
+**Buy Me a Coffee**: Your support will help me continue working on advancing and adding more features to the bot thank you
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="https://www.buymeacoffee.com/bladehx">
+  <img src="https://i.ibb.co/KNnhcvX/bmc-button.png" alt="Buy Me Coffee" height="40" width="150" style="margin-left: 60px;">
+</a>
+
 
  # BLADE MD SUPPORT
  
