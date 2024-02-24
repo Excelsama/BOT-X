@@ -16,7 +16,7 @@ global.website = 'https://github.com/Xcelsama/STAR-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3f3ae4aace2d012c11509.jpg'
 module.exports = {
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
-  author:  process.env.PACK_AUTHER ||  'BLADE BOT',
+  author:  process.env.PACK_AUTHER ||  'STAR MD BOT',
   packname:  process.env.PACK_NAME || 'MADE BY EXCEL DAVID',
   
   botname:   process.env.BOT_NAME === undefined ? "BLADE-MD" : process.env.BOT_NAME,
