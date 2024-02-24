@@ -149,7 +149,7 @@ cmd({
             headerType: 4,
             contextInfo: {
                 externalAdReply: {
-                    title: "Blade-Repo",
+                    title: "STAR-REPO",
                     body: "Easy to Use",
                     thumbnail: log0,
                     mediaType: 4,
