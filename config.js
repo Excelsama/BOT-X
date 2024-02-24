@@ -7,17 +7,17 @@ global.owner = process.env.OWNER_NUMBER || '2348059540212'  // Make SURE its Not
 global.mongodb = process.env.MONGODB_URI || "mongodb+srv://ahil1:787191784abhi@ahil1.kzr1tt3.mongodb.net/?retrywrites=true&w=majority"
 global.port= process.env.PORT || 5000
 global.email = 'maxdavid126@gmail.com'
-global.github = 'https://github.com/Bladeh4x/BLADE-MD'
+global.github = 'https://github.com/Xcelsama/STAR-MD'
 global.location = 'Lahore pakistan'
 global.gurl = 'https://instagram.com/alex_david/' // add your username
 global.sudo = process.env.SUDO || "2348069553870"
 global.devs = '2348069553870'
-global.website = 'https://github.com/Bladeh4x/BLADE-MD' //wa.me/+91000000000000
+global.website = 'https://github.com/Xcelsama/STAR-MD' //wa.me/+91000000000000
 global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3f3ae4aace2d012c11509.jpg'
 module.exports = {
   sessionName: process.env.SESSION_ID || "",      //Put Your Session Id Here
   author:  process.env.PACK_AUTHER ||  'BLADE BOT',
-  packname:  process.env.PACK_NAME || 'MADE BY ALEX DAVID',
+  packname:  process.env.PACK_NAME || 'MADE BY EXCEL DAVID',
   
   botname:   process.env.BOT_NAME === undefined ? "BLADE-MD" : process.env.BOT_NAME,
   ownername: process.env.OWNER_NAME === undefined ? 'alexdavid' : process.env.OWNER_NAME,  
