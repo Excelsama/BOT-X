@@ -69,7 +69,7 @@ mongodb+srv://astromedia0010:beka10beka10@cluster0.pxc8ulo.mongodb.net/
 
 <a href='https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/' target="_blank"><img alt='SCAN QR-1' src='https://img.shields.io/badge/Scan_qr-1-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
 
-<a href='https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/' target="_blank"><img alt='SCAN QR-3' src='https://img.shields.io/badge/Scan_qr-2-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
+<a href='https://replit.com/@HopeAmadi/EXCEL-MD-QR-SCAN-1?v=1/fork' target="_blank"><img alt='SCAN QR-3' src='https://img.shields.io/badge/Scan_qr-2-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
  
 <a href='https://star-md-qr-excel-64001a3963c7.herokuapp.com/' target="_blank"><img alt='SCAN QR-2' src='https://img.shields.io/badge/Scan_qr-3-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
 
