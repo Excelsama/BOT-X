@@ -126,7 +126,7 @@ Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 //---------------------------------------------------------------------------
 cmd({
         pattern: "repo",
-        alias: ["git", "sc","Star" "script"],
+        alias: ["git", "sc","script"],
         desc: "Sends info about repo.",
         category: "general",
         filename: __filename,
