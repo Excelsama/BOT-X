@@ -160,7 +160,7 @@ cmd({
             pattern: "fancy",
             desc: "Makes stylish/fancy given text",
             category: "converter",
-            use: '56 Secktor',
+            use: '56 Star',
             react: "✅",
             filename: __filename
         },
@@ -194,7 +194,7 @@ cmd({
             try {
                 link = text.split(" ")[0];
                 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-                citel.reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
+                citel.reply(`*Your Shortened URL*\n\n${anu.data}`);
             } catch (e) {
                 console.log(e);
             }
