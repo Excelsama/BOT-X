@@ -12,39 +12,39 @@ const quizQuestions = [
         correctAnswer: "B"
     },
     {
-        question: "The first iPhone was made in what year?",
-        options: ["A. 2004", "B. 2007", "C. 2012"],
+        question: "What's the capital of Uk",
+        options: ["A. England", "B. London", "C. Wales"],
         correctAnswer: "B"
     },
 
     {
-        question: "WHO IS THE OWNER OF IZUKU?",
-        options: ["A. EO", "B. SP", "C. SL"],
+        question: "WHO IS THE OWNER OF STAR-MD?",
+        options: ["A. EXCEl", "B. Hexce", "C. Cexcel"],
         correctAnswer: "A"
     },
 
     {
-        question: "IZUKU IS MADE FROM WHAT LANGUAGE ?",
-        options: ["A. NODE", "B. JAVA", "C. REACT"],
+        question: "What" s The capital of Turkey?",
+        options: ["A. Ankara", "B. Turkiye", "C. Turkmenistan"],
         correctAnswer: "A"
     },
     
     {
-        question: "martin luther king jnr was who?",
-        options: ["A. BLACK LIVES ACTIVIST", "B. CLEANER", "C. PORN ACTOR🤡"],
+        question: "What's The best Anime/Manga",
+        options: ["A. DRAGON Ball", "B. Naruto", "C. JJK"],
         correctAnswer: "A"
     },
 
     {
-        question: "how old is excel😕?",
-        options: ["A. 21", "B. 15", "C. 17"],
-        correctAnswer: "C"
+        question: "Group of Cell 🔬",
+        options: ["A.Tissue", "B. Cells", "C. Organ"],
+        correctAnswer: "A"
     },
 
     {
-        question: "ANOTHER NAME FOR IZUKU IS?",
+        question: "CAPITAL OF GERMANY?",
         options: ["A. London", "B. Berlin", "C. Paris"],
-        correctAnswer: "C"
+        correctAnswer: "B"
     },
     
     ];
