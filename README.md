@@ -68,6 +68,7 @@ mongodb+srv://astromedia0010:beka10beka10@cluster0.pxc8ulo.mongodb.net/
 <a href="https://r.mtdv.me/EXCEL-MDX"><img src="https://play-lh.googleusercontent.com/901aMQFFnVoX2T-YuJmTIwpPve_SUgMv_QSyzMSPtAqt_l0CyXN1DxfD6xXU0r2f9iM=w240-h480-rw" width="70" /></a>
 
 <a href='https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/' target="_blank"><img alt='SCAN QR-1' src='https://img.shields.io/badge/Scan_qr-1-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
+
 <a href='https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/' target="_blank"><img alt='SCAN QR-3' src='https://img.shields.io/badge/Scan_qr-1-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
  
 <a href='https://replit.com/@HopeAmadi/EXCEL-MD-QR-SCAN-1?v=1/fork' target="_blank"><img alt='SCAN QR-2' src='https://img.shields.io/badge/Scan_qr-2-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
