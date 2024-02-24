@@ -37,7 +37,7 @@ cmd({
     alias :['gpt'],
     desc: "chat with an AI(GPT)",
     category: "AI",
-    use: '<Hii,blade>',
+    use: '<◡̈⋆🅷🅸(●’◡’●)ﾉ,𝚂𝚝𝚊𝚛>',
     filename: __filename,
 },
 async(Void, citel,text) => {
@@ -136,13 +136,12 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ Total Stars:* ${data.stargazers_count} stars
 *🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* https://github.com/Bladeh4x/BLADE-MD
-*Group:* https://chat.whatsapp.com/DLniUfYVWR50sbkZDR8tBI
-*public grp:* https://chat.whatsapp.com/HTTzf69NNqWEU2v2yc7r0E
-*scan Qr:* https://blade-md-qr.onrender.com/
-*youtube tt:* https://youtu.be/YLG9OYERa5I?si=1e5cbrtKVc8aL5BI
-*Deploy Your Own:*-
-https://dashboard.heroku.com/new?button-url=https%3A%2F%2Fgithub.com%2FBladeh4x%2FBLADE-MD&template=https%3A%2F%2Fgithub.com%2FBladeh4x%2FBLADE-MD`
+*🍁 Repo:* Repo:*https://github.com/Xcelsama/STAR-MD
+*Group:* https://chat.whatsapp.com/Lg0lY4M1k8oDMYzylg86xs
+*public grp:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
+*scan Qr:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
+*ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
+*Deploy Your Own:*-https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -179,7 +178,7 @@ cmd({
         latensie = speed() - timestampe;
         let ter = `
 🔰 *${tlang().title}* 🔰
-*🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
+*🌟Description:* 𝙰 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚠𝚒𝚝𝚑 𝚛𝚒𝚌𝚑 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜, 𝚋𝚞𝚒𝚕𝚝 𝚒𝚗 𝙽𝚘𝚍𝚎𝙹𝚜 𝚝𝚘 𝚖𝚊𝚔𝚎 𝚢𝚘𝚞𝚛 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚎𝚗𝚓𝚘𝚢𝚊𝚋𝚕𝚎...𝚋𝚢 𝙴𝚡𝚌𝚎𝚕.
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
 *🕸Version:* 0.0.7
