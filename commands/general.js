@@ -126,22 +126,22 @@ Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 //---------------------------------------------------------------------------
 cmd({
         pattern: "repo",
-        alias: ["git", "sc", "script"],
+        alias: ["git", "sc","Star" "script"],
         desc: "Sends info about repo.",
         category: "general",
         filename: __filename,
     },
     async(Void, citel) => {
-        let { data } = await axios.get('https://api.github.com/repos/Bladeh4x/BLADE-MD')
+        let { data } = await axios.get('https://api.github.com/repos/Xcelsama/STAR-MD')
         let cap = `Hey ${citel.pushName}\n
-*⭐ Total Stars:* ${data.stargazers_count} stars
-*🍽️ Forks:* ${data.forks_count} forks
-*🍁 Repo:* Repo:*https://github.com/Xcelsama/STAR-MD
-*Group:* https://chat.whatsapp.com/Lg0lY4M1k8oDMYzylg86xs
-*public grp:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
-*scan Qr:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
-*ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
-*Deploy Your Own:*-https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
+*⭐ TOTᗩᒪ ՏTᗩᖇՏ:* ${data.stargazers_count} stars
+*🍽️ ᖴOᖇKՏ:* ${data.forks_count} forks
+*🍁 ᖇᗴᑭO:* Repo:*https://github.com/Xcelsama/STAR-MD
+*⚔️ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/Lg0lY4M1k8oDMYzylg86xs
+*📡ᑭᑌᗷᒪIᑕ ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
+*🔍Տᑕᗩᑎ ᑫᖇ:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
+*💻ᑕᕼᗩᑎᑎᗴᒪ ᒪIᑎK:* https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
+*⚙️DᗴᑭloY YOᑌᖇ Oᗯᑎ:*-https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD`
         let buttonMessaged = {
             image: { url: await botpic() },
             caption: cap,
@@ -178,6 +178,7 @@ cmd({
         latensie = speed() - timestampe;
         let ter = `
 🔰 *${tlang().title}* 🔰
+𝐎𝐖𝐍𝐄𝐑:-+2347045035241
 *🌟Description:* 𝙰 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚋𝚘𝚝 𝚠𝚒𝚝𝚑 𝚛𝚒𝚌𝚑 𝚏𝚎𝚊𝚝𝚞𝚛𝚎𝚜, 𝚋𝚞𝚒𝚕𝚝 𝚒𝚗 𝙽𝚘𝚍𝚎𝙹𝚜 𝚝𝚘 𝚖𝚊𝚔𝚎 𝚢𝚘𝚞𝚛 𝚆𝚑𝚊𝚝𝚜𝙰𝚙𝚙 𝚎𝚗𝚓𝚘𝚢𝚊𝚋𝚕𝚎...𝚋𝚢 𝙴𝚡𝚌𝚎𝚕.
 *⚡Speed:* ${latensie.toFixed(4)} ms
 *🚦Uptime:* ${runtime(process.uptime())}
