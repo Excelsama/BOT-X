@@ -167,7 +167,7 @@ cmd({
 
                 let n = await gis(name1)
                     images = n[Math.floor(Math.random() * n.length)].url;
-                    await Void.sendMessage(citel.chat, {image: {  url: images,}, caption: `_Xlicon Image Search_\n*${name1}*`,}, { quoted: citel, });
+                    await Void.sendMessage(citel.chat, {image: {  url: images,}, caption: `_Star-md Image Search_\n*${name1}*`,}, { quoted: citel, });
             }
         }
     )
