@@ -162,7 +162,7 @@ cmd({
 	          alias :  ['tt','ttdl'],
             desc: "Downloads Tiktok Videos Via Url.",
             category: "downloader",
-            react :'🥳',
+            react :'📲',
             filename: __filename,
             use: '<add tiktok url.>'
         },
@@ -370,7 +370,7 @@ cmd({
             use: '<add sticker url.>',
         },
         async(Void, citel, text) => {
-	if (!text) return await citel.send('*Provide Repo Url, Ex:- _.gitclone https://github.com/Bladeh4x/BLADE-MD_*') 
+	if (!text) return await citel.send('*Provide Repo Url, Ex:- _.gitclone https://github.com/Xcelsama/STAR-MD_*') 
     const regex = /(?:https|git)(?::\/\/|@)github\.com[\/:]([^\/:]+)\/(.+)/i
     if (!regex.test(text) ) return await citel.send('*Uhh Please, Provide Valid Repositry Url*');
     let [_, user, repo] = text.match(regex) || []
@@ -436,7 +436,7 @@ cmd({
 		let buttonMessage = {
                         video: fs.readFileSync(`./${randomName}`),
                         mimetype: 'video/mp4',
-                        caption: "  •ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
+                        caption: "  •𝚂𝚝𝚊𝚛𝟿𝟿𝟿-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ• " + Config.caption ,
                     }
                  Void.sendMessage(citel.chat, buttonMessage, { quoted: citel })
                  return fs.unlinkSync(`./${randomName}`);
@@ -726,7 +726,7 @@ cmd({
         },
         async(Void, citel, text) => {
             let yts = require("secktor-pack");
-            if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by •ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•`);
+            if (!text) return citel.reply(`Example : ${prefix}yts WhatsApp Bot by •𝚂𝚝𝚊𝚛𝟿𝟿𝟿-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•`);
             let search = await yts(text);
             let textt = "*YouTube Search*\n Result From " + text + "\n   ─────────────────── \n";
             let no = 1;
@@ -946,9 +946,9 @@ cmd({
 
 
 
-// By @•ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•
-// https://wa.me/2348059540212
-// https://www.youtube.com/@suhailtechinfo0
+// By @•𝚂𝚝𝚊𝚛𝟿𝟿𝟿-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•
+// https://wa.me/2347045035241
+// https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
 
 
 
@@ -963,7 +963,7 @@ async(Void, citel, text) => {
 if (!text) return await citel.reply(`*_Ohh PLease, Give Me Song Name_*`);
 let search = await yts(text)
 let i = search.all[1] ;
-let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio \n*•ʙʟᴀᴅᴇ271-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•*" ;
+let cap = "\t *---Yt Song Searched Data---*   \n\nTitle : " + i.title + "\nUrl : " + i.url +"\nDescription : " + i.timestamp +"\nViews : "+i.views +"\nUploaded : " +i.ago +"\nAuthor : "+i.author.name+"\n\n\nReply 1 To Video \nReply 2 To Audio \n*•𝚂𝚝𝚊𝚛𝟿𝟿𝟿-ᴍᴜʟᴛɪᴅᴇᴠɪᴄᴇ•*" ;
 Void.sendMessage(citel.chat,{image :{url : i.thumbnail}, caption :  cap })
 })
 */
