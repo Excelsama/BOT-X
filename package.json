@@ -1,13 +1,13 @@
 {
-  "name": "blade-md",
+  "name": "STAR-MD",
   "version": "0.0.7",
-  "description": "Multi device whatsapp bot by alex tv.",
+  "description": "Multi device whatsapp bot by Excel Amadi.",
   "main": "lib/client.js",
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "pm2 start lib/client.js --deep-monitoring --attach --name blade",
-    "stop": "pm2 stop blade"
+    "start": "pm2 start lib/client.js --deep-monitoring --attach --name Star",
+    "stop": "pm2 stop Star"
   },
   "author": "sampandey",
   "dependencies": {
@@ -74,10 +74,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Bladeh4x/BLADE-MD.git"
+    "url": "git+https://github.com/Xcelsama/STAR-MD"
   },
   "bugs": {
-    "url": "https://github.com/Bladeh4x/BLADE-MD/issues"
+    "url": "https://github.com/Xcelsama/STAR-MD/issues"
   },
-  "homepage": "https://github.com/Bladeh4x/BLADE-MD#readme"
+  "homepage": "https://github.com/Xcelsama/STAR-MD#readme"
 }
