@@ -4,7 +4,7 @@ const axios = require('axios')
 var nicetitle = '𝐄𝐗𝐂𝐄𝐋 𝐀𝐌𝐀𝐃𝐈'
 var nicebody = "|| ◁ㅤ❚❚ㅤ▷||ㅤ ↻"
 var niceurl = 'https://github.com/SamPandey001/Secktor-Md'
-const nicepic = '';
+const nicepic = 'https://i.ibb.co/chtrhzs/Socialthumb.jpg';
 /*
 cmd({
     pattern: "mentionpreview",
