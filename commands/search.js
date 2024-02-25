@@ -33,7 +33,7 @@ let Suhail_Md = "STAR MD Whatsapp bot md"
 
 
 const moment = require('moment-timezone')
-const {fetchJson,smd, tlang,send, getBuffer, prefix, Config ,groupdb } = require('../lib')
+const {fetchJson,cmd, tlang,send, getBuffer, prefix, Config ,groupdb } = require('../lib')
 let gis = require("async-g-i-s");
 const axios = require('axios')
 const fetch = require('node-fetch')
