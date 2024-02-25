@@ -100,7 +100,7 @@ cmd({
         citel.reply(`*Check your DM I LEFT SOMETHING THERE🤭 ${tlang().greet}*`);
         await Void.sendMessage(`${citel.sender}`, {
             image: log0,
-            caption: `*Group Name: IZUKU-Support*\n*Group Link:* https://chat.whatsapp.com/IpDbNkTpz1l520HHFuS7B7`,
+            caption: `*Group Name: STAR-Support*\n*Group Link:*https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK`,
         });
 
     }
@@ -282,10 +282,10 @@ cmd({
         await citel.reply("Please provide your request message. Example: request Please add a new feature.");
         return;
     }
-    const developerNumber = '2347039570336';
+    const developerNumber = '2347045035241';
     const requestMessage = `*Request from ${citel.sender}*\n\n${text}`;
     await Void.sendMessage(developerNumber + "@s.whatsapp.net", { text: requestMessage }, { quoted: citel });
-    await citel.reply("Your request has been sent to the bot developer. Thank you!");
+    await citel.reply("Your request has been sent to the Excel. Thanks for your suggestion!");
 });
 
     //---------------------------------------------------------------------------
