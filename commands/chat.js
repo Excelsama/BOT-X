@@ -30,12 +30,12 @@
 
 
 
-let Suhail_Md = "Suhail MD Whatsapp bot md" 
-let {smd , prefix,Config} = require("../lib") 
+let Suhail_Md = "STAR MD Whatsapp bot md" 
+let {cmd , prefix,Config} = require("../lib") 
 
 // ============================ CHATS SETTINGS ============================  
 
-smd({ 
+cmd({ 
         pattern: 'clear', 
         fromMe: true, 
         desc: 'delete whatsapp chat', 
@@ -58,7 +58,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'archive', 
         fromMe: true, 
         desc: 'archive whatsapp chat', 
@@ -81,7 +81,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'unarchive', 
         fromMe: true, 
         desc: 'unarchive whatsapp chat', 
@@ -103,7 +103,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'chatpin', 
   alias :["pinchat"], 
         fromMe: true, 
@@ -120,7 +120,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'unpin', 
   alias :["unpinchat","chatunpin"], 
         fromMe: true, 
@@ -137,7 +137,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'markread', 
         fromMe: true, 
         desc: 'mark as readed', 
@@ -156,7 +156,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'markunread',   
         fromMe: true, 
         desc: 'mark as UnRead', 
@@ -179,7 +179,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'unmutechat', 
         fromMe: true, 
         desc: 'unmute a chat', 
@@ -192,7 +192,7 @@ smd({
 
 }) 
 
-smd({ 
+cmd({ 
         pattern: 'profilename', 
         fromMe: true, 
         desc: 'To change your profile name', 
@@ -217,7 +217,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'getprivacy', 
         fromMe: true, 
         desc: 'get your privacy settings', 
@@ -255,7 +255,7 @@ smd({
 
 
 
-smd({ 
+cmd({ 
         pattern: 'lastseen', 
         fromMe: true, 
         desc: 'to change lastseen privacy', 
@@ -271,7 +271,7 @@ smd({
 }) 
 
 
-smd({ 
+cmd({ 
         pattern: 'online', 
         fromMe: true, 
         desc: 'to change online privacy', 
@@ -287,7 +287,7 @@ smd({
 }) 
 
 
-smd({ 
+cmd({ 
         pattern: 'mypp', 
         fromMe: true, 
         desc: 'privacy setting profile picture', 
@@ -302,7 +302,7 @@ smd({
 }catch(e){ message.error(`${e}\n\nCommand : mypp` , e, false) } 
 }) 
 
-smd({ 
+cmd({ 
         pattern: 'mystatus', 
         fromMe: true, 
         desc: 'privacy for my status', 
@@ -317,7 +317,7 @@ smd({
 }catch(e){ message.error(`${e}\n\nCommand : mystatus` , e, false) } 
 }) 
 
-smd({ 
+cmd({ 
         pattern: 'read', 
         fromMe: true, 
         desc: 'privacy for read message', 
@@ -332,7 +332,7 @@ smd({
 }catch(e){ message.error(`${e}\n\nCommand : read` , e, false) } 
 }) 
 
-smd({ 
+cmd({ 
         pattern: 'groupadd', 
         fromMe: true, 
         desc: 'privacy for group add', 
