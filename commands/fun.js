@@ -56,7 +56,7 @@ cmd({
     },
     async(Void, citel, text) => {
         const { data } = await axios.get(`https://nekos.life/api/v2/fact`)
-        return citel.reply(`*Fact:* ${data.fact}\n\n*Powered by IZUKU*`)   
+        return citel.reply(`*Fact:* ${data.fact}\n\n*𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑*`)   
     }
 
 )
@@ -77,7 +77,7 @@ cmd({
 ✻ ═════ •❅• ═════ ✼
 ║ *🗂Content:* ${quoo.data.quote.body}
 ║ *👤Author:* ${quoo.data.quote.author}
-║    
+║ * 👨‍💻𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑:-𝐄𝐗𝐂𝐄𝐋
 ✻ ═════ •❅• ═════ ✼ `
 return citel.reply(replyf)
     }
