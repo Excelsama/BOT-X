@@ -29,7 +29,7 @@
 
 
 
-let Suhail_Md = "Suhail MD Whatsapp bot md"
+let Suhail_Md = "STAR MD Whatsapp bot md"
 
 
 const moment = require('moment-timezone')
