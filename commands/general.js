@@ -136,7 +136,7 @@ cmd({
         let cap = `Hey ${citel.pushName}\n
 *⭐ TOTᗩᒪ ՏTᗩᖇՏ:* ${data.stargazers_count} stars
 *🍽️ ᖴOᖇKՏ:* ${data.forks_count} forks
-*🍁 ᖇᗴᑭO:* Repo:*https://github.com/Xcelsama/STAR-MD
+*🍁 ᖇᗴᑭO:*https://github.com/Xcelsama/STAR-MD
 *⚔️ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/Lg0lY4M1k8oDMYzylg86xs
 *📡ᑭᑌᗷᒪIᑕ ᘜᖇOᑌᑭ:* https://chat.whatsapp.com/EmP3syvou18HrZk6R6nTAK
 *🔍Տᑕᗩᑎ ᑫᖇ:* https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/
