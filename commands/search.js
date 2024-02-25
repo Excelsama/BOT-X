@@ -41,7 +41,7 @@ const fetch = require('node-fetch')
    //---------------------------------------------------------------------------
    const { shazam } = require('../lib')
    let yts = require("secktor-pack");
-   smd({
+   cmd({
            pattern: "find",
            alias :["shazam"],
            category: "search",
@@ -62,7 +62,7 @@ const fetch = require('node-fetch')
 })
     //------------------------------------------------------------------------------------
 
-smd({
+cmd({
    pattern: "github",
    category: "search",
    desc: "Finds info about song",
@@ -100,7 +100,7 @@ async(message, match) => {
    })
 
 //------------------------------------------------------------------------------------
-smd({
+cmd({
    pattern: "coffe",
    alias:["tea","kofi"],
    category: "search",
@@ -125,7 +125,7 @@ async(m) => {
 
 
     //---------------------------------------------------------------------------
-smd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
+cmd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
 
     async(message, text,{cmdName}) => {
     if (!text) return message.reply(`*_Uhh please, give me song name_*\n*_Example ${prefix+cmdName} blue eyes punjabi_*`);
@@ -146,7 +146,7 @@ smd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyri
 
 
     //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "imdb",
             category: "search",
             desc: "sends info of asked movie/series.",
@@ -183,7 +183,7 @@ smd({
         }
     )
     //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "weather",
             category: "search",
             desc: "Sends weather info about asked place.",
@@ -213,7 +213,7 @@ smd({
         }
     )
 //---------------------------------------------------------------------------
-smd({
+cmd({
          pattern: "npm",
          desc: "download mp4 from url.",
          category: "search",
@@ -232,7 +232,7 @@ smd({
 
     //---------------------------------------------------------------------------
 /*
-smd({
+cmd({
             pattern: "horo",
             category: "search",
             desc: "Gives horoscope info of user.",
@@ -267,7 +267,7 @@ smd({
     */
     //---------------------------------------------------------------------------
 
-smd({
+cmd({
             pattern: "cric",
             category: "search",
             desc: "Sends info of given query from Google Search.",
@@ -296,7 +296,7 @@ text +="\n*Match Ended:* " + dat.data[i].matchEnded;
 })
 
 //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "google",
             alias :['search','gsearch'],
             category: "search",
@@ -325,7 +325,7 @@ smd({
 
 
     //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "image",
             alias: ["img" , "pic"],
             category: "search",
@@ -431,7 +431,7 @@ for (let url of urlsArray) { try{ message.bot.sendFromUrl(message.chat ,url,"",m
 }catch(e){return await message.error(`${e}\n\n command: image`,e,`*_Uhh dear, Didn't get any results!_*`) }
  })
     //---------------------------------------------------------------------------
-smd({
+cmd({
             pattern: "couplepp",
             category: "search",
             desc: "Sends two couples pics.",
@@ -448,7 +448,7 @@ smd({
 
     ) 
     //---------------------------------------------------------------------------
-smd({
+cmd({
         pattern: "iswa",
         alias: ["oldwa","bio","onwa"],
         category: "search",
@@ -502,11 +502,11 @@ smd({
 )
 
 
-smd({
+cmd({
         pattern: "nowa",
         category: "search",
         desc: "Searches in given rage about given number.",
-        use: '9112345678xx',
+        use: '23470450352xx',
         filename: __filename,
     },
     async(message, text) => {
