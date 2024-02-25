@@ -24,7 +24,7 @@ const quizQuestions = [
     },
 
     {
-        question: "What" s The capital of Turkey?",
+        question: "What is The capital of Turkey?",
         options: ["A. Ankara", "B. Turkiye", "C. Turkmenistan"],
         correctAnswer: "A"
     },
