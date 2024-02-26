@@ -116,6 +116,7 @@ If You don't have a account in Heroku. Create a account.
     <br>
 
 <a href='https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/>
+[`📡Credits`](https://telegra.ph/STAR-MD-Bot-02-26-2)
 *******************************************
 🇴 🇼 🇳 🇪 🇷  🇮 🇳 🇫  🇴 
  
