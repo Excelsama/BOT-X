@@ -43,6 +43,7 @@
 
  
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
+[`Command Credits`]()
 
 ## Deployment Methods
 **If You Don't Have Any MongoDB Url Then, Use This Public one.!**
@@ -128,4 +129,3 @@ If You don't have a account in Heroku. Create a account.
 
 Excel ©2024
 
-Cmd({ credits} https://github/excelottuah
