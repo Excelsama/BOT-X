@@ -239,7 +239,7 @@ cmd({
                 if (anu1 == '401' || anu1.status.length == 0) {
                     nobio += `wa.me/${anu[0].jid.split("@")[0]}\n`
                 } else {
-                    text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Asia/Kolkata').format('HH:mm:ss DD/MM/YYYY')}\n\n`
+                    text += `🧐 *Number:* wa.me/${anu[0].jid.split("@")[0]}\n ✨*Bio :* ${anu1.status}\n🍁*Last update :* ${moment(anu1.setAt).tz('Africa/Lagos').format('HH:mm:ss DD/MM/YYYY')}\n\n`
                 }
             } catch { nowhatsapp += `${number0}${i}${number1}\n` }
         }
@@ -247,3 +247,52 @@ cmd({
 
     }
 )
+cmd({
+            pattern: "cric",
+            category: "search",
+            desc: "Sends info of given query from Google Search.",
+            use: '<text>',
+            filename: __filename,
+        },
+        async(message, text) => {
+try{
+            await message.reply (`*_Please Wait, Getting Cricket Info_*`);
+const response = await fetch('https://api.cricapi.com/v1/currentMatches?apikey=f68d1cb5-a9c9-47c5-8fcd-fbfe52bace78');
+const dat = await response.json();
+
+for (let i=0 ; i <  dat.data.length; i++) {
+let j = i+1;
+text +=`\n*--------------------- MATCH ${i}-------------------*`;
+text +="\n*Match Name:* "+ dat.data[i].name;
+text +="\n*Match Status:* "+ dat.data[i].status;
+text +="\n*Match Date:* " + dat.data[i].dateTimeGMT ;
+text +="\n*Match Started:* " + dat.data[i].matchStarted;
+text +="\n*Match Ended:* " + dat.data[i].matchEnded;
+
+}
+ return await message.reply( text);
+}catch(e){return await message.error(`${e}\n\n command: cric`,e,`*_Uhh dear, Didn't get any results!_*`) }
+
+})
+
+//---------------------------------------------------------------------------
+cmd({
+         pattern: "npm",
+         desc: "download mp4 from url.",
+         category: "search",
+         use: '<package name>',
+         filename: __filename
+     },
+     async( message, match) => { 
+       try{
+         if (!match) return message.reply('Please give me package name.📦')
+         const {data} = await axios.get(`https://api.npms.io/v2/search?q=${match}`)
+        let txt = data.results.map(({ package: pkg }) => `*${pkg.name}* (v${pkg.version})\n_${pkg.links.npm}_\n_${pkg.description}_`).join('\n\n')?.trim()
+          data && txt ? await message.reply(txt) : await message.reply('*No Result Found. Sorry!!*')
+          }catch(e){await message.error(`${e}\n\ncommand : npm`, e  )}
+     }
+ )
+
+    //---------------------------------------------------------------------------
+    }
+) 
