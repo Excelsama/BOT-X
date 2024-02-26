@@ -43,7 +43,8 @@
 
  
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
-[`Command Credits`]()
+
+[`📡Credits`](https://github.com/excelottah6)
 
 ## Deployment Methods
 **If You Don't Have Any MongoDB Url Then, Use This Public one.!**
