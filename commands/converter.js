@@ -195,7 +195,7 @@ cmd({
             try {
                 link = text.split(" ")[0];
                 anu = await axios.get(`https://tinyurl.com/api-create.php?url=${link}`);
-                citel.reply(`*🛡️Your Shortened URL*\n\n${anu.data}`);
+                citel.reply(`*sᴛᴀʀ-ᴍᴅ⁹⁹⁹ǫʀ sʜᴏʀᴛᴇʀ:- 🛡️Your Shortened URL*\n\n${anu.data}`);
             } catch (e) {
                 console.log(e);
             }
