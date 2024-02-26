@@ -1,15 +1,15 @@
 {
   "name": "STAR-MD",
   "version": "0.0.7",
-  "description": "Multi device whatsapp bot by Excel Amadi.",
+  "description": "Multi device whatsapp bot by excelottah6.",
   "main": "lib/client.js",
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "pm2 start lib/client.js --deep-monitoring --attach --name Star",
-    "stop": "pm2 stop Star"
+    "start": "pm2 start lib/client.js --deep-monitoring --attach --name izuku",
+    "stop": "pm2 stop izuku"
   },
-  "author": "sampandey",
+  "author": "excelottah6",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^9.1.4",
@@ -74,7 +74,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xcelsama/STAR-MD"
+    "url": "git+https://github.com/Xcelsama/STAR-MD.git"
   },
   "bugs": {
     "url": "https://github.com/Xcelsama/STAR-MD/issues"
