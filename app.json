@@ -84,10 +84,10 @@
   },
   "MONGODB_URI": {
     "description": "A secret String for Mongodb Connection.(Required),change for better experience",
-    "value": "mongodb+srv://astromedia0010:beka10beka10@cluster0.pxc8ulo.mongodb.net/"
+    "value": "mongodb+srv://salmanahmad:s4salmanyt@cluster0.szcj2eo.mongodb.net/?retryWrites=true&w=majority"
   },
     "THEME": {
-    "description": "Put the theme name you want to use. Avilable themes are GOJO,blade-md,NEZUKO,LUFFY,GOKU and many more..",
+    "description": "Put the theme name you want to use. Avilable themes are GOJO,STAR,NEZUKO,LUFFY,GOKU and many more..",
      "value": "STAR"
   },
     "WORKTYPE": {
