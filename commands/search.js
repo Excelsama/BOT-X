@@ -294,5 +294,63 @@ cmd({
  )
 
     //---------------------------------------------------------------------------
-    }
-) 
+    cmd({pattern: 'lyrics', alias :['lyric'],category: "search", desc: "Searche lyrics of given song name",use: '<text | song>',filename: __filename,},
+
+    async(message, text,{cmdName}) => {
+    if (!text) return message.reply(`*_Uhh please, give me song name_*\n*_Example ${prefix+cmdName} blue eyes punjabi_*`);
+    try {
+      const res = await ( await fetch(`https://inrl-web.onrender.com/api/lyrics?text=${text}`) ).json();
+      if(!res.status) return message.send("*Please Provide valid name!!!*");
+      if(!res.result) return message.send("*There's a problem, try again later!*");
+      const { thumb,lyrics,title,artist } = res.result, tbl= "```", tcl ="*", tdl = "_*", contextInfo = { externalAdReply: { ...(await message.bot.contextInfo("𝐒𝐓𝐀𝐑-𝐌𝐃",`Lyrics-${text}`))} }
+  await send(message, `*𝚃𝚒𝚝𝚕𝚎:* ${title}\n*𝙰𝚛𝚝𝚒𝚜𝚝:* ${artist} \n${tbl}${lyrics}${tbl} `,{contextInfo  : contextInfo },"");
+
+}catch(e){return await message.error(`${e}\n\n command: ${cmdName}`,e,`*_Didn't get any lyrics, Sorry!_*`) }
+
+
+
+
+
+})
+
+
+    //---------------------------------------------------------------------------
+
+𝐜md({
+   pattern: "github",
+   category: "search",
+   desc: "Finds info about github user",
+   filename: __filename,
+},
+async(message, match) => {
+ try{
+
+   message.react("🔍")
+         if (!match) return message.reply(`Give me a user name like ${prefix}github Xcelsama`)
+
+         const { data } = await axios(`https://api.github.com/users/${match}`)
+   if(!data) return await message.send(`*_Didn't get any results, Provide valid user name!_*`)
+   let gitdata =  data
+         message.sendMessage(message.jid, {
+           image: { url: gitdata.avatar_url }, caption:`ㅤㅤㅤ*[ GITHUB USER INFO ]*
+
+🚩 Id : ${gitdata.id}
+🔖 Nickname : ${gitdata.name}
+🔖 Username : ${gitdata.login}
+✨ Bio : ${gitdata.bio}
+🏢 Company : ${gitdata.company}
+📍 Location : ${gitdata.location}
+📧 Email : ${gitdata.email}
+📰 Blog : ${gitdata.blog}
+🔓 Public Repo : ${gitdata.repos_url}
+🔐 Public Gists : ${gitdata.gists_url}
+💕 Followers : ${gitdata.followers}
+👉 Following : ${gitdata.following}
+🔄 Updated At : ${gitdata.updated_at}
+🧩 Created At : ${gitdata.created_at}`
+         }, { quoted: message })
+
+          }catch(e){return await message.error(`${e}\n\n command: github`,e,`*_Didn't get any results, Sorry!_*`) }
+   })
+
+//------------------------------------------------------------------------------------
