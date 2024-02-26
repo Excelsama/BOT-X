@@ -71,7 +71,7 @@ cmd({
                 `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`
             );
             let textw = "";
-            textw += `*🌟Weather of  ${text}*\n\n`;
+            textw += `*🌟sᴛᴀʀ-ᴍᴅ⁹⁹⁹ ᴡᴇᴀᴛʜᴇʀ ʀᴇᴘᴏʀᴛ ᴏғ  ${text}*\n\n`;
             textw += `*Weather:-* ${wdata.data.weather[0].main}\n`;
             textw += `*Description:-* ${wdata.data.weather[0].description}\n`;
             textw += `*Avg Temp:-* ${wdata.data.main.temp}\n`;
@@ -137,11 +137,11 @@ cmd({
         if (!text) return citel.reply(`give me a query\n*Example : .google Who is Suhail Tech.*`);
         let google = require('google-it');
         google({ 'query': text}).then(res => {
-            let msg= `Google Search From : ${text} \n\n`;
+            let msg= `sᴛᴀʀ-ᴍᴅ⁹⁹⁹🔍ɢᴏᴏɢʟᴇ sᴇᴀʀᴄʜ  : ${text} \n\n`;
             for (let g of res) {
-                msg+= `➣ Title : ${g.title}\n`;
-                msg+= `➣ Description : ${g.snippet}\n`;
-                msg+= `➣ Link : ${g.link}\n\n────────────────────────\n\n`;
+                msg+= `📌 Title : ${g.title}\n`;
+                msg+= `⚔️  Description : ${g.snippet}\n`;
+                msg+= `🔗 Link : ${g.link}\n\n────────────────────────\n\n`;
             }
 
             return citel.reply(msg);
@@ -190,7 +190,7 @@ cmd({
         pattern: "iswa",
         category: "search",
         desc: "Searches in given rage about given number.",
-        use: '9112345678xx',
+        use: '23470450352xx',
         filename: __filename,
     },
     async(Void, citel, text) => {
