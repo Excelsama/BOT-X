@@ -3,7 +3,7 @@ const Config = require('../config')
 const axios = require('axios')
 var nicetitle = '𝐄𝐗𝐂𝐄𝐋 𝐀𝐌𝐀𝐃𝐈'
 var nicebody = "|| ◁ㅤ❚❚ㅤ▷||ㅤ ↻"
-var niceurl = 'https://github.com/SamPandey001/Secktor-Md'
+var niceurl = 'https://github.com/Xcelsama/STAR-MD'
 const nicepic = 'https://i.ibb.co/chtrhzs/Socialthumb.jpg';
 /*
 cmd({
