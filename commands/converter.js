@@ -1,4 +1,6 @@
 /**
+
+                                                            
  Copyright (C) 2022.
  Licensed under the  GPL-3.0 License;
  You may not use this file except in compliance with the License.
@@ -10,10 +12,38 @@
  **/
 
 const axios = require('axios')
-const { sck1, tiny, fancytext, listall,cmd,ffmpeg } = require('../lib/')
+const { sck1, tiny, fancytext, listall,cmd,ffmpeg,Config } = require('../lib/')
 const fs = require('fs-extra');
-const { exec } = require('child_process')
 const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
+const { exec } = require("child_process");
+const { fromBuffer } = require('file-type');
+
+//cmd({
+    //pattern: 'doc',
+    //desc: "convert media to document",
+    //react: "🔂",
+    //category: 'converter'
+//}, async (Void, citel, match) => {
+   // match = (match || "converted-media").replace(/[^A-Za-z0-9]/g, '-');
+
+   // if (!citel.reply_message.image && !citel.reply_message.audio && !citel.reply_message.video) {
+      //  return citel.reply("_*Reply to a video/audio/image message!*");
+   // }
+
+   // const media = await citel.reply_message.download();
+   // const { ext, mime } = await fromBuffer(media);
+
+    //const document = {
+       // document: media,
+        //mimetype: mime,
+       // fileName: match + "." + ext
+   // };
+
+   // return await Void.sendMessage(citel.chat, document, { quoted: citel });
+//});
+
+//---------------------------------------------------------------------------------------
+
 
     //---------------------------------------------------------------------------
     cmd({
@@ -36,14 +66,14 @@ if (mime =="imageMessage" || mime =="stickerMessage")
         exec(`ffmpeg -i ${media} ${name}`, (err) => {
             let buffer = fs.readFileSync(media)
             Void.sendMessage(citel.chat, { image: buffer }, { quoted: citel })
-          
+
          fs.unlink(media, (err) => {
          if (err) { return console.error('File Not Deleted from From TOPHOTO AT : ' , media,'\n while Error : ' , err);  }
          else return console.log('File deleted successfully in TOPHOTO  at : ' , media);
          });
-         
+
         })
-        
+
 } else return citel.reply ("```Uhh Please, Reply To A Non Animated Sticker```")
     }
 )
@@ -74,15 +104,15 @@ if(quot.message.videoMessage)
    let anu = await Void.downloadAndSaveMediaMessage(quot.message.videoMessage)
    return Void.sendMessage(citel.chat,{video:{url : anu},caption : cap })
 }
- 
+
 }
 //else citel.reply("```This is Not A ViewOnce Message```") 
-       
+
 }  
-     
+
 catch(e) {  console.log("error" , e ) }     
 
-       
+
 if(!citel.quoted) return citel.reply("```Uh Please Reply A ViewOnce Message```")           
 if(citel.quoted.mtype === "viewOnceMessage")
 { console.log("ViewOnce Entered") 
@@ -152,25 +182,48 @@ cmd({
             };
             let res = await axios.post("https://bot.lyo.su/quote/generate", body);
             let img = Buffer.alloc(res.data.result.image.length, res.data.result.image, "base64");
-            return citel.reply(img,{packname:'Secktor',author:'Quotely'},"sticker")
+            return citel.reply(img,{packname:'Izuku',author:'Quotely'},"sticker")
 
         }
     )
     //---------------------------------------------------------------------------
 cmd({
+    pattern: "tomp4",
+    alias:['mp4','tovideo','tovid'],
+    desc: "changes type to audio.",
+    category: "converter",
+    use: 'reply to any Video',
+    filename: __filename
+},
+async(Void, citel, text) => {
+    const { webp2mp4File } = require ("../lib")
+    if (!citel.quoted) return citel.reply('*_Reply To Animated Sticker or Gif_*')
+    let mime = citel.quoted.mtype
+    let mimetype = citel.quoted.mimetype
+    if( mime !="videoMessage" && !/webp/.test(mimetype)) return await citel.reply("*_Idiot... Reply To An Animated Sticker or Gif_*")
+    let media = await Void.downloadAndSaveMediaMessage(citel.quoted)
+    try {
+        if (/webp/.test(mimetype)) {  let webpToMp4 = await webp2mp4File(media);  media =  webpToMp4.result; }
+        await Void.sendMessage(citel.chat, { video: { url: media ,}, caption: `*╰┈➤ 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙴𝙳 𝙱𝚈 ${Config.botname}*`  },)
+        try{ return await fs.unlink(media);}catch(e){ return console.log("Error While Deleting Tomp4 File :  ", e)}
+    }catch(e){ return console.log("*Your Request Not Be Proceed due to Error.*  \n*_Error :_* ", e)}
+}
+)
+//--------------------------------------------------------------------------------
+cmd({
             pattern: "fancy",
             desc: "Makes stylish/fancy given text",
             category: "converter",
-            use: '56 STAR',
+            use: '46 Izuku',
             react: "✅",
             filename: __filename
         },
         async(Void, citel, text) => {
             if (isNaN(text.split(" ")[0]) || !text) {
                 let text = tiny(
-                    "Fancy text generator\n\nExample: .fancy 32 STAR\n\n"
+                    "Fancy text generator\n\nExample: .fancy 46 Izuku\n\n"
                 );
-                listall("STAR Bot").forEach((txt, num) => {
+                listall("IZUKU BOT").forEach((txt, num) => {
                     text += `${(num += 1)} ${txt}\n`;
                 });
                 return await citel.reply(text);
@@ -265,6 +318,8 @@ filename: __filename,
 
     }
 )
+//-------------------------------------------------------------
+
 //---------------------------------------------------------------------------
 cmd({
         pattern: "round",
@@ -293,7 +348,7 @@ filename: __filename,
             });
             const buffer = await sticker.toBuffer();
             return Void.sendMessage(citel.chat, {sticker: buffer}, {quoted: citel });
-        }else return citel.reply("*Uhh,Please reply to any image*");
+        }else return citel.reply("*Please reply to any image*");
 
     }
 )
@@ -315,7 +370,7 @@ if (mime =="audioMessage" || mime =="videoMessage")
      let buffer = fs.readFileSync(media);
     let audio = await toAudio(buffer);
     Void.sendMessage(citel.chat, { audio: audio, mimetype: 'audio/mpeg' }, { quoted: citel });
- 
+
 
 fs.unlink(media, (err) => {
 if (err) { return console.error('File Not Deleted from From TOAUDIO AT : ' , media,'\n while Error : ' , err);  }
@@ -323,6 +378,6 @@ else return console.log('File deleted successfully in TOAUDIO MP3 at : ' , media
 });
 
 }
-else return citel.reply ("```Uhh Please, Reply To A video Message```")
+else return citel.reply ("` Please, Reply To A video Message```")
 }
 )
