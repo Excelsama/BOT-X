@@ -1,3 +1,4 @@
+const {cmd} = require('../lib')
 cmd({
     pattern: "developer",
     desc: "Get developer information",
