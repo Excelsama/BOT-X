@@ -14,7 +14,7 @@ cmd({
 *WhatsApp Channel:* [Join Excel's Channel](https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m)
 `;
 
-        const imageUrl =https://telegra.ph/file/85ba57286c4b3af4b533f.jpg "URL_TO_YOUR_IMAGE"; 
+        const imageUrl = "https://telegra.ph/file/85ba57286c4b3af4b533f.jpg"; 
 
         await Void.sendMessage(citel.jid, { text: devInfo, quoted: citel, image: { url: imageUrl } });
     }
