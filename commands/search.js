@@ -125,7 +125,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
-    cmd({
+        cmd({
         pattern: "google",
         alias :['search','gsearch'],
         category: "search",
@@ -143,11 +143,12 @@ cmd({
                 msg+= `➣ Description : ${g.snippet}\n`;
                 msg+= `➣ Link : ${g.link}\n\n────────────────────────\n\n`;
             }
-         
+
             return citel.reply(msg);
         })
     }
 )
+    
     //---------------------------------------------------------------------------
 cmd({
             pattern: "image",
