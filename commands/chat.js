@@ -260,7 +260,7 @@ cmd({
         fromMe: true, 
         desc: 'to change lastseen privacy', 
         type: 'privacy' 
-}, async (message, match, {smd }) => { 
+}, async (message, match, {cmd }) => { 
     try{ 
         if (!match) return await message.send(`_*Example:-* .lastseen all_\n_to change last seen privacy settings_`); 
         const available_privacy = ['all', 'contacts', 'contact_blacklist', 'none']; 
