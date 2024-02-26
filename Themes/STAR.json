@@ -5,7 +5,7 @@
     "LANGCODE": "en",
     "STRINGS": {
     "updater": {
-    "UPDATE": "Your bot is already on latest version Star",
+    "UPDATE": "Your bot is already  on latest version Star",
     "NEW_UPDATE": "There is a new update available for the bot!\n\n*Changes:*\n",
     "UPDATED_LOCAL": "Fresh Updates Installed!"
     },
