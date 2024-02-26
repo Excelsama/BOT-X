@@ -1,13 +1,13 @@
 {
   "name": "STAR-MD",
   "version": "0.0.7",
-  "description": "Multi device whatsapp bot by Excel Amadi.",
+  "description": "Multi device whatsapp bot by EXCEL AMADI.",
   "main": "lib/client.js",
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "pm2 start lib/client.js --deep-monitoring --attach --name Star",
-    "stop": "pm2 stop Star"
+    "start": "pm2 start lib/client.js --deep-monitoring --attach --name STAR",
+    "stop": "pm2 stop STAR"
   },
   "author": "sampandey",
   "dependencies": {
