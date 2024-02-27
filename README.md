@@ -80,7 +80,7 @@ mongodb+srv://astromedia0010:beka10beka10@cluster0.pxc8ulo.mongodb.net/
  
 <a href='https://star-md-qr-excel-64001a3963c7.herokuapp.com/' target="_blank"><img alt='SCAN QR-2' src='https://img.shields.io/badge/Scan_qr-03-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
 
-<a href='https://star-qr-web-02-905f5080602c.herokuapp.com/' target="_blank"><img alt='SCAN QR-2' src='https://img.shields.io/badge/Scan_qr-4-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
+<a href='https://star-qr-web-02-905f5080602c.herokuapp.com/' target="_blank"><img alt='SCAN QR-2' src='https://img.shields.io/badge/Scan_qr-04-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
 
 
 ＊DEPLOYMENT METHODS.
