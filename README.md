@@ -45,6 +45,8 @@
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
 
 [`📡Credits`](https://github.com/excelottah6)
+## Deployment Methods
+##
 
 
   𒆜ՏᎬͲ ႮᏢ ҒϴᎡ ՏͲᎪᎡ-ᎷᎠ𒋨
