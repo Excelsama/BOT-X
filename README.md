@@ -45,11 +45,8 @@
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
 
 [`📡Credits`](https://github.com/excelottah6)
-## 𒆜ՏᎬͲ ႮᏢ ҒϴᎡ ՏͲᎪᎡ-ᎷᎠ𒋨
+## 𝐒𝐄𝐓 𝐔𝐏 𝐅𝐎𝐑 𝐒𝐓𝐀𝐑-𝐌𝐃
 
-
-
-  
 ➤FORK THE REPOSITORY (Repo) 
     <br>
 <a href="https://github.com/Xcelsama/STAR-MD/fork"><img title="STAR" src="https://img.shields.io/badge/FORK STAR-MD?color=black&style=for-the-badge&logo=stackshare"></a>
