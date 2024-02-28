@@ -2,53 +2,37 @@ const { cmd } = require('../lib');
  let recordedMessage = '';
 
  cmd({
-  pattern: "addtask",
-  desc: "Add a task to your to-do list",
-  category: "utility",
-  fromMe: true,
-}, async (Void, citel, text) => {
-  const taskDescription = text.trim();
-  
-  if (!taskDescription) {
-    await citel.reply("Invalid format. Please provide a task description.");
-    return;
-  }
+   pattern: "addtask",
+   desc: "Add task to to-do list",
+  fromMe:true,
+   category: "utility",
+ }, async (Void, citel, text) => {
+   // Check if a message is already recorded
+   if (recordedMessage === '') {
+     const message = text.trim();
+     recordedMessage = message;
+     await citel.reply(`Task recorded: "${message}"`);
+   } else {
+     await citel.reply("A task is already recorded.");
+   }
+ });
+ //-------------------------------------------------------------
+ cmd({
+   pattern: "deltask",
+   desc: "Delete the recorded task",
+   category: "utility",
+  fromme:true
+ }, async (Void, citel) => {
+   recordedMessage = '';
+   await citel.reply("Task expected to be completed and deleted.");
+ });
 
-  todoList.push(taskDescription);
-  await citel.reply(`Task added: ${taskDescription}`);
-});
-
-cmd({
-  pattern: "viewlist",
-  desc: "View your to-do list",
-  category: "utility",
-  fromMe: true,
-}, async (Void, citel) => {
-  if (todoList.length === 0) {
-    await citel.reply("Your to-do list is empty.");
-    return;
-  }
-
-  let message = "Your to-do list:\n";
-  todoList.forEach((task, index) => {
-    message += `${index + 1}. ${task}\n`;
-  });
-  await citel.reply(message);
-});
-
-cmd({
-  pattern: "removetask",
-  desc: "Remove a task from your to-do list",
-  category: "utility",
-  fromMe: true,
-}, async (Void, citel, text) => {
-  const index = parseInt(text.trim());
-  if (isNaN(index) || index < 1 || index > todoList.length) {
-    await citel.reply("Invalid task index. Please provide a valid index.");
-    return;
-  }
-
-  const removedTask = todoList.splice(index - 1, 1)[0];
-  await citel.reply(`Task removed: ${removedTask}`);
-});
-
+ cmd({
+   on: "text",
+  fromMe:false,
+ }, async (Void, citel, text) => {
+   if (/(\baza\b|\bsend task\b|\brecordedtask\b)/i.test(text) && recordedMessage) {
+     await citel.reply(recordedMessage);
+   }
+ });
+//-------------------------------------------_______________________----------
