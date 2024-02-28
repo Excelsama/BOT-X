@@ -1,6 +1,5 @@
-
-
 const { cmd } = require('../lib');
+ let recordedMessage = '';
 let todoList = [];
 
 function addTask(description, priority) {
