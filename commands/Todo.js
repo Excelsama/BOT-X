@@ -1,4 +1,6 @@
-;
+const { cmd } = require('../lib');
+ let recordedMessage = '';
+
  cmd({
   pattern: "addtask",
   desc: "Add a task to your to-do list",
