@@ -57,11 +57,7 @@
 
 ➤  GET SESSION  ID FOR  ⭐STAR-MD⭐
   
-  ```PAIR CODE BELONG TO SIGMA-MD AND SUHAIL-MD```
-
-<a href='https://sessions.maher-zubair.tech/pair' target="_blank"><img alt='Pair code' src='https://img.shields.io/badge/Pair-code-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
-
-<a href='https://suhail-md-vtsf.onrender.com/code' target="_blank"><img alt='Pair code' src='https://img.shields.io/badge/Pair-code-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
+  
 
 <a href="https://r.mtdv.me/EXCEL-MDX"><img src="https://play-lh.googleusercontent.com/901aMQFFnVoX2T-YuJmTIwpPve_SUgMv_QSyzMSPtAqt_l0CyXN1DxfD6xXU0r2f9iM=w240-h480-rw" width="70" /></a>
 
