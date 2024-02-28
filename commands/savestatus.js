@@ -1,3 +1,4 @@
+/**Copy and give credits
 
 cmd({
   pattern: "save",
