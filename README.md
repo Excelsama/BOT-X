@@ -43,8 +43,7 @@
 
  
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
- [`ℹ️IN CASE OF HELP CONCERNING DEPLOYMENT`](https://wa.me/+2347045035241)
-[`📡Credits`](https://github.com/excelottah6)
+ [`📡Credits`](https://github.com/excelottah6)
 ## 💫𝐒𝐄𝐓 𝐔𝐏 𝐅𝐎𝐑 𝐒𝐓𝐀𝐑-𝐌𝐃💫
 
 ➤FORK THE REPOSITORY (Repo) 
