@@ -1,48 +1,19 @@
-const { cmd } = require('../lib');
- let recordedMessage = '';
-let todoList = [];
-
-function addTask(description, priority) {
-  todoList.push({ description, priority });
-  return `Task added: ${description} (Priority: ${priority})`;
-}
-
-function viewList() {
-  if (todoList.length === 0) {
-    return "Your to-do list is empty.";
-  }
-
-  let message = "Your to-do list:\n";
-  todoList.forEach((task, index) => {
-    message += `${index + 1}. ${task.description} (Priority: ${task.priority})\n`;
-  });
-  return message;
-}
-
-function removeTask(index) {
-  if (isNaN(index) || index < 1 || index > todoList.length) {
-    return "Invalid task index. Please provide a valid index.";
-  }
-
-  const removedTask = todoList.splice(index - 1, 1)[0];
-  return `Task removed: ${removedTask.description}`;
-}
-
-cmd({
+;
+ cmd({
   pattern: "addtask",
   desc: "Add a task to your to-do list",
   category: "utility",
   fromMe: true,
 }, async (Void, citel, text) => {
-  const [description, priority] = text.trim().split("|").map(item => item.trim());
+  const taskDescription = text.trim();
   
-  if (!description || !priority) {
-    await citel.reply("Invalid format. Please provide description and priority separated by '|'.");
+  if (!taskDescription) {
+    await citel.reply("Invalid format. Please provide a task description.");
     return;
   }
 
-  const response = addTask(description, priority);
-  await citel.reply(response);
+  todoList.push(taskDescription);
+  await citel.reply(`Task added: ${taskDescription}`);
 });
 
 cmd({
@@ -51,8 +22,16 @@ cmd({
   category: "utility",
   fromMe: true,
 }, async (Void, citel) => {
-  const response = viewList();
-  await citel.reply(response);
+  if (todoList.length === 0) {
+    await citel.reply("Your to-do list is empty.");
+    return;
+  }
+
+  let message = "Your to-do list:\n";
+  todoList.forEach((task, index) => {
+    message += `${index + 1}. ${task}\n`;
+  });
+  await citel.reply(message);
 });
 
 cmd({
@@ -62,8 +41,12 @@ cmd({
   fromMe: true,
 }, async (Void, citel, text) => {
   const index = parseInt(text.trim());
-  const response = removeTask(index);
-  await citel.reply(response);
+  if (isNaN(index) || index < 1 || index > todoList.length) {
+    await citel.reply("Invalid task index. Please provide a valid index.");
+    return;
+  }
+
+  const removedTask = todoList.splice(index - 1, 1)[0];
+  await citel.reply(`Task removed: ${removedTask}`);
 });
-```
 
