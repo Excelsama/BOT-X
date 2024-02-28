@@ -3,8 +3,8 @@
 const { cmd, getRandomInt } = require('../lib');
 const quizQuestions = [
     {
-        question: "What is the capital of France?",
-        options: ["A. London", "B. Berlin", "C. Paris"],
+        question: "What is the capital of romania?",
+        options: ["A. London", "B. Berlin", "C. Bucharest"],
         correctAnswer: "C"
     },
     {
@@ -13,8 +13,8 @@ const quizQuestions = [
         correctAnswer: "B"
     },
     {
-        question: "What's the capital of Uk",
-        options: ["A. England", "B. London", "C. Wales"],
+        question: "What's the capital of icelay",
+        options: ["A. ice city", "B. Reykjavik", "C. Wales"],
         correctAnswer: "B"
     },
     {
@@ -23,18 +23,18 @@ const quizQuestions = [
         correctAnswer: "A"
     },
     {
-        question: "What is The capital of Turkey?",
-        options: ["A. Ankara", "B. Turkiye", "C. Turkmenistan"],
+        question: "What is The capital of Hungary?",
+        options: ["A. Budapest", "B. Huncity", "C. Hungury"],
         correctAnswer: "A"
     },
     {
-        question: "What's The best Anime/Manga",
+        question: "Which Anime/manga is Goku from",
         options: ["A. DRAGON Ball", "B. Naruto", "C. JJK"],
         correctAnswer: "A"
     },
     {
-        question: "Group of Cell 🔬",
-        options: ["A.Tissue", "B. Cells", "C. Organ"],
+        question: "Group of Organs are called🔬",
+        options: ["A.System", "B. Cells", "C. Organ"],
         correctAnswer: "A"
     },
     {
@@ -42,7 +42,7 @@ const quizQuestions = [
         options: ["A. London", "B. Berlin", "C. Paris"],
         correctAnswer: "B"
     },
-    // Add more questions here...
+    
     {
         question: "What's the largest ocean on Earth?",
         options: ["A. Atlantic Ocean", "B. Indian Ocean", "C. Pacific Ocean"],
@@ -73,7 +73,7 @@ const quizQuestions = [
         options: ["A. Vincent van Gogh", "B. Pablo Picasso", "C. Leonardo da Vinci"],
         correctAnswer: "C"
     },
-    // Add more questions as needed
+   
     {
         question: "What's the chemical symbol for gold?",
         options: ["A. Au", "B. Ag", "C. Fe"],
