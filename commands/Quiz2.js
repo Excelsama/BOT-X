@@ -13,13 +13,13 @@ const quizQuestions = [
         correctAnswer: "B"
     },
     {
-        question: "What's the capital of icelay",
+        question: "What's the capital of iceland",
         options: ["A. ice city", "B. Reykjavik", "C. Wales"],
         correctAnswer: "B"
     },
     {
         question: "WHO IS THE OWNER OF STAR-MD?",
-        options: ["A. EXCEl", "B. Hexce", "C. Cexcel"],
+        options: ["A. EXCEL", "B. Hexce", "C. Cexcel"],
         correctAnswer: "A"
     },
     {
