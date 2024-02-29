@@ -36,6 +36,53 @@ async(Void, citel, text,{ isCreator }) => {
 )
  //---------------------------------------------------------------------------
 cmd({
+        pattern: "Developer",
+        alias: ["Developer"],
+        desc: "To check on Developer info",
+        category: "𝐒𝐓𝐀𝐑",
+        filename: __filename,
+    },
+    async(Void, citel) => {
+        const uptime = process.uptime();
+        timestampe = speed();
+        latensie = speed() - timestampe;
+        let ter = `
+🔰 𝐃𝐄𝐕𝐄𝐋𝐎𝐏𝐄𝐑🔰
+𝐍𝐚𝐦𝐞:-𝐄𝐱𝐜𝐞𝐥
+𝐀𝐠𝐞:-𝟏𝟓 𝐲𝐫𝐬
+𝐏𝐡𝐨𝐧𝐞:-https://wa.me/2347045035241
+𝐆𝐢𝐭𝐡𝐮𝐛:-https://github.com/Xcelsama
+𝐓𝐢𝐤𝐭𝐨𝐤:-https://tiktok.com/@xcelsama
+𝐂𝐡𝐚𝐧𝐧𝐞𝐥:-https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m
+𝐅𝐚𝐜𝐞𝐛𝐨𝐨𝐤:-https://www.facebook.com/itz.hepzibah.5
+`;
+        let buttonMessaged = {
+            image: {
+                url: await botpic(),
+            },
+            caption: ter  `
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: tlang().title,
+                    body: `Developer`,
+                    thumbnail: log0,
+                    mediaType: 2,
+                    mediaUrl: ``,
+                    sourceUrl: ``,
+                },
+            },
+        };
+        return await Void.sendMessage(citel.chat, buttonMessaged, {
+            quoted: citel,
+        });
+
+    }
+)
+
+//---------------------------------------------------------------------------
+cmd({
     pattern: "setgoodbye",
     desc: "sets goodbye message in specific group.",
     category: "misc",
