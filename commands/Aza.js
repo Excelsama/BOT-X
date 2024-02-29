@@ -2,7 +2,7 @@ const { cmd } = require('../lib');
  let recordedMessage = '';
 
  cmd({
-   pattern: "setaza",
+   pattern: "setacctno",
    desc: "Store a message as account number",
   fromMe:true,
    category: "utility",
@@ -18,7 +18,7 @@ const { cmd } = require('../lib');
  });
  //-------------------------------------------------------------
  cmd({
-   pattern: "delaza",
+   pattern: "delacctno",
    desc: "Delete the recorded account number",
    category: "utility",
   fromme:true
@@ -31,7 +31,7 @@ const { cmd } = require('../lib');
    on: "text",
   fromMe:false,
  }, async (Void, citel, text) => {
-   if (/(\baza\b|\bsend aza\b|\baccount number\b)/i.test(text) && recordedMessage) {
+   if (/(\baza\b|\bsend the\b|\bacct no\b)/i.test(text) && recordedMessage) {
      await citel.reply(recordedMessage);
    }
  });
