@@ -125,6 +125,54 @@ Void.sendMessage(citel.chat,{image:{url:data.data[0].url}})
 
 //---------------------------------------------------------------------------
 cmd({
+        pattern: "alive2",
+        alias: ["about"],
+        desc: "To check bot alive state",
+        category: " utility",
+        filename: __filename,
+    },
+    async(Void, citel) => {
+        const uptime = process.uptime();
+        timestampe = speed();
+        latensie = speed() - timestampe;
+        let ter = `
+ㅤ ────────────────────────── .°୭̥ ❁         
+╰─➤｡･:*˚:✧｡ *${tlang().title}* ｡･:*˚:✧｡
+╰─➤*🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
+╰─➤*⚡️Speed:* ${latensie.toFixed(4)} ms
+╰─➤*⏱Uptime:* ${runtime(process.uptime())}
+╰─➤*🌟Version:* 10.0.0
+╰─➤*👤Owner:*  ${Config.ownername}
+╰─➤*Powered by ${tlang().title}*
+°୭̥ ❁ ───────────────────────── .°୭̥ ❁ `;
+        let buttonMessaged = {
+            image: {
+                url: await botpic(),
+            },
+            caption: ter,
+            footer: tlang().footer,
+            headerType: 4,
+            contextInfo: {
+                externalAdReply: {
+                    title: tlang().title,
+                    body: `Bot-Status`,
+                    thumbnail: log0,
+                    mediaType: 2,
+                    mediaUrl: ``,
+                    sourceUrl: ``,
+                },
+            },
+        };
+        return await Void.sendMessage(citel.chat, buttonMessaged, {
+            quoted: citel,
+        });
+
+    }
+)
+
+//---------------------------------------------------------------------------
+
+cmd({
         pattern: "repo",
         alias: ["git", "sc","script"],
         desc: "Sends info about repo.",
