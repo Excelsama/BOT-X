@@ -1,50 +1,59 @@
 const { cmd } = require('../lib');
-let reminders = [];
+const schedule = require('node-schedule');
 
+// Create a map to store user-specific reminders
+const userReminders = new Map();
+
+// Command for setting reminders
 cmd({
-  pattern: "setreminder",
-  desc: "Set a reminder for yourself",
-  category: "utility",
-  fromMe: true,
-}, async (Void, citel, text) => {
-  const [timeString, ...messageParts] = text.trim().split(" ");
-  const timeInMinutes = parseInt(timeString);
-  const message = messageParts.join(" ");
+    pattern: "setreminder" ,
+    desc: 'Set a reminder for a task or event (e.g., ".setreminder Buy groceries tomorrow at 3:00 PM").',
+    category: 'utility',
+}, async (Void, citel, match) => {
+    const input = match[1].trim(); // Get the input after ".setreminder"
+    const matches = input.match(/^(.*?)\s+at\s+(.*)$/i); // Check if it contains "at" and split into text and time
 
-  if (isNaN(timeInMinutes)) {
-    await citel.reply("Invalid time format. Please use a number followed by 'm' for minutes.");
-    return;
-  }
+    if (!matches) {
+        await citel.reply('Invalid format. Please use ".setreminder text at time".');
+        return;
+    }
 
-  const currentTime = new Date();
-  const triggerTime = new Date(currentTime.getTime() + timeInMinutes * 60000); // Convert minutes to milliseconds
+    const reminderText = matches[1].trim(); // Get the reminder text
+    const timeInput = matches[2].trim(); // Get the time input
 
-  reminders.push({ message, triggerTime });
+    // Schedule the reminder using node-schedule
+    const job = schedule.scheduleJob(timeInput, () => {
+        // When the scheduled time arrives, send the reminder message
+        citel.reply(`Reminder set: "${reminderText}"`);
+    });
 
-  await citel.reply(`Reminder set: "${message}" in ${timeInMinutes} minutes.`);
+    // Store the reminder job for later use (e.g., for canceling)
+    const userId = citel.sender;
+    if (!userReminders.has(userId)) {
+        userReminders.set(userId, []);
+    }
+    userReminders.get(userId).push(job);
+
+    // Confirm to the user that the reminder has been set
+    await citel.reply(`Reminder set: "${reminderText}" at ${timeInput}`);
 });
-//-------------------------------------------------------------
+
+// Command for canceling reminders
 cmd({
-  pattern: "delreminder",
-  desc: "Delete all your reminders",
-  category: "utility",
-  fromMe: true,
+    pattern: "cancelreminder",
+    desc: "Cancel your scheduled reminders.",
+    category: "utility",
 }, async (Void, citel) => {
-  reminders = [];
-  await citel.reply("All reminders deleted.");
+    const userId = citel.sender;
+
+    if (userReminders.has(userId)) {
+        const userJobs = userReminders.get(userId);
+        userJobs.forEach((job) => {
+            job.cancel(); // Cancel the scheduled reminder
+        });
+        userReminders.delete(userId); // Remove the user's reminders
+        await citel.reply("All your scheduled reminders have been canceled.");
+    } else {
+        await citel.reply("You don't have any scheduled reminders.");
+    }
 });
-
-setInterval(() => {
-  const currentTime = new Date();
-  const triggeredReminders = reminders.filter(reminder => reminder.triggerTime <= currentTime);
-  
-  for (const reminder of triggeredReminders) {
-    // Send reminder message to user
-    // Here you would implement the functionality to send the reminder message to the user
-    // For simplicity, I'll just log it for demonstration
-    console.log("Reminder:", reminder.message);
-
-    // Remove triggered reminder from the list
-    reminders = reminders.filter(r => r !== reminder);
-  }
-}, 60000); // Check every minute for triggered reminders
