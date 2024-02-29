@@ -36,7 +36,7 @@ async(Void, citel, text,{ isCreator }) => {
 )
  //---------------------------------------------------------------------------
 cmd({
-        pattern: "Developer",
+        pattern: "Dev",
         alias: ["Developer"],
         desc: "To check on Developer info",
         category: "𝐒𝐓𝐀𝐑",
@@ -532,7 +532,7 @@ cmd({
   alias:'facebook',
   fromMe: false,
   catergory:'downloader',
-  react:'📡',
+  react:'⚔️',
   desc: 'Download fb video without watermark',
 },
 async (Void,citel, text,) => {
