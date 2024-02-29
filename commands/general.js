@@ -128,7 +128,7 @@ cmd({
         pattern: "alive2",
         alias: ["about"],
         desc: "To check bot alive state",
-        category: " utility",
+        category: " 𝐒𝐓𝐀𝐑",
         filename: __filename,
     },
     async(Void, citel) => {
@@ -138,7 +138,7 @@ cmd({
         let ter = `
 ㅤ ────────────────────────── .°୭̥ ❁         
 ╰─➤｡･:*˚:✧｡ *${tlang().title}* ｡･:*˚:✧｡
-╰─➤*🌟Description:* A WhatsApp bot with rich features, build in NodeJs to make your WhatsApp enjoyable.
+╰─➤*🌟Description:* A WhatsApp bot with rich features, built in NodeJs to make your WhatsApp enjoyable.
 ╰─➤*⚡️Speed:* ${latensie.toFixed(4)} ms
 ╰─➤*⏱Uptime:* ${runtime(process.uptime())}
 ╰─➤*🌟Version:* 10.0.0
@@ -174,7 +174,7 @@ cmd({
 
 cmd({
         pattern: "repo",
-        alias: ["git", "sc","script"],
+        alias: ["star", "sc","script"],
         desc: "Sends info about repo.",
         category: "general",
         filename: __filename,
