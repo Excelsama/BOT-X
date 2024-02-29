@@ -128,7 +128,7 @@ cmd({
         pattern: "alive2",
         alias: ["about","starz"],
         desc: "To check bot alive state",
-        category: " 𝐒𝐓𝐀𝐑",
+        category: "𝐒𝐓𝐀𝐑",
         filename: __filename,
     },
     async(Void, citel) => {
@@ -136,7 +136,7 @@ cmd({
         timestampe = speed();
         latensie = speed() - timestampe;
         let ter = `
-ㅤ ────────────────────────── .°୭̥ ❁         
+ㅤ ❁    🔰STAR-ALIVE-2🔰     
 ╰─➤｡･:*˚:✧｡ *${tlang().title}* ｡･:*˚:✧｡
 ╰─➤*🌟Description:* A WhatsApp bot with rich features, built in NodeJs to make your WhatsApp enjoyable.
 ╰─➤*⚡️Speed:* ${latensie.toFixed(4)} ms
