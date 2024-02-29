@@ -5,7 +5,7 @@ const { cmd } = require('../lib');
    pattern: "addtask",
    desc: "Add task to to-do list",
   fromMe:true,
-   category: "utility",
+   category: "𝐒𝐓𝐀𝐑",
  }, async (Void, citel, text) => {
    // Check if a message is already recorded
    if (recordedMessage === '') {
@@ -20,7 +20,7 @@ const { cmd } = require('../lib');
  cmd({
    pattern: "deltask",
    desc: "Delete the recorded task",
-   category: "utility",
+   category: "𝐒𝐓𝐀𝐑",
   fromme:true
  }, async (Void, citel) => {
    recordedMessage = '';
