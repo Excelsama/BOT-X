@@ -61,7 +61,7 @@
 
 <a href="https://r.mtdv.me/EXCEL-MDX"><img src="https://play-lh.googleusercontent.com/901aMQFFnVoX2T-YuJmTIwpPve_SUgMv_QSyzMSPtAqt_l0CyXN1DxfD6xXU0r2f9iM=w240-h480-rw" width="70" /></a>
 
-<a href='https://star-md-qr.giftedtechnexus.co.ke/' target="_blank"><img alt='SCAN QR-01' src='https://img.shields.io/badge/Scan_qr-01-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=red&color=black'/></a>
+<a href='https://star-md-qrx-219e89515d5e.herokuapp.com/' target="_blank"><img alt='SCAN QR-01' src='https://img.shields.io/badge/Scan_qr-01-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=red&color=black'/></a>
 
 <a href='https://star-md-qr-web-xcelsama-e29e85286f3a.herokuapp.com/' target="_blank"><img alt='SCAN QR-02' src='https://img.shields.io/badge/Scan_qr-02-100000?style=for-the-badge&logo=scan&logoColor=white&labelColor=black&color=blue'/></a>
 
