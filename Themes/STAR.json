@@ -1,0 +1,63 @@
+{
+    "_JSON_": true,
+    "AUTHOR": "STAR-MD",
+    "LANGUAGE": "English",
+    "LANGCODE": "en",
+    "STRINGS": {
+    "updater": {
+    "UPDATE": "Your bot is already  on latest version Star",
+    "NEW_UPDATE": "There is a new update available for the bot!\n\n*Changes:*\n",
+    "UPDATED_LOCAL": "Fresh Updates Installed!"
+    },
+    "global": {
+    "botName": " 𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑",
+
+    "body": "STAR-MD",
+    "greet2" : "Star",
+    "pic1": "https://i.ibb.co/LvdHzXs/Socialthumb.jpg",
+    "pic2": "https://i.ibb.co/9GHyH6k/Screenshot-20240226-161751.jpg",
+    "pic3": "https://i.ibb.co/B2CPtkv/IMG-20231229-WA0009.png",
+    "pic4": "https://i.ibb.co/hmR7Myf/8db579648c47d5c4cbbbcd0d800639fe-0.jpg",
+    "pic5": "https://i.ibb.co/h9CMmkk/desktop-wallpaper-tech-demon-boy-anime.jpg",
+    "pic6": "https://i.ibb.co/RTwtxYN/desktop-wallpaper-gaming-tablet.jpg",
+    "pic7": "https://i.ibb.co/vDnzsQ7/Excel.jpg",
+    "gif1": "https://i.ibb.co/HtT3vjm/goku-gif-3.gif",
+    "gif2": "https://i.ibb.co/6DtgRfC/200w.gif",
+    "gif3": "https://i.ibb.co/n3dLZY4/goku-gif-6.gif",
+    "gif4": "https://i.ibb.co/DQN5yBp/goku-icegif-9.gif",
+    "gif5": "https://i.ibb.co/QpNVGr7/3b6c9b8e28c72db4c052161bb1a75c36.gif",
+    "gif6": "https://i.ibb.co/4W8p2Ys/cba27f734c6c27960af08b109d614471.gif",
+    "gif7": "https://i.ibb.co/cTYgg07/309a8a92ec732b1ef9b44602b3d7043e.gif",
+    "greet" : "Hi, There Star",
+    "dotbody" : "Stop me if you can.",
+    "promote": "A new worthy Star arrived",
+    "pmallow": "Hii,This is STAR\n*Master pretty occupied.*\n seems like he is busy right now.\nKindly Leave your Message.\n\n_I will inform him about your message asap......_",
+    "pmblock": "❌ Blocked*\n\n You have been blocked for spamming.\n\n _ 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆𝐨𝐤𝐮_",
+    "pmwarn": "✋Hii* \nPlease don't spam else I'll block you for spamming. You have ${checkPermit.times} warning(s).\n\n * 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆𝐨𝐤𝐮*",
+    "permited": "Hii ${tname} Sir*\n\nNow You are permitted by my owner to pm now.\n\n 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝙎𝙏𝘼𝙍-𝙈𝘿",
+    "revoked" : "Hii ${tname} Sir\n\nYour pm permit permission has been prevoked now.\n\n 𝐏𝐨𝐰𝐞𝐫𝐞𝐝 𝐛𝐲 𝐆𝐨𝐤𝐮",
+    "demote": "You are not Worthy like i imagined",
+    "antlink": "Link Detected.\n*Good Bye Worthless Star*",
+    "session": "\n*This is your session.sam.json,keep it safe and store it properly*\n_Now Upload This json file in Your Forked Repo_\n Connect your repo to Heroku and Deploy Branch and Bot will run for Always\n\n*𝐏𝐎𝐖𝐄𝐑𝐄𝐃 𝐁𝐘 𝐒𝐓𝐀𝐑*",
+    "mention": " Please mention any user STAR",
+    "title": "𝐒𝐓𝐀𝐑",
+    "footer": " 𝐒𝐓𝐀𝐑-𝐌𝐃",
+    "by": "Made by: CitelVoid",
+    "chat_desc": "Options Avilable* : 1. mute\n2. unmute\n3. archive\n4. unarchive\n5. read\n6. unread\n7. delete",
+    "success": "Success ✓",
+    "dot": "Hello Star, Why don't you try -help",
+    "couple_male": "I'm sorry i didn't understand for so long",
+    "couple_female": "Put everything in your soulders",
+    "admin": "𝑇ℎ𝑖𝑠 𝑐𝑜𝑚𝑚𝑎𝑛𝑑 𝑖𝑠 𝑜𝑛𝑙𝑦 𝑓𝑜𝑟 𝑔𝑟𝑜𝑢𝑝 𝐴𝑑𝑚𝑖𝑛⚠️!",
+    "botAdmin": "𝑃𝑙𝑒𝑎𝑠𝑒 𝑃𝑟𝑜𝑣𝑖𝑑𝑒 𝑚𝑒 𝐴𝑑𝑚𝑖𝑛 𝑅𝑜𝑙𝑒 .❗",
+    "owner": "𝐓𝐡𝐢𝐬 𝐂𝐨𝐦𝐦𝐚𝐧𝐝 𝐢𝐬 𝐨𝐧𝐥𝐲 𝐟𝐨𝐫 𝐌𝐲 𝐎𝐰𝐧𝐞𝐫 ⚠️",
+    "group": "𝑻𝒉𝒊𝒔 𝑭𝒆𝒂𝒕𝒖𝒓𝒆 𝒊𝒔 𝑶𝒏𝒍𝒚 𝑭𝒐𝒓 𝑮𝒓𝒐𝒖𝒑𝒔❗",
+    "private": "𝑻𝒉𝒊𝒔 𝒇𝒆𝒂𝒕𝒖𝒓𝒆 𝒊𝒏 𝒐𝒏𝒍𝒚 𝒇𝒐𝒓 𝒕𝒉𝒆 𝐌𝐲 𝐎𝐰𝐧𝐞𝐫 ⚠️",
+    "bot": "𝑻𝒉𝒊𝒔 𝒇𝒆𝒂𝒕𝒖𝒓𝒆 𝒊𝒏 𝒐𝒏𝒍𝒚 𝒇𝒐𝒓 𝒕𝒉𝒆 𝒃𝒐𝒕 𝒏𝒖𝒎𝒃𝒆𝒓⚠️",
+    "wait": "𝑷𝒓𝒐𝒄𝒆𝒔𝒔𝒊𝒏𝒈 𝒚𝒐𝒖𝒓 𝒓𝒆𝒒𝒖𝒆𝒔𝒕 𝒘𝒂𝒊𝒕 𝒂 𝒍𝒊𝒍 𝒔𝒕𝒂𝒓✅"
+    },
+    "error": {
+    "text": "Task Failed"
+    }
+    }
+    }
