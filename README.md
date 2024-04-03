@@ -47,7 +47,7 @@
   [`ℹ️Contact Owner`](https://wa.me/+2347045035241)
 
 
- [`📡Credits`](https://github.com/excelottah6)
+
 ## 💫𝐒𝐄𝐓 𝐔𝐏 𝐅𝐎𝐑 𝐒𝐓𝐀𝐑-𝐌𝐃💫
 
 ➤FORK THE REPOSITORY (Repo) 
@@ -109,7 +109,6 @@ If You don't have a account in Heroku. Create a account.
 <a href='https://dashboard.heroku.com/new?template=https://github.com/Xcelsama/STAR-MD' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/>
 
 
-[`📡Credits`](https://telegra.ph/STAR-MD-Bot-02-26-2)
 
 *******************************************
 🇴 🇼 🇳 🇪 🇷  🇮 🇳 🇫  🇴 
