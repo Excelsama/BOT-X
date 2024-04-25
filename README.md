@@ -1,4 +1,3 @@
-[`HARUKI-MD:- A MORE DEVELOPED AND ENHANCED VERSION OF STAR-MD`](https://github.com/Xcelsama/STAR-MD) 
 
 <a href="https://ibb.co/MBvWDD2"><img src="https://i.imgur.com/34rJ6i0.jpeg" alt="bedc8c36c17b243a89a73c3f5ee65404" border="0"></a>
 <h1 align="center">  ✴️STAR-MD✴️
@@ -37,7 +36,7 @@ If you find STAR-MD helpful, consider giving it a star ⭐ to show your apprecia
 
 ❏FORK THE REPOSITORY 
   <a href="https://github.com/Xcelsam/STAR-MD/fork" target="_blank">
-  <img src="https://img.shields.io/badge/FORK HARUKI-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
+  <img src="https://img.shields.io/badge/FORK STAR-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
 </a>
 
 
