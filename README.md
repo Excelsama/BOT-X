@@ -12,12 +12,12 @@
 
 
 
-## ⭐ `Star This Repo`
-If you find STAR-MD helpful, consider giving it a star ⭐ to show your appreciation,Support.
+## 🌟 `Star This Repo`
+If you find STAR-MD helpful, consider giving it a star 🌟 to show your appreciation,Support.
 
 
 
-☀ＦＥＡＴＵＲＥＳ☀️
+📡ＦＥＡＴＵＲＥＳ📡
 
 
 ◉ Multi-Device Support  
@@ -53,7 +53,7 @@ If you find STAR-MD helpful, consider giving it a star ⭐ to show your apprecia
 
 
 
-## ☀️`Deployments`☀
+## 👻`Deployments`👻
 #### DEPLOY TO HEROKU 
 
 ☉ If You don't have a account in Heroku. Create a account.
