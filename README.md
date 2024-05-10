@@ -1,5 +1,5 @@
 
-<a href="https://ibb.co/MBvWDD2"><img src="https://i.imgur.com/34rJ6i0.jpeg" alt="bedc8c36c17b243a89a73c3f5ee65404" border="0"></a>
+<a href="https://ibb.co/MBvWDD2"><img src="https://telegra.ph/file/3741da4d10dced8aba747.jpg" alt="bedc8c36c17b243a89a73c3f5ee65404" border="0"></a>
 <h1 align="center">  ✴️STAR-MD✴️
 </p>
   
