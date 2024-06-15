@@ -1,3 +1,5 @@
+# ⚠UPDATES ONGOING⚠
+
  [`ℹ️FOLLOW FOR UPDATES`](https://github.com/Xcelsama) 
 </p>
 <a href="https://ibb.co/MBvWDD2"><img src="https://telegra.ph/file/3741da4d10dced8aba747.jpg" alt="bedc8c36c17b243a89a73c3f5ee65404" border="0"></a>
@@ -19,19 +21,6 @@ If you find STAR-MD helpful, consider giving it a star 🌟 to show your appreci
 
 
 
-📡ＦＥＡＴＵＲＥＳ📡
-
-
-◉ Multi-Device Support  
-◉ AI Photo Enhancement  
-◉ Downloader Commands  
-◉ Hidden NSFW Commands  
-◉ Logo Commands  
-◉ Anime Commands  
-◉ Economy Menu  
-◉ Various Games  
-◉ Audio/Video Editor Commands                   
-◉ Others...... 
 
 ## 🛠️ `Installation Procedure` 🛠
 
