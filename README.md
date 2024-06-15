@@ -47,7 +47,7 @@ If you find STAR-MD helpful, consider giving it a star 🌟 to show your appreci
 ❏GET SESSION ID 
 (SCAN-QR)           
  
-<a href="https://star-md--qr-164809a7a3c7.herokuapp.com/" target="_blank">
+<a href="https://star-md-qr-2759d730f44a.herokuapp.com/" target="_blank">
   <img src="https://img.shields.io/badge/SESSION ID-black?style=for-the-badge&logo=render" alt="Authenticate With WhatsApp" width="170" height="34">
 </a>
 
