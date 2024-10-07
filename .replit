@@ -1,4 +1,4 @@
-run = "pm2 start lib/client.js --deep-monitoring --attach --name blade-md"
+run = "pm2 start lib/client.js --deep-monitoring --attach --name BOT-X"
 entrypoint = "lib/client.js"
 hidden = [".config", "package-lock.json"]
  
