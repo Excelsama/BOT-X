@@ -25,8 +25,8 @@
 
    5. Clone Repo and install required packages
       ```
-      git clone https://github.com/Bladeh4x/BLADE-MD
-      cd BLADE-MD
+      git clone https://github.com/Excelsama/BOT-X
+      cd BOT-X
       yarn install --network-concurrency 1
       ```
 
@@ -44,8 +44,8 @@
       THUMB_IMAGE = "https://telegra.ph/file/8f6f537cc4103b48f3783.jpg"
       port = 5000
       email = "xxxxxxxxxxxxx@gmail.com"
-      global_url = "www.tiktok/Blade_ffhx"
-      OWNER_NAME = "SALMAN"
+      global_url = "www.tiktok/Xcelsama"
+      OWNER_NAME = "EXCEL"
       AUTO_REACTION = false
       FAKE_COUNTRY_CODE = 354
       READ_MESSAGE = false
@@ -57,7 +57,7 @@
       WELCOME_MESSAGE =  "*Hi,* @user \n*Welcome in* @gname \n*Member count* : @count th"
       THEME= GOJO
       WORKTYPE = public
-      PACK_INFO = "blade md"
+      PACK_INFO = "Xcelsama"
       ANTILINK_VALUES = "chat.whatsapp.com"
       
       ```
