@@ -9,7 +9,7 @@
   "OWNER_NAME": {
   "description": "BOT OWNER NAME", 
       "value": "Excel"
-  },
+  }, 
   "ALIVE_MESSAGE": {
     "description": " SET YOUR ALIVE MESSAGE FOR THE BOT",
      "required" :false
