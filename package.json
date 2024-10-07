@@ -1,20 +1,24 @@
 {
-  "name": "STAR-MD",
+  "name": "BOT-X",
   "version": "0.0.7",
-  "description": "Multi device whatsapp bot by Excel.",
+  "description": "Multi device whatsapp bot by excelottah6.",
   "main": "lib/client.js",
+  "engines": {
+    "npm": ">=9.7.2",
+    "node": ">=20.0.0"
+  },
   "type": "commonjs",
   "license": "GPL-3.0",
   "scripts": {
-    "start": "pm2 start lib/client.js --deep-monitoring --attach --name STAR",
-    "stop": "pm2 stop STAR"
+    "start": "pm2 start lib/client.js --deep-monitoring --attach --name BOT-X",
+    "stop": "pm2 stop BOT-X"
   },
-  "author": "Xcelsama",
+  "author": "excelottah6",
   "dependencies": {
     "@adiwajshing/keyed-db": "^0.2.4",
     "@hapi/boom": "^9.1.4",
-    "@sampandey001/baileys": "latest",
-    "aptoide-scraper":"^1.0.1",
+    "@whiskeysockets/baileys": "6.6.0",
+    "aptoide-scraper": "^1.0.1",
     "@shineiichijo/marika": "^2.0.3",
     "anime-character-random": "latest",
     "async-g-i-s": "^1.4.0",
@@ -59,6 +63,7 @@
     "simple-git": "^3.16.1",
     "soundcloud-downloader": "^1.0.0",
     "tiktok-scraper": "^1.4.36",
+    "ytdl-core": "^4.11.5",
     "translatte": "^3.0.1",
     "util": "^0.12.4",
     "vz-tiktok-downloader": "^2.2.5",
@@ -74,10 +79,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Xcelsama/STAR-MD.git"
+    "url": "git+https://github.com/Excelsama/BOT-X.git"
   },
   "bugs": {
-    "url": "https://github.com/Xcelsama/STAR-MD/issues"
+    "url": "https://github.com/Excelsama/BOT-X/issues"
   },
-  "homepage": "https://github.com/Xcelsama/STAR-MD#readme"
+  "homepage": "https://github.com/Excelsama/BOT-X#readme"
 }
