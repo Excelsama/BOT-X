@@ -1,4 +1,6 @@
 const { command } = require('../lib');
+const util = require('util');
+
 command(
  {
   on: 'text',
@@ -8,7 +10,7 @@ command(
  async (message, match, m, client) => {
   const content = message.text;
   if (!content) return;
-  if (!(content.startsWith('>') || content.startsWith('$') || content.startsWith('|'))) return;
+  if (!content.startsWith('>')) return;
 
   const evalCmd = content.slice(1).trim();
 
@@ -27,6 +29,43 @@ command(
     result = require('util').inspect(result, {
      depth: 2,
     });
+   } else {
+    result = result?.toString();
+   }
+
+   await message.reply(result || 'No result');
+  } catch (error) {
+   await message.reply(`Error: ${error.message}`);
+  }
+ }
+);
+
+command(
+ {
+  on: 'text',
+  fromMe: true,
+  dontAddCommandList: true,
+ },
+ async (message, match, m, client) => {
+  const content = message.text;
+  if (!content) return;
+  if (!content.startsWith('$')) return;
+
+  const evalCmd = content.slice(1).trim();
+
+  try {
+   let result = await eval(`(async () => { ${evalCmd} })()`);
+
+   if (result === undefined) {
+    if (evalCmd === 'message') result = message;
+    if (evalCmd === 'client') result = client;
+    if (evalCmd === 'm') result = m;
+   }
+
+   if (typeof result === 'function') {
+    result = result.toString();
+   } else if (typeof result === 'object' && result !== null) {
+    result = util.inspect(result, { depth: 2 });
    } else {
     result = result?.toString();
    }
