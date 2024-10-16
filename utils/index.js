@@ -1,79 +1,62 @@
-const axios = require('axios');
-const { jidDecode, delay, generateWAMessageFromContent } = require('baileys');
-const { fromBuffer } = require('file-type');
-const path = require('path');
-const FormData = require('form-data');
-const { spawn } = require('child_process');
-const { default: fetch } = require('node-fetch');
-let { JSDOM } = require('jsdom');
-const { commands } = require('../lib/plugins');
-const config = require('../config');
 const fs = require('fs');
-const { loadMessage } = require('../db');
+const axios = require('axios');
+const webp = require('node-webpmux');
+const path = require('path');
+const crypto = require('crypto');
+const { fromBuffer } = require('file-type');
 const { tmpdir } = require('os');
-
-async function validatAndSaveDeleted(client, msg) {
- if (msg.type === 'protocolMessage') {
-  if (msg.message.protocolMessage.type === 'REVOKE') {
-   await client.sendMessage(msg.key.remoteJid, { text: 'Message Deleted' });
-   let jid = config.ANTI_DELETE;
-   let message = await loadMessage(msg.message.protocolMessage.key.id);
-   const m = generateWAMessageFromContent(jid, message.message, {
-    userJid: client.user.id,
-   });
-   await client.relayMessage(jid, m.message, {
-    messageId: m.key.id,
-   });
-   return m;
-  }
- }
-}
-
-function ffmpeg(buffer, args = [], ext = '', ext2 = '') {
- return new Promise(async (resolve, reject) => {
-  try {
-   let tmp = path.join(tmpdir() + '/' + new Date() + '.' + ext);
-   let out = tmp + '.' + ext2;
-   await fs.promises.writeFile(tmp, buffer);
-   const ffmpegProcess = spawn('ffmpeg', ['-y', '-i', tmp, ...args, out])
-    .on('error', reject)
-    .on('close', async (code) => {
-     try {
-      await fs.promises.unlink(tmp);
-      if (code !== 0) {
-       reject(new Error(`FFmpeg process exited with code ${code}`));
-       return;
-      }
-      const processedData = await fs.promises.readFile(out);
-      await fs.promises.unlink(out);
-      resolve(processedData);
-     } catch (e) {
-      reject(e);
-     }
-    });
-  } catch (e) {
-   reject(e);
-  }
- });
-}
+const { Buffer } = require('buffer');
+const ffmpeg = require('fluent-ffmpeg');
+const ffmpegPath = require('@ffmpeg-installer/ffmpeg').path;
+ffmpeg.setFfmpegPath(ffmpegPath);
 
 /**
  * Convert Audio to Playable WhatsApp Audio
  * @param {Buffer} buffer Audio Buffer
  * @param {String} ext File Extension
  */
-function toAudio(buffer, ext) {
- return ffmpeg(buffer, ['-vn', '-ac', '2', '-b:a', '128k', '-ar', '44100', '-f', 'mp3'], ext, 'mp3');
-}
+const toAudio = (inputBuffer) => {
+ return new Promise((resolve, reject) => {
+  const stream = new Readable();
+  stream.push(inputBuffer);
+  stream.push(null);
+  const chunks = [];
+  ffmpeg(stream)
+   .toFormat('mp3')
+   .on('error', (err) => reject(err))
+   .on('end', () => {
+    resolve(Buffer.concat(chunks));
+   })
+   .pipe()
+   .on('data', (chunk) => chunks.push(chunk));
+ });
+};
 
 /**
- * Convert Audio to Playable WhatsApp PTT
- * @param {Buffer} buffer Audio Buffer
- * @param {String} ext File Extension
+ * Convert audio buffer to WhatsApp PTT format (opus).
+ * @param {Buffer} inputBuffer - Buffer containing the input file.
+ * @returns {Promise<Buffer>} - Promise resolving to the converted Opus buffer.
  */
-function toPTT(buffer, ext) {
- return ffmpeg(buffer, ['-vn', '-c:a', 'libopus', '-b:a', '128k', '-vbr', 'on', '-compression_level', '10'], ext, 'opus');
-}
+const toPTT = (inputBuffer) => {
+ return new Promise((resolve, reject) => {
+  const stream = new Readable();
+  stream.push(inputBuffer);
+  stream.push(null);
+  const chunks = [];
+
+  ffmpeg(stream)
+   .audioCodec('libopus')
+   .audioBitrate(128)
+   .audioQuality(10)
+   .toFormat('opus')
+   .on('error', (err) => reject(err))
+   .on('end', () => {
+    resolve(Buffer.concat(chunks));
+   })
+   .pipe()
+   .on('data', (chunk) => chunks.push(chunk));
+ });
+};
 
 /**
  * Convert Audio to Playable WhatsApp Video
@@ -101,15 +84,7 @@ async function getBuffer(url, options = {}) {
   throw new Error(`Error: ${error.message}`);
  }
 }
-const decodeJid = (jid) => {
- if (!jid) return jid;
- if (/:\d+@/gi.test(jid)) {
-  const decode = jidDecode(jid) || {};
-  return decode.user && decode.server ? `${decode.user}@${decode.server}` : jid;
- } else {
-  return jid;
- }
-};
+
 async function FiletypeFromUrl(url) {
  const buffer = await getBuffer(url);
  const out = await fromBuffer(buffer);
@@ -119,23 +94,12 @@ async function FiletypeFromUrl(url) {
  }
  return { type, buffer };
 }
-function extractUrlFromMessage(message) {
+function UrlFromMsg(message) {
  const urlRegex = /(https?:\/\/[^\s]+)/gi;
  const match = urlRegex.exec(message);
  return match ? match[0] : null;
 }
 
-const removeCommand = async (name) => {
- return new Promise((resolve, reject) => {
-  commands.map(async (command, index) => {
-   if (command.pattern !== undefined && command.pattern.test(new RegExp(`${config.PREFIX}( ?${name})`, 'is'))) {
-    commands.splice(index, 1);
-    return resolve(true);
-   }
-  });
-  resolve(false);
- });
-};
 async function getJson(url, options) {
  try {
   options ? options : {};
@@ -152,79 +116,60 @@ async function getJson(url, options) {
   return err;
  }
 }
+const getTempPath = () => path.join(tmpdir(), `${crypto.randomBytes(6).readUIntLE(0, 6).toString(36)}`);
+
+const convertToWebp = async (media, isVideo = false) => {
+ const tmpFileIn = getTempPath() + (isVideo ? '.mp4' : '.jpg');
+ const tmpFileOut = getTempPath() + '.webp';
+ fs.writeFileSync(tmpFileIn, media);
+
+ await new Promise((resolve, reject) => {
+  ffmpeg(tmpFileIn)
+   .outputOptions(['-vcodec', 'libwebp', '-vf', "scale='min(320,iw)':min'(320,ih)':force_original_aspect_ratio=decrease,fps=15, pad=320:320:-1:-1:color=white@0.0, split [a][b]; [a] palettegen=reserve_transparent=on:transparency_color=ffffff [p]; [b][p] paletteuse", ...(isVideo ? ['-loop', '0', '-ss', '00:00:00', '-t', '00:00:05', '-preset', 'default', '-an', '-vsync', '0'] : [])])
+   .toFormat('webp')
+   .on('error', reject)
+   .on('end', () => resolve(true))
+   .save(tmpFileOut);
+ });
+
+ const buff = fs.readFileSync(tmpFileOut);
+ fs.unlinkSync(tmpFileOut);
+ fs.unlinkSync(tmpFileIn);
+ return buff;
+};
+
+const writeExif = async (media, metadata, isWebp = false) => {
+ const tmpFileIn = getTempPath() + '.webp';
+ const tmpFileOut = getTempPath() + '.webp';
+ fs.writeFileSync(tmpFileIn, isWebp ? media : await convertToWebp(media, !isWebp && media.length > 200000));
+
+ if (metadata.packname || metadata.author) {
+  const img = new webp.Image();
+  const json = {
+   'sticker-pack-id': 'https://github.com/AstroX10/xstro-bot',
+   'sticker-pack-name': metadata.packname,
+   'sticker-pack-publisher': metadata.author,
+   emojis: metadata.categories || [''],
+  };
+  const exifAttr = Buffer.from([0x49, 0x49, 0x2a, 0x00, 0x08, 0x00, 0x00, 0x00, 0x01, 0x00, 0x41, 0x57, 0x07, 0x00, 0x00, 0x00, 0x00, 0x00, 0x16, 0x00, 0x00, 0x00]);
+  const jsonBuff = Buffer.from(JSON.stringify(json), 'utf-8');
+  const exif = Buffer.concat([exifAttr, jsonBuff]);
+  exif.writeUIntLE(jsonBuff.length, 14, 4);
+  await img.load(tmpFileIn);
+  fs.unlinkSync(tmpFileIn);
+  img.exif = exif;
+  await img.save(tmpFileOut);
+  return tmpFileOut;
+ }
+};
 
 module.exports = {
- parseTimeToSeconds: (timeString) => {
-  const [minutes, seconds] = timeString.split(':').map(Number);
-  return minutes * 60 + seconds;
- },
  toAudio,
  toPTT,
  toVideo,
- ffmpeg,
  FiletypeFromUrl,
- removeCommand,
  getBuffer,
- extractUrlFromMessage,
- decodeJid,
- isAdmin: async (jid, user, client) => {
-  const groupMetadata = await client.groupMetadata(jid);
-  const groupAdmins = groupMetadata.participants.filter((participant) => participant.admin !== null).map((participant) => participant.id);
-
-  return groupAdmins.includes(decodeJid(user));
- },
- webp2mp4: async (source) => {
-  let form = new FormData();
-  let isUrl = typeof source === 'string' && /https?:\/\//.test(source);
-  form.append('new-image-url', isUrl ? source : '');
-  form.append('new-image', isUrl ? '' : source, 'image.webp');
-  let res = await fetch('https://ezgif.com/webp-to-mp4', {
-   method: 'POST',
-   body: form,
-  });
-  let html = await res.text();
-  let { document } = new JSDOM(html).window;
-  let form2 = new FormData();
-  let obj = {};
-  for (let input of document.querySelectorAll('form input[name]')) {
-   obj[input.name] = input.value;
-   form2.append(input.name, input.value);
-  }
-  let res2 = await fetch('https://ezgif.com/webp-to-mp4/' + obj.file, {
-   method: 'POST',
-   body: form2,
-  });
-  let html2 = await res2.text();
-  let { document: document2 } = new JSDOM(html2).window;
-  return new URL(document2.querySelector('div#output > p.outfile > video > source').src, res2.url).toString();
- },
- validatAndSaveDeleted,
- webp2png: async (source) => {
-  let form = new FormData();
-  let isUrl = typeof source === 'string' && /https?:\/\//.test(source);
-  form.append('new-image-url', isUrl ? source : '');
-  form.append('new-image', isUrl ? '' : source, 'image.webp');
-  let res = await fetch('https://s6.ezgif.com/webp-to-png', {
-   method: 'POST',
-   body: form,
-  });
-  let html = await res.text();
-  let { document } = new JSDOM(html).window;
-  let form2 = new FormData();
-  let obj = {};
-  for (let input of document.querySelectorAll('form input[name]')) {
-   obj[input.name] = input.value;
-   form2.append(input.name, input.value);
-  }
-  let res2 = await fetch('https://ezgif.com/webp-to-png/' + obj.file, {
-   method: 'POST',
-   body: form2,
-  });
-  let html2 = await res2.text();
-  console.log(html2);
-  let { document: document2 } = new JSDOM(html2).window;
-  return new URL(document2.querySelector('div#output > p.outfile > img').src, res2.url).toString();
- },
+ UrlFromMsg,
  parseJid(text = '') {
   return [...text.matchAll(/@([0-9]{5,16}|0)/g)].map((v) => v[1] + '@s.whatsapp.net');
  },
@@ -238,83 +183,9 @@ module.exports = {
  getUrl: (getUrl = (url) => {
   return url.match(new RegExp(/https?:\/\/(www\.)?[-a-zA-Z0-9@:%._+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_+.~#?&/=]*)/, 'gi'));
  }),
- qrcode: async (string) => {
-  const { toBuffer } = require('qrcode');
-  let buff = await toBuffer(string);
-  return buff;
- },
- secondsToDHMS: (seconds) => {
-  seconds = Number(seconds);
-
-  const days = Math.floor(seconds / (3600 * 24));
-  seconds %= 3600 * 24;
-
-  const hours = Math.floor(seconds / 3600);
-  seconds %= 3600;
-
-  const minutes = Math.floor(seconds / 60);
-  seconds %= 60;
-
-  seconds = Math.floor(seconds);
-
-  const parts = [];
-
-  if (days) parts.push(`${days} Days`);
-  if (hours) parts.push(`${hours} Hours`);
-  if (minutes) parts.push(`${minutes} Minutes`);
-  if (seconds) parts.push(`${seconds} Seconds`);
-  return parts.join(' ');
- },
- formatBytes: (bytes, decimals = 2) => {
-  if (!+bytes) return '0 Bytes';
-
-  const k = 1024;
-  const dm = decimals < 0 ? 0 : decimals;
-  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
-
-  const i = Math.floor(Math.log(bytes) / Math.log(k));
-
-  return `${parseFloat((bytes / Math.pow(k, i)).toFixed(dm))} ${sizes[i]}`;
- },
- sleep: delay,
- clockString: (duration) => {
-  (seconds = Math.floor((duration / 1000) % 60)), (minutes = Math.floor((duration / (1000 * 60)) % 60)), (hours = Math.floor((duration / (1000 * 60 * 60)) % 24));
-
-  hours = hours < 10 ? '0' + hours : hours;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
-  seconds = seconds < 10 ? '0' + seconds : seconds;
-
-  return hours + ':' + minutes + ':' + seconds;
- },
- runtime: () => {
-  const duration = process.uptime();
-  const seconds = Math.floor(duration % 60);
-  const minutes = Math.floor((duration / 60) % 60);
-  const hours = Math.floor((duration / (60 * 60)) % 24);
-
-  const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-
-  return formattedTime;
- },
- Bitly: async (url) => {
-  return new Promise((resolve, reject) => {
-   const BitlyClient = require('bitly').BitlyClient;
-   const bitly = new BitlyClient('6e7f70590d87253af9359ed38ef81b1e26af70fd');
-   bitly
-    .shorten(url)
-    .then((a) => {
-     resolve(a);
-    })
-    .catch((A) => reject(A));
-   return;
-  });
- },
- isNumber: function isNumber() {
-  const int = parseInt(this);
-  return typeof int === 'number' && !isNaN(int);
- },
- getRandom: function getRandom() {
-  if (Array.isArray(this) || this instanceof String) return this[Math.floor(Math.random() * this.length)];
-  return Math.floor(Math.random() * this);
- },
+ imageToWebp: (media) => convertToWebp(media),
+ videoToWebp: (media) => convertToWebp(media, true),
+ writeExifImg: (media, metadata) => writeExif(media, metadata),
+ writeExifVid: (media, metadata) => writeExif(media, metadata),
+ writeExifWebp: (media, metadata) => writeExif(media, metadata, true),
 };
