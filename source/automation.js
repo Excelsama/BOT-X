@@ -1,5 +1,5 @@
 const { command } = require('../lib');
-const { isAdmin } = require('../utils');
+const { isAdmin } = require('./group');
 const { getAntiLink, setAntiLink, deleteAntiLink, AntiWord, addAntiWord, getAntiWords } = require('../db');
 
 // AntiLink Command
