@@ -1,4 +1,4 @@
-const { FiletypeFromUrl, parseJid, extractUrlFromMessage } = require('../utils');
+const { FiletypeFromUrl, parseJid, UrlFromMsg } = require('../utils');
 const { getStatus, getMessage, setMessage, toggleStatus, delMessage } = require('../db');
 
 class Greetings {
@@ -41,7 +41,7 @@ class Greetings {
 
   let msg = this.replaceMessagePlaceholders(messageData.message, user, metadata);
 
-  const url = extractUrlFromMessage(msg);
+  const url = UrlFromMsg(msg);
 
   if (url) {
    await this.sendMediaMessage(groupId, url, msg);
