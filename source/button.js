@@ -14,14 +14,14 @@ command(
    {
     type: 'reply',
     params: {
-     display_text: 'Option 1', // Button display text
+     display_text: '.ping', // Button display text
      id: 'option1', // Button ID
     },
    },
    {
     type: 'reply',
     params: {
-     display_text: 'Option 2', // Button display text
+     display_text: '.list', // Button display text
      id: 'option2', // Button ID
     },
    },
