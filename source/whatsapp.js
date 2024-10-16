@@ -1,7 +1,5 @@
 const { command, serialize } = require('../lib');
-const { loadMessage, getName } = require('../db');
-const { isAdmin } = require('./group');
-const { ANTI_DELETE } = require('../config');
+const { loadMessage } = require('../db');
 
 command(
  {
@@ -25,10 +23,11 @@ command(
   desc: 'Set User name',
   type: 'whatsapp',
  },
- async (message, match) => {
-  if (!match) return await message.reply('_Enter name_');
-  await message.updateName(match);
-  return await message.reply(`_Username Updated : ${match}_`);
+ async (message, match, m, client) => {
+  if (!match) return message.reply('_Provide Name!_');
+  const newName = match;
+  await client.updateProfileName(newName);
+  return await message.reply(`_Name Set to ${newName}_`);
  }
 );
 
@@ -40,14 +39,16 @@ command(
   type: 'whatsapp',
  },
  async (message, match, m, client) => {
+  let jid;
   if (message.isGroup) {
-   let jid = message.mention[0] || message.reply_message.jid;
-   if (!jid) return await message.reply('_Reply to a person or mention_');
-   await message.block(jid);
-   return await message.sendMessage(`_@${jid.split('@')[0]} Blocked_`, { mentions: [jid] });
+   jid = message.mention && message.mention.length > 0 ? message.mention[0] : message.reply_message ? message.reply_message.participant : null;
+   if (!jid) return await message.reply('_Please mention or reply to the person you want to block._');
+   await client.updateBlockStatus(jid, 'block');
+   return await message.reply(`_@${jid.split('@')[0]} Blocked_`, { mentions: [jid] });
   } else {
-   await message.block(message.jid);
-   return await message.reply('_User blocked_');
+   jid = message.jid;
+   await message.reply('_Blocked_');
+   return await client.updateBlockStatus(jid, 'block');
   }
  }
 );
@@ -56,18 +57,20 @@ command(
  {
   pattern: 'unblock',
   fromMe: true,
-  desc: 'Unblock a person',
+  desc: 'Unblocks a person',
   type: 'whatsapp',
  },
  async (message, match, m, client) => {
+  let jid;
   if (message.isGroup) {
-   let jid = message.mention[0] || message.reply_message.jid;
-   if (!jid) return await message.reply('_Reply to a person or mention_');
-   await message.block(jid);
-   return await message.sendMessage(message.jid, `_@${jid.split('@')[0]} unblocked_`, { mentions: [jid] });
+   jid = message.mention && message.mention.length > 0 ? message.mention[0] : message.reply_message ? message.reply_message.participant : null;
+   if (!jid) return await message.reply('_Please mention or reply to the person you want to Unblock._');
+   await client.updateBlockStatus(jid, 'unblock');
+   return await message.reply(`_@${jid.split('@')[0]} UnBlocked_`, { mentions: [jid] });
   } else {
-   await message.unblock(message.jid);
-   return await message.reply('_User unblocked_');
+   jid = message.jid;
+   await client.updateBlockStatus(jid, 'unblock');
+   return await message.reply('_Unblocked_');
   }
  }
 );
@@ -80,7 +83,7 @@ command(
   type: 'whatsapp',
  },
  async (message, match, m, client) => {
-  const targetJid = message.reply_message?.jid || message.jid;
+  const targetJid = message.reply_message?.sender || message.jid;
   if (!targetJid) return await message.reply(message.jid, 'Unable to retrieve the JID.');
   return await message.send(targetJid);
  }
@@ -88,7 +91,7 @@ command(
 
 command(
  {
-  pattern: 'del',
+  pattern: 'dlt',
   fromMe: true,
   desc: 'Deletes your message or a replied message',
   type: 'whatsapp',
@@ -128,24 +131,5 @@ command(
   msg = await serialize(JSON.parse(JSON.stringify(msg.message)), message.client);
   if (!msg.quoted) return await message.reply('No quoted message found');
   await message.copyNForward(message.jid, msg.quoted.message);
- }
-);
-
-command(
- {
-  on: 'delete',
-  fromMe: false,
-  desc: 'Logs the recent deleted message',
-  dontAddCommandList: true,
- },
- async (message, match, m, client) => {
-  if (!ANTI_DELETE) return await message.sendMessage(message.user, '_Anti Delete Not Set in Config_');
-  let msg = await loadMessage(message.messageId);
-  if (!msg) return;
-  msg = await serialize(JSON.parse(JSON.stringify(msg.message)), client);
-  if (!msg) return await message.reply('No deleted message found');
-  let deleted = await message.copyNForward(ANTI_DELETE, msg.message);
-  let name = msg.from.endsWith('@g.us') ? `_Group: ${(await client.groupMetadata(msg.from)).subject}_\n_Name: ${await getName(msg.sender)}_` : `_Name: ${await getName(msg.from)}_`;
-  return await message.reply(`_Message Deleted_\n_From: ${msg.from}_\n${name}\n_SenderJid: ${msg.sender}_`, { quoted: deleted });
  }
 );
