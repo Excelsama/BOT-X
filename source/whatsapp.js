@@ -88,7 +88,7 @@ command(
 
 command(
  {
-  pattern: 'dlt',
+  pattern: 'del',
   fromMe: true,
   desc: 'Deletes your message or a replied message',
   type: 'whatsapp',
