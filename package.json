@@ -1,6 +1,7 @@
 {
  "name": "BOT-X",
- "version": "2.0",
+ "version": "0.0.1",
+ "description": "",
  "type": "commonjs",
  "main": "index.js",
  "scripts": {
@@ -26,6 +27,6 @@
   "simple-git": "^3.24.0",
   "sqlite3": "^5.1.7",
   "unzipper": "^0.12.3",
-  "git": "git+https://github.com/Excelsama/BOT-X.git"
+  "xstro": "git+https://github.com/AstroX10/xstro-api.git"
  }
 }
