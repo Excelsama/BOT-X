@@ -27,8 +27,9 @@ module.exports = {
  SESSION_ID: process.env.SESSION_ID || '',
  PREFIX: process.env.HANDLER || '.',
  ANTI_CALL: process.env.ANTI_CALL || 'false', // 'true' | 'false' | 'block'
+ STICKER_PACK: process.env.STICKER_PACK || 'ᴇxᴄᴇʟ;xᴄᴇʟsᴀᴍᴀ',
  WARN_COUNT: 3,
- SUDO: process.env.SUDO || '',
+ SUDO: process.env.SUDO || '2347045035241,'', // Add your number the empty apostrophe dont add +  to ur number
  AUTO_READ_MESSAGE: process.env.AUTO_READ || false,
  AUTO_STATUS_READ: process.env.AUTO_STATUS_READ || true,
  PRESENCE_UPDATE: process.env.PRESENCE_UPDATE || 'recording', // 'available' | 'unavailable' | 'composing'  |'recording' | 'paused'
