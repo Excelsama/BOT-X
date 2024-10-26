@@ -49,7 +49,7 @@ module.exports = {
   },
 
   VERSION: process.env.VERSION || 'v2.0',
-  LANG: process.env.configmenu|| 'BOT-X,
+  LANG: process.env.configmenu|| 'BOT-X',
   WORKTYPE: process.env.WORKTYPE || 'public'
 };
 
