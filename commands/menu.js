@@ -42,9 +42,9 @@ Secktor.cmd({
                     .locale('id')
                 const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
                 let total = await sck1.countDocuments()
-                let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⊷\n`
+                let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⪩\n`
                 str +=
-                    '```' + `𖣎 ╭──────────────◆
+                    '```' + `𖣎 ╭──────────────⪩
 𖣎 │ USER:- ${citel.pushName}
 𖣎 │ UI:- ${tlang().title}
 𖣎 │ PREFIX:- [ ${prefix} ]
@@ -55,19 +55,19 @@ Secktor.cmd({
 𖣎 │ MEM:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
 𖣎 │ TIME:- ${time}
 𖣎 │ DATE:- ${date}
-𖣎 ╰──────────────◆
-╰───────────────⊷\n
+𖣎 ╰──────────────⪩
+╰───────────────⪩\n
 ` + '```'
                 for (const category in cmds) 
                 {
-                   str += `╭────❏ *${tiny(category)}* ❏\n` ;
+                   str += `╭────⋉ *${tiny(category)}* ⋊\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
                         for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                        str += `╰━━━━━━━━━━━━━──⪩\n`  ;
+                        str += `╰━━━━━━━━━━━──⪩\n`  ;
                         break ;
                    }
                    else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                         str += `╰━━━━━━━━━━━━━━──⪩\n`  ; 
+                         str += `╰━━━━━━━━━━━──⪩\n`  ; 
                    }
 
                 }
