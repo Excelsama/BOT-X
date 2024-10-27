@@ -46,7 +46,7 @@ Secktor.cmd({
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⊷\n`
                 str +=
                     '```' + `│ ╭──────────────◆
-𖣎 │ User:- ${citel.pushName}
+𖣎 │ USER:- ${citel.pushName}
 𖣎 │ UI:- ${tlang().title}
 𖣎 │ Prefix:- [ ${prefix} ]
 𖣎 │ Owner:- ${Config.ownername}
@@ -63,7 +63,7 @@ Secktor.cmd({
                 {
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
-                        for (const plugins of cmds[*category*]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
                         str += `╰━━━━━━━━━━━━━──⊷\n`  ;
                         break ;
                    }
