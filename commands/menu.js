@@ -56,7 +56,7 @@ Secktor.cmd({
     });
     moment.tz.setDefault("Asia/KOLKATA").locale('id');
     let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》───⊷\n";
-    _0x2ce686 += '```│ ╭──────────────◆\n│ │ 
+    _0x2ce686 += `│ ╭──────────────◆\n│ │ 
 ᴅᴇᴠᴇʟᴏᴘᴇʀ " + _0x22e548.pushName + "\n│ │  \n│ │ 
 ᴘʀᴇғɪx:- [ " + prefix + " ]\n│ │  
 ᴏᴡɴᴇʀ:- " + Config.ownername + "\n│ │  
