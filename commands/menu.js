@@ -15,8 +15,8 @@ const Secktor = require("../lib/commands");
 Secktor.cmd({
   'pattern': "help",
   'alias': ["menu"],
-  'desc': "Help list",
-  'category': "general",
+  'desc': "all cmd",
+  'category': "",
   'react': '⏳',
   'filename': __filename
 }, async (_0x41fa70, _0x22e548, _0x44e062) => {
@@ -55,14 +55,12 @@ Secktor.cmd({
       }
     });
     moment.tz.setDefault("Asia/KOLKATA").locale('id');
-    let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》───⊷\n";
-    _0x2ce686 += `│ ╭──────────────◆\n│ │ 
-ᴅᴇᴠᴇʟᴏᴘᴇʀ " + _0x22e548.pushName + "\n│ │  \n│ │ 
+    let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》─────⊷\n";
+    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │ 
+ᴜsᴇʀ:- " + _0x22e548.pushName + "\n│ │  ᴅᴇᴠᴇʟᴏᴘᴇʀ:-xᴄᴇʟsᴀᴍᴀ\n│ │  
 ᴘʀᴇғɪx:- [ " + prefix + " ]\n│ │  
 ᴏᴡɴᴇʀ:- " + Config.ownername + "\n│ │  
-ᴜᴘᴛɪᴍᴇ:- " + runtime(process.uptime()) + "\n│ │  
-ᴍᴇᴍᴏʀʏ:- " + formatp(os.totalmem() - os.freemem()) + '/' + 
-formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
+ᴜᴘᴛɪᴍᴇ:- " + runtime(process.uptime()) + "\n│ │ , ᴍᴇᴍᴏʀʏ:- " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
     for (const _0x32ef0c in _0x185d93) {
       _0x2ce686 += "╭────✪ *" + tiny(_0x32ef0c) + "* \n";
       if (_0x44e062.toLowerCase() == _0x32ef0c.toLowerCase()) {
@@ -79,7 +77,7 @@ formatp(os.totalmem()) + "\n│ ╰──────────────◆
         _0x2ce686 += "╰━━━━━━━━━━━━━━──⊷\n";
       }
     }
-    _0x2ce686 += "";
+    _0x2ce686 += "© 2024 BOT-X";
     let _0x41763e = {
       'image': {
         'url': await botpic()
@@ -120,7 +118,7 @@ Secktor.cmd({
   'pattern': "owner",
   'desc': "To find 👨‍💻owner number",
   'category': "general",
-  'react': '👑',
+  'react': '⚔️',
   'filename': __filename
 }, async (_0x2d6a3a, _0x5ad307) => {
   const _0x5dd43a = require("../config");
@@ -141,7 +139,7 @@ Secktor.cmd({
         'thumbnail': log0,
         'mediaType': 0x2,
         'mediaUrl': '',
-        'sourceUrl': 'https://wa.me/+2347045035241' + "?text=Hii bro,I am " + _0x5ad307.pushName
+        'sourceUrl': 'https://wa.me/+' + owner[0x0] + "?text=Hii bro,I am " + _0x5ad307.pushName
       }
     }
   };
@@ -168,13 +166,14 @@ Secktor.cmd({
       throw new Error(`Invalid timezone: ${location}`);
     }
     await citel.reply(`
-╭─────── Time Check! ⏱️ ───✦
-│                               
+╭─────── TIME ──────❖
+│                              
 │ ⏱️ Your Local Time: ${formattedTime} 
 │ ${location} Time: ${targetTime} 
 │                               
-╰──────────────✧
-  `);
+│ 
+╰───────❖
+    `);
   } catch (error) {
     console.error(error);
     await citel.reply(`
