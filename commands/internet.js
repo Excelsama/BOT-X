@@ -54,6 +54,7 @@ cmd({
   desc: "Gives descriptive info of query from youtube..",
   category: "internet",
   filename: __filename,
+  react:"🎥"
   use: '<yt search text>'
 }, async (Void, citel, text) => {
   let yts = require("secktor-pack");
