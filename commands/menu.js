@@ -9,7 +9,7 @@ const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
 
     //---------------------------------------------------------------------------
-cmd({
+Secktor.cmd({
             pattern: "help",
             alias: ["menu"],
             desc: "commands list",
@@ -83,7 +83,7 @@ cmd({
     )
     //---------------------------------------------------------------------------
  
-cmd({
+Secktor.cmd({
   pattern: "time",
   desc: "Get the current time in a specified location.",
   react: "⏱",
@@ -123,7 +123,7 @@ cmd({
   }
 });
 //---------------------------------------------------------------------------
-   cmd({
+   Secktor.cmd({
             pattern: "list",
             desc: "list menu",
             category: "general"
@@ -155,7 +155,7 @@ for (let i = 0; i < commands.length; i++)
         }
     )
     //---------------------------------------------------------------------------
-cmd({
+Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
@@ -192,7 +192,7 @@ cmd({
     }
 )
 
-cmd({
+Secktor.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
