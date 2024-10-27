@@ -14,7 +14,7 @@ Secktor.cmd({
             alias: ["menu"],
             desc: "commands list",
             category: "general",
-            react: "✨",
+            react: "⏳",
             filename: __filename
         },
         async(Void, citel, text) => {
@@ -46,24 +46,24 @@ Secktor.cmd({
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⊷\n`
                 str +=
                     '```' + `│ ╭──────────────◆
-│ │ User:- ${citel.pushName}
-│ │ Theme:- ${tlang().title}
-│ │ Prefix:- [ ${prefix} ]
-│ │ Owner:- ${Config.ownername}
-│ │ Plugins:- ${commands.length}
-│ │ Users:- ${total}
-│ │ Uptime:- ${runtime(process.uptime())}
-│ │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-│ │ Time:- ${time}
-│ │ Date:- ${date}
-│ ╰──────────────◆
+𖣎 │ User:- ${citel.pushName}
+𖣎 │ UI:- ${tlang().title}
+𖣎 │ Prefix:- [ ${prefix} ]
+𖣎 │ Owner:- ${Config.ownername}
+𖣎 │ Plugins:- ${commands.length}
+𖣎 │ Users:- ${total}
+𖣎 │ Uptime:- ${runtime(process.uptime())}
+𖣎 │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+𖣎 │ Time:- ${time}
+𖣎 │ Date:- ${date}
+𖣎 ╰──────────────◆
 ╰───────────────⊷\n
 ` + '```'
                 for (const category in cmds) 
                 {
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
-                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
+                        for (const plugins of cmds[*category*]) { str += `│ ${fancytext(plugins,1)}\n` ; }
                         str += `╰━━━━━━━━━━━━━──⊷\n`  ;
                         break ;
                    }
@@ -86,7 +86,7 @@ Secktor.cmd({
 Secktor.cmd({
   pattern: "time",
   desc: "Get the current time in a specified location.",
-  react: "⏱",
+  react: "⌚",
   catergory: "info"
 }, async (Void, citel, text) => {
   try {
@@ -103,13 +103,12 @@ Secktor.cmd({
       throw new Error(`Invalid timezone: ${location}`);
     }
     await citel.reply(`
-╭─────── Time Check! ⏱️ ───────╮
-│                               │
-│ ⏱️ Your Local Time: ${formattedTime} │
-│ ${location} Time: ${targetTime} │
-│                               │
-│ **Stay in sync with the world's clocks! **│
-╰─────── Time Travel Now? ⏳ ───────╯
+╭─────── Time Check! ⌚ ───────𖣐
+𖣎                               
+𖣎 ⏱️ Your Local Time: ${formattedTime} 
+𖣎 ${location} Time: ${targetTime} 
+𖣎
+╰─────────𖣐
     `);
   } catch (error) {
     console.error(error);
@@ -159,7 +158,7 @@ Secktor.cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
-        react: "💜",
+        react: "👑",
         filename: __filename
     },
     async(Void, citel) => {
@@ -195,8 +194,8 @@ Secktor.cmd({
 Secktor.cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
-    category: "general",
-    react: "✨",
+    category: "tools",
+    react: "📁",
     filename: __filename
 },
 async(Void, citel, text) => {
