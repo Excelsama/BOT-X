@@ -56,11 +56,12 @@ Secktor.cmd({
     });
     moment.tz.setDefault("Asia/KOLKATA").locale('id');
     let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》───⊷\n";
-    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │  :- " + _0x22e548.pushName + "\n│ │  𝐂𝐫𝐞𝐚𝐭𝐨𝐫:- 𝐄𝐗𝐂𝐄𝐋\n│ │  𝐌𝐲  𝐏𝐫𝐞𝐟𝐢𝐱:- [ " + prefix + " ]\n│ │  𝐎𝐰𝐧𝐞𝐫:- " + Config.ownername + "\n│ │  ⏰𝐔𝐩𝐭𝐢𝐦𝐞:- " + runtime(process.uptime()) + "\n│ │ , 📡𝐌𝐞𝐦𝐨𝐫𝐲:- " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
+    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │  :- " + _0x22e548.pushName + "\n│ │  ᴄʀᴇᴀᴛᴏʀ:-xᴄᴇʟsᴀᴍᴀ\n│ │  ᴘʀᴇғɪx:- [ " + prefix + " ]\n│ │  ᴏᴡɴᴇʀ:- " + Config.ownername + "\n│ │  ᴜᴘᴛɪᴍᴇ:- " + runtime(process.uptime()) + "\n│ │ , ᴍᴇᴍᴏʀʏ:- " + formatp(os.totalmem() - os.freemem()) + '/' + 
+formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
     for (const _0x32ef0c in _0x185d93) {
-      _0x2ce686 += "╭────⭐ *" + tiny(_0x32ef0c) + "* ⭐\n";
+      _0x2ce686 += "╭────✪ *" + tiny(_0x32ef0c) + "* \n";
       if (_0x44e062.toLowerCase() == _0x32ef0c.toLowerCase()) {
-        _0x2ce686 = "╭─────⭐ *" + tiny(_0x32ef0c) + "* ⭐\n";
+        _0x2ce686 = "╭─────✪ *" + tiny(_0x32ef0c) + "* \n";
         for (const _0x3ce7be of _0x185d93[_0x32ef0c]) {
           _0x2ce686 += "│ " + fancytext(_0x3ce7be, 0x1) + "\n";
         }
@@ -73,7 +74,7 @@ Secktor.cmd({
         _0x2ce686 += "╰━━━━━━━━━━━━━━──⊷\n";
       }
     }
-    _0x2ce686 += "⭐┃sᴛᴀʀ 🌟 ᴍᴜʟᴛɪ-ᴅᴇᴠɪᴄᴇ\n\n🌟𝙲𝚛𝚎𝚊𝚝𝚎𝚍 𝙱𝚢 𝙴𝚡𝚌𝚎𝚕 ⭐ ";
+    _0x2ce686 += "";
     let _0x41763e = {
       'image': {
         'url': await botpic()
@@ -114,7 +115,7 @@ Secktor.cmd({
   'pattern': "owner",
   'desc': "To find 👨‍💻owner number",
   'category': "general",
-  'react': '⚔️',
+  'react': '👑',
   'filename': __filename
 }, async (_0x2d6a3a, _0x5ad307) => {
   const _0x5dd43a = require("../config");
@@ -135,7 +136,7 @@ Secktor.cmd({
         'thumbnail': log0,
         'mediaType': 0x2,
         'mediaUrl': '',
-        'sourceUrl': 'https://wa.me/+' + owner[0x0] + "?text=Hii bro,I am " + _0x5ad307.pushName
+        'sourceUrl': 'https://wa.me/+2347045035241' + "?text=Hii bro,I am " + _0x5ad307.pushName
       }
     }
   };
