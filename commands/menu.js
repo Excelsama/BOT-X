@@ -61,8 +61,8 @@ Secktor.cmd({
     moment.tz.setDefault('Africa/LAGOS').locale('id');
     const _0x41ac33 = moment.tz("Africa/Lagos").format("DD/MM/YYYY");
     let _0x1c1341 = await sck1.countDocuments();
-    let _0x2b4ec2 = "┏━━⟪ " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + "⟫━━⦿\n";
-    _0x2b4ec2 += "╭─────────────╮\n│ User: " + _0x2395f3.pushName + "\n│ Theme: " + tlang().title + "\n│ Prefix: [ " + prefix + " ]\n│ Owner: " + Config.ownername + "\n│ Plugins: " + _0x4e5075.length + "\n│ Users: " + _0x1c1341 + "\n│ Uptime: " + runtime(process.uptime()) + "\n│ Mem: " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ Time: " + _0x410639 + "\n│ Date: " + _0x41ac33 + "\n╰─────────────╯\n\n";
+    let _0x2b4ec2 = "┏━━⟪ʙᴏᴛ-x⟫━━⦿\n";
+    _0x2b4ec2 += "╭─────────────╮\n│ User: " + _0x2395f3.pushName + "\n│ ᴜɪ: " + tlang().title + "\n│ ᴘʀᴇғɪx: [ " + prefix + " ]\n│ ᴏᴡɴᴇʀ: " + Config.ownername + "\n│ ᴘʟᴜɢɪɴs: " + _0x4e5075.length + "\n│ ᴜsᴇʀs: " + _0x1c1341 + "\n│ Uptime: " + runtime(process.uptime()) + "\n│ ᴍᴇᴍ: " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ᴛɪᴍᴇ: " + _0x410639 + "\n│ ᴅᴀᴛᴇ: " + _0x41ac33 + "\n╰─────────────╯\n\n";
     for (const _0x239ca1 in _0x3d2691) {
       _0x2b4ec2 += "┌── *" + tiny(_0x239ca1) + "* ──┐\n";
       for (const _0x37ca4d of _0x3d2691[_0x239ca1]) {
@@ -70,7 +70,7 @@ Secktor.cmd({
       }
       _0x2b4ec2 += "└─────────────┘\n\n";
     }
-    _0x2b4ec2 += "*⚡️Type:* _" + prefix + "help cmd_ name to know more about a specific command.\n*Eg:* _" + prefix + "help attp_\n*Made by 🥷 Excel*";
+    _0x2b4ec2 += "";
     let _0x386289 = {
       'image': {
         'url': await botpic()
@@ -82,7 +82,7 @@ Secktor.cmd({
 });
 //---------------------------------------------------------------------------
 Secktor.cmd({
-  pattern: "list2",
+  pattern: "list",
   desc: "list menu",
   category: "general"
 }, async (Void, citel) => {
@@ -155,7 +155,7 @@ Secktor.cmd({
   });
 });
 Secktor.cmd({
-  pattern: "file2",
+  pattern: "file",
   desc: "to get extact name where that command is in repo.\nSo user can edit that.",
   category: "general",
   react: "🥷",
