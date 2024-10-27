@@ -12,7 +12,7 @@ Secktor.cmd({
             pattern: "help",
             alias: ["menu"],
             desc: "commands list",
-            category: "general",
+            category: "",
             react: "⏳",
             filename: __filename
         },
@@ -122,9 +122,9 @@ or contact support.**
 });
 //---------------------------------------------------------------------------
    Secktor.cmd({
-            pattern: "list",
+            pattern: "allcmd",
             desc: "list menu",
-            category: "general", 
+            category: "info", 
             react:"🧾"
         },
         async(Void, citel) => {
