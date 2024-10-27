@@ -82,6 +82,7 @@ cmd({
         }
     )
     //---------------------------------------------------------------------------
+ 
 cmd({
   pattern: "time",
   desc: "Get the current time in a specified location.",
@@ -103,10 +104,10 @@ cmd({
     }
     await citel.reply(`
 ╭─────── Time Check! ⏱️ ───────╮
-│                               
-│ ⏱️ Your Local Time: ${formattedTime} 
-│ ${location} Time: ${targetTime} 
-│                               
+│                               │
+│ ⏱️ Your Local Time: ${formattedTime} │
+│ ${location} Time: ${targetTime} │
+│                               │
 │ **Stay in sync with the world's clocks! **│
 ╰─────── Time Travel Now? ⏳ ───────╯
     `);
@@ -114,12 +115,13 @@ cmd({
     console.error(error);
     await citel.reply(`
 ⚠️ **Oops! Time travel error!** ⏳
-│                                       
-│ ${error.message}                       
-│ Please check your input and try again. 
+│                                       │
+│ ${error.message}                       │
+│ Please check your input and try again. │
 ╰───────────────────────────────────────╯
-    }
-) 
+    `);
+  }
+});
 //---------------------------------------------------------------------------
    cmd({
             pattern: "list",
