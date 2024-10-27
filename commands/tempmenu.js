@@ -21,7 +21,7 @@ const Secktor = require('../lib/commands')
     //---------------------------------------------------------------------------
 Secktor.cmd({
             pattern: "help",
-            alias: ["menu"],
+            alias: ["menu2"],
             desc: "Help list",
             category: "general",
             react: "✨",
@@ -93,7 +93,7 @@ Secktor.cmd({
     )
     //---------------------------------------------------------------------------
 Secktor.cmd({
-            pattern: "list",
+            pattern: "list2",
             desc: "list menu",
             category: "general"
         },
@@ -125,7 +125,7 @@ for (let i = 0; i < commands.length; i++)
     )
     //---------------------------------------------------------------------------
 Secktor.cmd({
-        pattern: "owner",
+        pattern: "owner2",
         desc: "To find owner number",
         category: "general",
         react: "💜",
@@ -162,7 +162,7 @@ Secktor.cmd({
 )
 
 Secktor.cmd({
-    pattern: "file",
+    pattern: "file2",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
     react: "✨",
