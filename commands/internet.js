@@ -64,7 +64,7 @@ cmd({
   let textt = "*Result*\n\n From " + text + "\n\n───────────────────\n";
   let no = 1;
   for (let i of search.all) {
-    textt += `📂Title:${i.title}\n Type : ${i.type}\n⌛Duration : ${i.timestamp}\nUrl : ${i.url}\n\n──────────────\n\n`;
+    textt += `🎈Title:${i.title}\n 🪄Format : ${i.type}\n⌛Duration : ${i.timestamp}\n🔗Url : ${i.url}\n\n──────────────\n\n`;
   }
   return Void.sendMessage(citel.chat, {
     image: {
@@ -138,7 +138,7 @@ cmd({
   desc: "Downloads apks",
   category: "Tools",
   filename: __filename,
-  use: '<add sticker url.>'
+  use: '<download apks.>'
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply("*Give me App Name*");
