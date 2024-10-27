@@ -9,7 +9,7 @@ const readmore = long.repeat(4001)
 const Secktor = require('../lib/commands')
 
     //---------------------------------------------------------------------------
-Secktor.cmd({
+cmd({
             pattern: "help",
             alias: ["menu"],
             desc: "commands list",
@@ -82,7 +82,46 @@ Secktor.cmd({
         }
     )
     //---------------------------------------------------------------------------
-Secktor.cmd({
+cmd({
+  pattern: "time",
+  desc: "Get the current time in a specified location.",
+  react: "⏱",
+  catergory: "info"
+}, async (Void, citel, text) => {
+  try {
+    let location = text.slice(5).trim();
+    if (!location) {
+      throw new Error("Please specify a location after the command.");
+    }
+    moment.tz.setDefault("Africa/Lagos");
+    let formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a z');
+    let targetTime;
+    try {
+      targetTime = moment.tz(location).format('MMMM Do YYYY, h:mm:ss a z');
+    } catch (timezoneError) {
+      throw new Error(`Invalid timezone: ${location}`);
+    }
+    await citel.reply(`
+╭─────── Time Check! ⏱️ ───────╮
+│                               │
+│ ⏱️ Your Local Time: ${formattedTime} │
+│ ${location} Time: ${targetTime} │
+│                               │
+│ **Stay in sync with the world's clocks! **│
+╰─────── Time Travel Now? ⏳ ───────╯
+    `);
+  } catch (error) {
+    console.error(error);
+    await citel.reply(`
+⚠️ **Oops! Time travel error!** ⏳
+│                                       │
+│ ${error.message}                       │
+│ Please check your input and try again. │
+╰───────────────────────────────────────╯
+    }
+) 
+//---------------------------------------------------------------------------
+   cmd({
             pattern: "list",
             desc: "list menu",
             category: "general"
@@ -114,7 +153,7 @@ for (let i = 0; i < commands.length; i++)
         }
     )
     //---------------------------------------------------------------------------
-Secktor.cmd({
+cmd({
         pattern: "owner",
         desc: "To find owner number",
         category: "general",
@@ -151,7 +190,7 @@ Secktor.cmd({
     }
 )
 
-Secktor.cmd({
+cmd({
     pattern: "file",
     desc: "to get extact name where that command is in repo.\nSo user can edit that.",
     category: "general",
