@@ -56,7 +56,12 @@ Secktor.cmd({
     });
     moment.tz.setDefault("Asia/KOLKATA").locale('id');
     let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》───⊷\n";
-    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │  :- " + _0x22e548.pushName + "\n│ │  ᴄʀᴇᴀᴛᴏʀ:-xᴄᴇʟsᴀᴍᴀ\n│ │  ᴘʀᴇғɪx:- [ " + prefix + " ]\n│ │  ᴏᴡɴᴇʀ:- " + Config.ownername + "\n│ │  ᴜᴘᴛɪᴍᴇ:- " + runtime(process.uptime()) + "\n│ │ , ᴍᴇᴍᴏʀʏ:- " + formatp(os.totalmem() - os.freemem()) + '/' + 
+    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │ 
+ᴅᴇᴠᴇʟᴏᴘᴇʀ " + _0x22e548.pushName + "\n│ │  \n│ │ 
+ᴘʀᴇғɪx:- [ " + prefix + " ]\n│ │  
+ᴏᴡɴᴇʀ:- " + Config.ownername + "\n│ │  
+ᴜᴘᴛɪᴍᴇ:- " + runtime(process.uptime()) + "\n│ │  
+ᴍᴇᴍᴏʀʏ:- " + formatp(os.totalmem() - os.freemem()) + '/' + 
 formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
     for (const _0x32ef0c in _0x185d93) {
       _0x2ce686 += "╭────✪ *" + tiny(_0x32ef0c) + "* \n";
@@ -143,6 +148,44 @@ Secktor.cmd({
   return await _0x2d6a3a.sendMessage(_0x5ad307.chat, _0x51aa36, {
     'quoted': _0x5ad307
   });
+Secktor.cmd({
+  pattern: "time",
+  desc: "Get the current time in a specified location.",
+  react: "⏱",
+  catergory: "info"
+}, async (Void, citel, text) => {
+  try {
+    let location = text.slice(5).trim();
+    if (!location) {
+      throw new Error("Please specify a location after the command.");
+    }
+    moment.tz.setDefault("Africa/Lagos");
+    let formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a z');
+    let targetTime;
+    try {
+      targetTime = moment.tz(location).format('MMMM Do YYYY, h:mm:ss a z');
+    } catch (timezoneError) {
+      throw new Error(`Invalid timezone: ${location}`);
+    }
+    await citel.reply(`
+╭─────── Time Check! ⏱️ ───✦
+│                               
+│ ⏱️ Your Local Time: ${formattedTime} 
+│ ${location} Time: ${targetTime} 
+│                               
+╰──────────────✧
+  `);
+  } catch (error) {
+    console.error(error);
+    await citel.reply(`
+⚠️ **Oops! Time travel error!** ⏳
+│                                       │
+│ ${error.message}                       │
+│ Please check your input and try again. │
+╰───────────────────────────────────────╯
+    `);
+  }
+});
 });
 Secktor.cmd({
   'pattern': "file",
