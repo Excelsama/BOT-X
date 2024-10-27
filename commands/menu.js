@@ -17,7 +17,7 @@ Secktor.cmd({
   'alias': ["menu"],
   'desc': "Help list",
   'category': "general",
-  'react': '⭐',
+  'react': '⏳',
   'filename': __filename
 }, async (_0x41fa70, _0x22e548, _0x44e062) => {
   const {
@@ -55,8 +55,8 @@ Secktor.cmd({
       }
     });
     moment.tz.setDefault("Asia/KOLKATA").locale('id');
-    let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》─────⊷\n";
-    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │  👤 𝐔𝐬𝐞𝐫:- " + _0x22e548.pushName + "\n│ │  𝐂𝐫𝐞𝐚𝐭𝐨𝐫:- 𝐄𝐗𝐂𝐄𝐋\n│ │  𝐌𝐲  𝐏𝐫𝐞𝐟𝐢𝐱:- [ " + prefix + " ]\n│ │  𝐎𝐰𝐧𝐞𝐫:- " + Config.ownername + "\n│ │  ⏰𝐔𝐩𝐭𝐢𝐦𝐞:- " + runtime(process.uptime()) + "\n│ │ , 📡𝐌𝐞𝐦𝐨𝐫𝐲:- " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
+    let _0x2ce686 = "╭────《 " + fancytext(Config.ownername.split(" ")[0x0], 0x3a) + " 》───⊷\n";
+    _0x2ce686 += '```' + ("│ ╭──────────────◆\n│ │  :- " + _0x22e548.pushName + "\n│ │  𝐂𝐫𝐞𝐚𝐭𝐨𝐫:- 𝐄𝐗𝐂𝐄𝐋\n│ │  𝐌𝐲  𝐏𝐫𝐞𝐟𝐢𝐱:- [ " + prefix + " ]\n│ │  𝐎𝐰𝐧𝐞𝐫:- " + Config.ownername + "\n│ │  ⏰𝐔𝐩𝐭𝐢𝐦𝐞:- " + runtime(process.uptime()) + "\n│ │ , 📡𝐌𝐞𝐦𝐨𝐫𝐲:- " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ╰──────────────◆\n╰───────────────⊷\n\n") + "```";
     for (const _0x32ef0c in _0x185d93) {
       _0x2ce686 += "╭────⭐ *" + tiny(_0x32ef0c) + "* ⭐\n";
       if (_0x44e062.toLowerCase() == _0x32ef0c.toLowerCase()) {
