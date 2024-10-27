@@ -62,7 +62,7 @@ Secktor.cmd({
     const _0x41ac33 = moment.tz("Africa/Lagos").format("DD/MM/YYYY");
     let _0x1c1341 = await sck1.countDocuments();
     let _0x2b4ec2 = "\n";
-    _0x2b4ec2 += "┏━━━━•❃〘 BӨƬ-X〙❃•━━━━━┓\n│ User: " + _0x2395f3.pushName + "\n│ ᴜɪ: " + tlang().title + "\n│ ᴘʀᴇғɪx: [ " + prefix + " ]\n│ ᴏᴡɴᴇʀ: " + Config.ownername + "\n│ ᴘʟᴜɢɪɴs: " + _0x4e5075.length + "\n│ ᴜsᴇʀs: " + _0x1c1341 + "\n│ Uptime: " + runtime(process.uptime()) + "\n│ ᴍᴇᴍ: " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ᴛɪᴍᴇ: " + _0x410639 + "\n│ ᴅᴀᴛᴇ: " + _0x41ac33 + "\n╰─────────────╯\n\n";
+    _0x2b4ec2 += "┏━━━━•❃〘 BӨƬ-X〙❃•━━━┓\n│ User: " + _0x2395f3.pushName + "\n│ ᴜɪ: " + tlang().title + "\n│ ᴘʀᴇғɪx: [ " + prefix + " ]\n│ ᴏᴡɴᴇʀ: " + Config.ownername + "\n│ ᴘʟᴜɢɪɴs: " + _0x4e5075.length + "\n│ ᴜsᴇʀs: " + _0x1c1341 + "\n│ Uptime: " + runtime(process.uptime()) + "\n│ ᴍᴇᴍ: " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n│ ᴛɪᴍᴇ: " + _0x410639 + "\n│ ᴅᴀᴛᴇ: " + _0x41ac33 + "\n╰─────────────╯\n\n";
     for (const _0x239ca1 in _0x3d2691) {
       _0x2b4ec2 += "┌── *" + tiny(_0x239ca1) + "* ──┐\n";
       for (const _0x37ca4d of _0x3d2691[_0x239ca1]) {
