@@ -1,4 +1,3 @@
-
 const os = require('os')
 const moment = require("moment-timezone")
 const fs = require("fs")
@@ -45,17 +44,17 @@ Secktor.cmd({
                 let total = await sck1.countDocuments()
                 let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⊷\n`
                 str +=
-                    '```' + `│ ╭──────────────◆
+                    '```' + `𖣎 ╭──────────────◆
 𖣎 │ USER:- ${citel.pushName}
 𖣎 │ UI:- ${tlang().title}
-𖣎 │ Prefix:- [ ${prefix} ]
-𖣎 │ Owner:- ${Config.ownername}
-𖣎 │ Plugins:- ${commands.length}
-𖣎 │ Users:- ${total}
-𖣎 │ Uptime:- ${runtime(process.uptime())}
-𖣎 │ Mem:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-𖣎 │ Time:- ${time}
-𖣎 │ Date:- ${date}
+𖣎 │ PREFIX:- [ ${prefix} ]
+𖣎 │ OWNER:- ${Config.ownername}
+𖣎 │ PLUGINS:- ${commands.length}
+𖣎 │ USERS:- ${total}
+𖣎 │ UPTIME:- ${runtime(process.uptime())}
+𖣎 │ MEM:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
+𖣎 │ TIME:- ${time}
+𖣎 │ DATE:- ${date}
 𖣎 ╰──────────────◆
 ╰───────────────⊷\n
 ` + '```'
@@ -64,11 +63,11 @@ Secktor.cmd({
                    str += `╭────❏ *${tiny(category)}* ❏\n` ;
                    if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────❏ *${tiny(category)}* ❏\n` ;      
                         for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                        str += `╰━━━━━━━━━━━━━──⊷\n`  ;
+                        str += `╰━━━━━━━━━━━━━──⪩\n`  ;
                         break ;
                    }
                    else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                         str += `╰━━━━━━━━━━━━━━──⊷\n`  ; 
+                         str += `╰━━━━━━━━━━━━━━──⪩\n`  ; 
                    }
 
                 }
@@ -103,21 +102,21 @@ Secktor.cmd({
       throw new Error(`Invalid timezone: ${location}`);
     }
     await citel.reply(`
-╭─────── Time Check! ⌚ ───────𖣐
-𖣎                               
-𖣎 ⏱️ Your Local Time: ${formattedTime} 
-𖣎 ${location} Time: ${targetTime} 
-𖣎
-╰─────────𖣐
-    `);
+Here's Your result 
+        Time in ${location}                      
+
+ ${location} Time: ${targetTime} 
+
+⏱️ Your Local Time: ${formattedTime} 
+   `);
   } catch (error) {
     console.error(error);
     await citel.reply(`
-⚠️ **Oops! Time travel error!** ⏳
-│                                       │
-│ ${error.message}                       │
-│ Please check your input and try again. │
-╰───────────────────────────────────────╯
+⚠️ **Oops! Error in your request try again
+or contact support.**
+                                      
+ ${error.message}                       
+ Please check your input and try again. 
     `);
   }
 });
@@ -125,7 +124,8 @@ Secktor.cmd({
    Secktor.cmd({
             pattern: "list",
             desc: "list menu",
-            category: "general"
+            category: "general", 
+            react:"🧾"
         },
         async(Void, citel) => {
             const { commands } = require('../lib');
@@ -156,8 +156,8 @@ for (let i = 0; i < commands.length; i++)
     //---------------------------------------------------------------------------
 Secktor.cmd({
         pattern: "owner",
-        desc: "To find owner number",
-        category: "general",
+        desc: "To acquire owner number",
+        category: "info",
         react: "👑",
         filename: __filename
     },
