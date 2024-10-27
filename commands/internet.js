@@ -28,7 +28,7 @@ cmd({
   desc: "text to speech.",
   category: "tools",
   filename: __filename,
-  use: '<Hii,this is BOT-X>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply('Please give me a text  to change into audio,mp3.');
@@ -55,7 +55,7 @@ cmd({
   category: "internet",
   filename: __filename,
   react:"🎥", 
-  use: '<findvideo text>'
+  
 }, async (Void, citel, text) => {
   let yts = require("secktor-pack");
   if (!text) {
@@ -82,7 +82,7 @@ cmd({
   desc: "Downloads video ",
   category: "internet",
   filename: __filename,
-  use: '<808-juice wrld >'
+  
 }, async (Void, citel, text) => {
   let yts = require("secktor-pack");
   let search = await yts(text);
@@ -139,7 +139,7 @@ cmd({
   desc: "Downloads apks",
   category: "Tools",
   filename: __filename,
-  use: '<download apks.>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply("*Give me App Name*");
@@ -205,7 +205,7 @@ cmd({
   desc: "Sends info about the query(of youtube video/audio).",
   category: "internet",
   filename: __filename,
-  use: '<faded-Alan walker.>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply(`Use ${command} Back in Black`);
@@ -242,7 +242,7 @@ cmd({
   desc: "Downloads ringtone.",
   category: "internet",
   filename: __filename,
-  use: '<ringtone name>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply(`Example: ${prefix}ringtone back in black`);
@@ -265,7 +265,7 @@ cmd({
   desc: "Downloads image from pinterest.",
   category: "internet",
   filename: __filename,
-  use: '<text|image name>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return reply("What picture are you looking for?") && Void.sendMessage(citel.chat, {
@@ -309,7 +309,7 @@ cmd({
   desc: "Downloads zip from Mediafire.",
   category: "tools",
   filename: __filename,
-  use: '<url of mediafire>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     return citel.reply(`Give link ${tlang().greet}`);
@@ -343,7 +343,7 @@ cmd({
   desc: "Downloads audio from youtube.",
   category: "internet",
   filename: __filename,
-  use: '<text>'
+  
 }, async (Void, citel, text) => {
   let yts = require("secktor-pack");
   let search = await yts(text);
@@ -399,7 +399,7 @@ cmd({
   desc: "Downloads video from youtube.",
   category: "internet",
   filename: __filename,
-  use: '<dlvid url>'
+  
 }, async (Void, citel, text) => {
   if (!text) {
     citel.reply(`❌Please provide me a url`);
@@ -463,7 +463,7 @@ cmd({
   pattern: "dlaudio",
   desc: "Downloads audio by yt link.",
   category: "downloader",
-  use: '<dlaudio url>'
+  
 }, async (Void, citel, text) => {
   if (text.length === 0) {
     reply(`❌ URL is empty! \nSend ${prefix}ytmp3 url`);
