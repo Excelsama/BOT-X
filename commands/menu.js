@@ -72,7 +72,7 @@ cmd({
                    }
 
                 }
-                str+= `*⭐️Type:* _${prefix}help cmd_ name to know more about specific command.\n*Eg:* _${prefix}help attp_\n*Made with ❤️ in Nodejs* `
+                str+= ` `
                 let buttonMessaged = {
                     image: { url: await botpic() },
                     caption: str
