@@ -24,7 +24,7 @@
     "chalk": "^4.1.2",
     "cheerio": "^1.0.0-rc.10",
     "child_process": "^1.0.2",
-    "crypto-js": "latest",
+    "crypto-js": "^4.1.1",
     "discord-mongoose-economy": "^1.2.0",
     "discord-xp": "^1.1.16",
     "dotenv": "^16.0.0",
