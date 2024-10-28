@@ -30,7 +30,7 @@
     "dotenv": "^16.0.0",
     "express": "^4.18.1",
     "fb-info-video": "^1.0.2",
-    "ffmpeg": "^0.0.4",
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "file-type": "^16.5.3",
     "fluent-ffmpeg": "^2.1.2",
     "form-data": "^4.0.0",
