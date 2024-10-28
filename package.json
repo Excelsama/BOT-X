@@ -53,7 +53,7 @@
     "openai": "4.25.0",
     "pastebin-js": "latest",
     "path": "^0.12.7",
-    "pm2": "^5.3.1",
+    "pm2": "^5.4.2",
     "request": "^2.88.2",
     "secktor-pack": "latest",
     "simple-git": "^3.16.1",
