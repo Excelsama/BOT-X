@@ -40,7 +40,7 @@
     "heroku-client": "3.1.0",
     "human-readable": "^0.2.1",
     "jimp": "^0.16.1",
-    "jsdom": "^16.4.0",
+    "jsdom": "^20.0.0",
     "koyeb-api-client": "latest",
     "mailist": "^1.0.3",
     "moment-timezone": "^0.5.34",
