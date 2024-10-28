@@ -28,7 +28,7 @@
     "discord-mongoose-economy": "^1.2.0",
     "discord-xp": "^1.1.16",
     "dotenv": "^16.0.3",
-    "express": "^4.18.1",
+    "express": "latest",
     "fb-info-video": "^1.0.2",
     "@ffmpeg-installer/ffmpeg": "^1.1.0",
     "file-type": "^16.5.3",
