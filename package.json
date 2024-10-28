@@ -18,7 +18,7 @@
     "@shineiichijo/marika": "^2.0.3",
     "anime-character-random": "latest",
     "async-g-i-s": "^1.4.0",
-    "awesome-phonenumber": "^3.3.0",
+    "awesome-phonenumber": "^6.4.0",
     "axios": "^0.24.0",
     "cache-manager": "^5.3.0",
     "chalk": "^4.1.2",
