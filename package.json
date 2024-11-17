@@ -69,14 +69,14 @@
   },
   "directories": {
     "lib": "lib",
-    "plugins": "plugins"
+    "commands": "commands"
   },
   "devDependencies": {
     "pino": "^7.0.5"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Excelsama/BOT-X.git"
+    "url" "git+https://github.com/Excelsama/BOT-X.git"
   },
   "bugs": {
     "url": "https://github.com/Excelsama/BOT-X/issues"
