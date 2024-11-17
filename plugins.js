@@ -1,6 +1,6 @@
 const fs = require('fs');
 const path = require('path');
-const directoryPath = '../plugins';
+const directoryPath = '../commands';
 let jsFileCount = 0;
 
 fs.readdir(directoryPath, function (err, files) {
