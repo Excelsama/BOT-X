@@ -69,7 +69,7 @@
   },
   "directories": {
     "lib": "lib",
-    "commands": "commands"
+    "plugins": "plugins"
   },
   "devDependencies": {
     "pino": "^7.0.5"
