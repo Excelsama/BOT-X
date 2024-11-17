@@ -1,63 +1,78 @@
-const fs = require('fs-extra');
-if (fs.existsSync('config.env')) require('dotenv').config({ path: __dirname + '/config.env' });
-
+ 
+const fs = require("fs-extra");
+if (fs.existsSync(".env"))
+  require("dotenv").config({ path: __dirname + "/.env" });
 //═══════[Required Variables]════════\\
-global.owner = process.env.OWNER_NUMBER || '2347045035241';  
+global.audio = "www.youtube.com";
+global.video = "www.youtube.com";
+global.port = process.env.PORT;
+global.appUrl = process.env.APP_URL || "";
+global.email = "ms.excelamadi@yahoo.com";
+global.location = "Rivers,Nigeria";
 global.mongodb = process.env.MONGODB_URI || "mongodb+srv://Xcelsama:Xcel@xcelsama.qpklf.mongodb.net/?retryWrites=true&w=majority&appName=Xcelsama";
-global.port = process.env.PORT || 5000;
-global.email = 'ms.excel.amadi@gmail.com';
-global.github = 'https://github.com/Excelsama/BOT-X';
-global.location = 'Rivers Nigeria';
-global.gurl = 'https://instagram.com/xcel_sama/'; 
+global.allowJids = process.env.ALLOW_JID || "true";
+global.blockJids = process.env.BLOCK_JID || "null";
+global.DATABASE_URL = process.env.DATABASE_URL || "";
+global.timezone = process.env.TZ || process.env.TIME_ZONE || "Africa/Lagos";
+global.github = process.env.GITHUB || "https://github.com/Excelsama/BOT-X";
+global.gurl = process.env.GURL || "https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m";
+global.website = process.env.GURL || " https://whatsapp.com/channel/0029Va9wmuz8F2pGIURwmo0m";
+global.THUMB_IMAGE = process.env.THUMB_IMAGE || process.env.IMAGE || "https://i.ibb.co/jTJDVYj/Leonardo-Phoenix-A-vibrant-animestyle-illustration-of-a-young-2.jpg";
+global.devs = "2347045035241";
 global.sudo = process.env.SUDO || "2347045035241";
-global.devs = '2347045035241';
-global.website = 'https://github.com/Excelsama/BOT-X';
-global.THUMB_IMAGE = process.env.THUMB_IMAGE || 'https://telegra.ph/file/3f3ae4aace2d012c11509.jpg';
+global.owner = process.env.OWNER_NUMBER || "2347045035241";
+global.style = process.env.STYLE || "3";
+global.gdbye = process.env.GOODBYE || "true";
+global.wlcm = process.env.WELCOME || "true";
+global.warncount = process.env.WARN_COUNT || 3;
+global.disablepm = process.env.DISABLE_PM || "false";
+global.disablegroup = process.env.DISABLE_GROUPS || "false",
+global.MsgsInLog = process.env.MSGS_IN_LOG || "false";
+global.userImages = process.env.USER_IMAGES || "https://i.imgur.com/zdD9xsf.mp4";
+global.waPresence = process.env.WAPRESENCE || "available";
+global.readcmds = process.env.READ_COMMAND || "false";
+global.readmessage = process.env.READ_MESSAGE || "false";
+global.readmessagefrom = process.env.READ_MESSAGE_FROM || "";
+global.read_status = process.env.AUTO_READ_STATUS || "true";
+global.save_status = process.env.AUTO_SAVE_STATUS || "false";
+global.save_status_from = process.env.SAVE_STATUS_FROM || "";
+global.read_status_from = process.env.READ_STATUS_FROM || "";
 
+global.api_smd = "https://api-smd-1.vercel.app";
+global.scan = "https://nikkapair.onrender.com/pair";
+
+global.SESSION_ID =
+  process.env.SESSION_ID ||
+  " " // session id here
 module.exports = {
-  sessionName: process.env.SESSION_ID || "",  // Put Your Session ID Here
-  author: process.env.PACK_AUTHER || 'xcelsama',
-  packname: process.env.PACK_NAME || 'BOT-X',
-
+  menu: process.env.MENU || "2",
+  HANDLERS: process.env.PREFIX || ",",
+  BRANCH: process.env.BRANCH || "main",
+  VERSION: process.env.VERSION || "1.0.0",
+  caption: process.env.CAPTION || "`BOT-X ™`",
+  author: process.env.PACK_AUTHER || "Xcelsama",
+  packname: process.env.PACK_NAME || "BOT-X",
   botname: process.env.BOT_NAME || "BOT-X",
-  ownername: process.env.OWNER_NAME || 'Excel',
-
-  auto_read_status: process.env.AUTO_READ_STATUS || true,
-  autoreaction: process.env.AUTO_REACTION || false,
-  antibadword: process.env.ANTI_BAD_WORD || 'nbwoed',
-  alwaysonline: process.env.ALWAYS_ONLINE || false,
-  antifake: process.env.FAKE_COUNTRY_CODE || '234',
-  readmessage: process.env.READ_MESSAGE || false,
-  auto_status_saver: process.env.AUTO_STATUS_SAVER || false,
-  HANDLERS: process.env.PREFIX || '*',
-  warncount: process.env.WARN_COUNT || 3,
-  disablepm: process.env.DISABLE_PM || false,
-  levelupmessage: process.env.LEVEL_UP_MESSAGE || false,
-  antilink: process.env.ANTILINK_VALUES || 'chat.whatsapp.com',
-  antilinkaction: process.env.ANTILINK_ACTION || 'remove',
-
-  BRANCH: 'main',
-  ALIVE_MESSAGE: process.env.ALIVE_MESSAGE || '',
- autobio: process.env.AUTO_BIO || false,
- caption: process.env.CAPTION || "",
- OPENAI_API_KEY: process.env.OPENAI_API_KEY || false,
- heroku: process.env.heroku || false,
- HEROKU: {
- HEROKU: process.env.HEROKU || false,
- API_KEY: process.env.HEROKU_API_KEY || '',
- APP_NAME: process.env.HEROKU_APP_NAME || ''
-  },
-
-  VERSION: process.env.VERSION || 'v2.0',
-  LANG: process.env.UI|| 'BOT-X',
-  WORKTYPE: process.env.WORKTYPE || 'public'
+  ownername: process.env.OWNER_NAME || "Xcelsama",
+  errorChat: process.env.ERROR_CHAT || "",
+  KOYEB_API: process.env.KOYEB_API || "false",
+  REMOVE_BG_KEY: process.env.REMOVE_BG_KEY || "",
+  OPENAI_API_KEY: process.env.OPENAI_API_KEY || "",
+  HEROKU_API_KEY: process.env.HEROKU_API_KEY || "",
+  HEROKU_APP_NAME: process.env.HEROKU_APP_NAME || "",
+  antilink_values: process.env.ANTILINK_VALUES || "all",
+  HEROKU: process.env.HEROKU_APP_NAME && process.env.HEROKU_API_KEY,
+  aitts_Voice_Id: process.env.AITTS_ID || "37",
+  ELEVENLAB_API_KEY: process.env.ELEVENLAB_API_KEY || "",
+  WORKTYPE: process.env.WORKTYPE || process.env.MODE || "private",
+  LANG: (process.env.UI|| "BOT-X.UI").toUpperCase(),
 };
-
-// Watch for file changes and reload
+global.rank = "updated";
+global.isMongodb = true;
 let file = require.resolve(__filename);
 fs.watchFile(file, () => {
   fs.unwatchFile(file);
-  console.log(`Updated '${__filename}'`);
+  console.log(`Update'${__filename}'`);
   delete require.cache[file];
   require(file);
 });
