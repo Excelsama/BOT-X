@@ -13,4 +13,4 @@ RUN npm install
 # Add additional Steps To Run...
 EXPOSE 3000
 CMD ["npm","start" ]
- 
+# IF YOU ARE MODIFYING THIS BOT DONT CHANGE THIS  RUN rm -rf /root/STAR-KING0/node_modules
