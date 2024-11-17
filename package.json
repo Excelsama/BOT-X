@@ -76,7 +76,7 @@
   },
   "repository": {
     "type": "git",
-    "url" "git+https://github.com/Excelsama/BOT-X.git"
+    "url": "git+https://github.com/Excelsama/BOT-X.git"
   },
   "bugs": {
     "url": "https://github.com/Excelsama/BOT-X/issues"
