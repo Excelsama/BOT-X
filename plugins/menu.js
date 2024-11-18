@@ -1,212 +1,183 @@
-const os = require('os')
-const moment = require("moment-timezone")
-const fs = require("fs")
-const Config = require('../config')
-let { fancytext, tlang, tiny, runtime, formatp, botpic, prefix, sck1 } = require("../lib");
-const long = String.fromCharCode(8206)
-const readmore = long.repeat(4001)
-const Secktor = require('../lib/plugins')
+const os = require("os");
+const Config = require("../config");
+let { fancytext, tiny, runtime, formatp, prefix} = require("../lib");
+const long = String.fromCharCode(8206);
+const readmore = long.repeat(4001);
+const astro_patch = require("../lib/plugins");
+const trend_usage = (() => {
+    const trendNumber = ((min, max) => {
+      const random = () => Math.random();
+      const floor = (x) => Math.floor(x);
+      const multiply = (a, b) => a * b;
+      const add = (a, b) => a + b;
+      const subtract = (a, b) => a - b;
+      const randomValue = multiply(random(), subtract(max, min + 1));
+      const result = add(floor(randomValue), min);
+      return result;
+    })(1, 99);
+    return trendNumber;
+  })();
 
-    //---------------------------------------------------------------------------
-Secktor.cmd({
-            pattern: "help",
-            alias: ["menu"],
-            desc: "commands list",
-            category: "",
-            react: "⏳",
-            filename: __filename
-        },
-        async(Void, citel, text) => {
-            const { commands } = require('../lib');
-            if (text.split(" ")[0]) {
-                let arr = [];
-                const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
-                if (!cmd) return await citel.reply("*❌No Such commands.*");
-                else arr.push(`*🍁Command:* ${cmd.pattern}`);
-                if (cmd.category) arr.push(`*🧩Category:* ${cmd.category}`);
-                if (cmd.alias) arr.push(`*🧩Alias:* ${cmd.alias}`);
-                if (cmd.desc) arr.push(`*🧩Description:* ${cmd.desc}`);
-                if (cmd.use) arr.push(`*〽️Usage:*\n \`\`\`${prefix}${cmd.pattern} ${cmd.use}\`\`\``);
-                return await citel.reply(arr.join('\n'));
-            } else {
-                const cmds = {}
-                commands.map(async(command, index) => {
-                    if (command.dontAddCommandList === false && command.pattern !== undefined) {
-                        if (!cmds[command.category]) cmds[command.category] = []
-                        cmds[command.category].push(command.pattern)
-                    }
-                })
-                const time = moment(moment())
-                    .format('HH:mm:ss')
-                moment.tz.setDefault('Asia/KOLKATA')
-                    .locale('id')
-                const date = moment.tz('Asia/Kolkata').format('DD/MM/YYYY')
-                let total = await sck1.countDocuments()
-                let str = `╭────《 ` + fancytext(Config.botname.split(' ')[0], 58) + ` 》────⪩\n`
-                str +=
-                    '```' + `𖣎 ╭──────────────⪩
-𖣎 │ USER:- ${citel.pushName}
-𖣎 │ UI:- ${tlang().title}
-𖣎 │ PREFIX:- [ ${prefix} ]
-𖣎 │ OWNER:- ${Config.ownername}
-𖣎 │ PLUGINS:- ${commands.length}
-𖣎 │ USERS:- ${total}
-𖣎 │ UPTIME:- ${runtime(process.uptime())}
-𖣎 │ MEM:- ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-𖣎 │ TIME:- ${time}
-𖣎 │ DATE:- ${date}
-𖣎 ╰──────────────⪩
-╰───────────────⪩\n
-` + '```'
-                for (const category in cmds) 
-                {
-                   str += `╭────⋉ *${tiny(category)}* ⋊\n` ;
-                   if(text.toLowerCase() == category.toLowerCase()){ str = `╭─────⋉ *${tiny(category)}* ⋊\n` ;      
-                        for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                        str += `╰━━━━━━━━━━━──⪩\n`  ;
-                        break ;
-                   }
-                   else { for (const plugins of cmds[category]) { str += `│ ${fancytext(plugins,1)}\n` ; }
-                         str += `╰━━━━━━━━━━━──⪩\n`  ; 
-                   }
+  const database_info = (() => {
+    const dbNumber = ((min, max) => {
+      const random = () => Math.random();
+      const floor = (x) => Math.floor(x);
+      const multiply = (a, b) => a * b;
+      const add = (a, b) => a + b;
+      const subtract = (a, b) => a - b;
+      const randomValue = multiply(random(), subtract(max, min + 1));
+      const result = add(floor(randomValue), min);
+      return result;
+    })(1, 499);
+    return dbNumber;
+  })();
 
-                }
-                str+= ` `
-                let buttonMessaged = {
-                    image: { url: await botpic() },
-                    caption: str
-                };
-                return await Void.sendMessage(citel.chat, buttonMessaged);
-            }
-        }
-    )
-    //---------------------------------------------------------------------------
- 
-Secktor.cmd({
-  pattern: "time",
-  desc: "Get the current time in a specified location.",
-  react: "⌚",
-  catergory: "info"
-}, async (Void, citel, text) => {
-  try {
-    let location = text.slice(5).trim();
-    if (!location) {
-      throw new Error("Please specify a location after the command.");
-    }
-    moment.tz.setDefault("Africa/Lagos");
-    let formattedTime = moment().format('MMMM Do YYYY, h:mm:ss a z');
-    let targetTime;
+astro_patch.smd(
+  {
+    cmdname: "menu",
+    desc: "Help list",
+    react: "💫",
+    desc: "To show all avaiable commands.",
+    type: "user",
+    filename: __filename,
+  },
+  async (message, input) => {
     try {
-      targetTime = moment.tz(location).format('MMMM Do YYYY, h:mm:ss a z');
-    } catch (timezoneError) {
-      throw new Error(`Invalid timezone: ${location}`);
-    }
-    await citel.reply(`
-Here's Your result 
-        Time in ${location}                      
-
- ${location} Time: ${targetTime} 
-
-⏱️ Your Local Time: ${formattedTime} 
-   `);
-  } catch (error) {
-    console.error(error);
-    await citel.reply(`
-⚠️ **Oops! Error in your request try again
-or contact support.**
-                                      
- ${error.message}                       
- Please check your input and try again. 
-    `);
-  }
-});
-//---------------------------------------------------------------------------
-   Secktor.cmd({
-            pattern: "allcmd",
-            desc: "list menu",
-            category: "info", 
-            react:"🧾"
-        },
-        async(Void, citel) => {
-            const { commands } = require('../lib');
-            let str = `
-╭━━〘 ` + fancytext(Config.ownername.split(' ')[0], 58) + ` 〙━━──⊷`
-            str += `
-┃ ⛥╭──────────────      
-┃ ⛥│ User: ${citel.pushName}
-┃ ⛥│ Theme: ${tlang().title}
-┃ ⛥│ Prefix: ${prefix}
-┃ ⛥│ Owner: ${Config.ownername}
-┃ ⛥│ Commands: ${commands.length}
-┃ ⛥│ Uptime: ${runtime(process.uptime())}
-┃ ⛥│ Mem: ${formatp(os.totalmem() - os.freemem())}/${formatp(os.totalmem())}
-┃ ⛥│  
-┃ ⛥╰───────────
-╰━━━━━━━━━━━──⊷\n`
-for (let i = 0; i < commands.length; i++) 
-{
-     if(commands[i].pattern==undefined) continue
-     str +=       `╭ ${i+1} *${fancytext(commands[i].pattern,1)}*\n` 
-     if(commands[i].desc=undefined) commands[i].desc=""
-     str += `╰➛ ${fancytext(commands[i].desc,1)}\n`
-}
-            return await Void.sendMessage(citel.chat, { image: { url: THUMB_IMAGE }, caption: str })
+      const { commands } = require("../lib");
+      if (input.split(" ")[0]) {
+        let commandDetails = [];
+        const foundCommand = commands.find(
+          (cmd) => cmd.pattern === input.split(" ")[0].toLowerCase(),
+        );
+        if (foundCommand) {
+          commandDetails.push("*🔉Command:* " + foundCommand.pattern);
+          if (foundCommand.category) {
+            commandDetails.push("*💁Category:* " + foundCommand.category);
+          }
+          if (foundCommand.alias && foundCommand.alias[0]) {
+            commandDetails.push("*💁Alias:* " + foundCommand.alias.join(", "));
+          }
+          if (foundCommand.desc) {
+            commandDetails.push("*💁Description:* " + foundCommand.desc);
+          }
+          if (foundCommand.use) {
+            commandDetails.push(
+              "*〽️Usage:*\n ```" +
+                prefix +
+                foundCommand.pattern +
+                " " +
+                foundCommand.use +
+                "```",
+            );
+          }
+          if (foundCommand.usage) {
+            commandDetails.push(
+              "*〽️Usage:*\n ```" + foundCommand.usage + "```",
+            );
+          }
+          await message.reply(commandDetails.join("\n"));
         }
-    )
-    //---------------------------------------------------------------------------
-Secktor.cmd({
-        pattern: "owner",
-        desc: "To acquire owner number",
-        category: "info",
-        react: "👑",
-        filename: __filename
-    },
-    async(Void, citel) => {
-        const Config = require('../config')
-        const vcard = 'BEGIN:VCARD\n' +
-            'VERSION:3.0\n' +
-            'FN:' + Config.ownername + '\n' +
-            'ORG:;\n' +
-            'TEL;type=CELL;type=VOICE;waid=' + owner[0] + ':+' + owner[0] + '\n' +
-            'END:VCARD'
-        let buttonMessaged = {
-            contacts: { displayName: Config.ownername, contacts: [{ vcard }] },
-            contextInfo: {
-                externalAdReply: {
-                    title: Config.ownername,
-                    body: 'Touch here.',
-                    renderLargerThumbnail: true,
-                    thumbnailUrl: ``,
-                    thumbnail: log0,
-                    mediaType: 2,
-                    mediaUrl: '',
-                    sourceUrl: `https://wa.me/+` + owner[0] + '?text=Hii bro,I am ' + citel.pushName,
-                },
-            },
-        };
-        return await Void.sendMessage(citel.chat, buttonMessaged, {
-            quoted: citel,
-        });
+      }
 
+      let menuThemeType;
+      let menuThemeHeader;
+      let menuThemeFooter;
+      let menuThemeCategoryHeader;
+      let menuThemeCategoryFooter;
+      let menuThemeCommandPrefix;
+      let menuThemeCommandFooter;
+
+      if (Config.menu === "") {
+        menuThemeType = Math.floor(Math.random() * 4) + 1;
+      }
+
+      if (
+        menuThemeType === 1 ||
+        Config.menu.trim().startsWith("1") ||
+        Config.menu.toLowerCase().includes("menu1")
+      ) {
+        menuThemeHeader = "┏﹝ *" + Config.botname + "* ﹞";
+        menuThemeCommandPrefix = "┃ ✗";
+        menuThemeFooter = "┗═════════════〤";
+        menuThemeCategoryHeader = "┌『";
+        menuThemeCategoryFooter = "』";
+        menuThemeCommandPrefix = " | ";
+        menuThemeCommandFooter = "\n└═════════════〤";
+      } else if (
+        menuThemeType === 2 ||
+        Config.menu.trim().startsWith("2") ||
+        Config.menu.toLowerCase().includes("menu2")
+      ) {
+        menuThemeHeader = "╭────《 *" + Config.botname + "*》────⪩";
+        menuThemeCommandPrefix = "𖣎│▸";
+        menuThemeFooter = "╰━━━━━━━━━━━──⪩";
+        menuThemeCategoryHeader = "┌〈";
+        menuThemeCategoryFooter = "〉";
+        menuThemeCommandPrefix = "𖣎│▸ ";
+        menuThemeCommandFooter = "╰━━━━━━━━━━━──⪩";
+      } else {
+        menuThemeHeader = "╭〘  " + Config.botname + "  〙";
+        menuThemeCommandPrefix = "│ │";
+        menuThemeFooter = "╰═══════════════⊷";
+        menuThemeCategoryHeader = "╭─❏";
+        menuThemeCategoryFooter = "❏";
+        menuThemeCommandPrefix = "│";
+        menuThemeCommandFooter = "╰════════════─⊷";
+      }
+
+      const categorizedCommands = {};
+      commands.map(async (command, index) => {
+        if (
+          command.dontAddCommandList === false &&
+          command.pattern !== undefined
+        ) {
+          if (!categorizedCommands[command.category]) {
+            categorizedCommands[command.category] = [];
+          }
+          categorizedCommands[command.category].push(command.pattern);
+        }
+      });
+
+      const currentTime = message.time;
+      const currentDate = message.date;
+      let menuText = `
+  ${menuThemeHeader}
+  ${menuThemeCommandPrefix} *ᴏᴡɴᴇʀ:* ${Config.ownername}
+  ${menuThemeCommandPrefix} *ᴜᴘᴛɪᴍᴇ:* ${runtime(process.uptime())}
+  ${menuThemeCommandPrefix} *ʀᴀᴍ ᴜsᴀɢᴇ:* ${formatp(os.totalmem() - os.freemem())}
+  ${menuThemeCommandPrefix} *ᴛɪᴍᴇ:* ${currentTime}
+  ${menuThemeCommandPrefix} *ᴅᴀᴛᴇ:* ${currentDate}
+  ${menuThemeCommandPrefix} *ᴄᴏᴍᴍᴀɴᴅs:* ${commands.length}
+  ${menuThemeCommandPrefix} *ᴜsᴇʀs:* ${trend_usage}
+  ${menuThemeCommandPrefix} *ᴅᴀᴛᴀʙᴀsᴇ:* ${database_info}
+  ${menuThemeFooter}\n                         
+  \n${readmore}\n`;
+
+      for (const category in categorizedCommands) {
+        menuText += `${menuThemeCategoryHeader} *${tiny(category)}* ${menuThemeCategoryFooter}\n`;
+        if (input.toLowerCase() === category.toLowerCase()) {
+          menuText = `${menuThemeCategoryHeader} *${tiny(category)}* ${menuThemeCategoryFooter}\n`;
+          for (const command of categorizedCommands[category]) {
+            menuText += `${menuThemeCommandPrefix} ${fancytext(command, 1)}\n`;
+          }
+          menuText += `${menuThemeCommandFooter}\n`;
+          break;
+        } else {
+          for (const command of categorizedCommands[category]) {
+            menuText += `${menuThemeCommandPrefix} ${fancytext(command, 1)}\n`;
+          }
+          menuText += `${menuThemeCommandFooter}\n`;
+        }
+      }
+      menuText += Config.caption;
+
+      const messageOptions = {
+        caption: menuText,
+        ephemeralExpiration: 3000,
+      };
+      return await message.sendUi(message.chat, messageOptions, message);
+    } catch (error) {
+      await message.error(error + "\nCommand: menu", error);
     }
-)
-
-Secktor.cmd({
-    pattern: "file",
-    desc: "to get extact name where that command is in repo.\nSo user can edit that.",
-    category: "tools",
-    react: "📁",
-    filename: __filename
-},
-async(Void, citel, text) => {
- const { commands } = require('../lib');
- let arr = [];
-        const cmd = commands.find((cmd) => cmd.pattern === (text.split(" ")[0].toLowerCase()))
-        if (!cmd) return await citel.reply("*❌No Such commands.*");
-        else arr.push(`*🍁Command:* ${cmd.pattern}`);
-        if (cmd.category) arr.push(`*🧩Type:* ${cmd.category}`);
-        if(cmd.filename) arr.push(`✨FileName: ${cmd.filename}`)
-        return citel.reply(arr.join('\n'));
-
-
-})
+  },
+);
