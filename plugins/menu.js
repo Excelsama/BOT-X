@@ -1,3 +1,4 @@
+
 const os = require("os");
 const Config = require("../config");
 let { fancytext, tiny, runtime, formatp, prefix} = require("../lib");
@@ -34,7 +35,7 @@ const trend_usage = (() => {
 
 astro_patch.smd(
   {
-    cmdname: "menu",
+    cmdname: "xenu",
     desc: "Help list",
     react: "💫",
     desc: "To show all avaiable commands.",
@@ -110,11 +111,11 @@ astro_patch.smd(
       ) {
         menuThemeHeader = "╭────《 *" + Config.botname + "*》────⪩";
         menuThemeCommandPrefix = "𖣎│▸";
-        menuThemeFooter = "╰━━━━━━━━━━━──⪩";
+        menuThemeFooter = "╰──────────⪩";
         menuThemeCategoryHeader = "┌〈";
-        menuThemeCategoryFooter = "〉";
+        menuThemeCategoryFooter = "》──────⪩";
         menuThemeCommandPrefix = "𖣎│▸ ";
-        menuThemeCommandFooter = "╰━━━━━━━━━━━──⪩";
+        menuThemeCommandFooter = "╰───────────⪩";
       } else {
         menuThemeHeader = "╭〘  " + Config.botname + "  〙";
         menuThemeCommandPrefix = "│ │";
