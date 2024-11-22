@@ -35,7 +35,7 @@ const trend_usage = (() => {
 
 astro_patch.smd(
   {
-    cmdname: "xenu",
+    cmdname: "menu",
     desc: "Help list",
     react: "💫",
     desc: "To show all avaiable commands.",
