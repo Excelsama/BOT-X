@@ -27,7 +27,7 @@ Give BOT-X a star to show your appreciation and support 🌟 to the Developers.
 
 >BOT-X CAN BE DEPLOYED ON VARIOUS HOSTING PLATFORM JUST FORK & IMPORT THE FORKED REPO ADD ENVIRONMENT VARIABLES : SESSION_ID 
 
-## ```BOT-X CAN BE DEPLOYED ON```
+## ```💫DEPLOYMENT OPTIONS💫```
 
 ### ```PANEL OFC```
 
