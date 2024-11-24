@@ -10,7 +10,7 @@
 
 
 
- ## ⭐️`Star This Repo` ⭐️
+ # ⭐️`Star This Repo` ⭐️
 
 Give BOT-X a star to show your appreciation and support 🌟 to the Developers.
 
