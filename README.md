@@ -59,5 +59,5 @@ Add Environment Variables SESSION_ID & DATABASE_URL Then Click Deploy.
 
 <a href='https://dashboard.heroku.com/new?template=https://github.com/Excelsama/BOT-X' target="_blank"><img alt='DEPLOY' src='https://img.shields.io/badge/-DEPLOY-black?style=for-the-badge&logo=heroku&logoColor=white'/></a>
 
-## ```🤝 Acknowledgements
-THANKS TO EVERYONE  THAT MADE THIS PROJECT POSSIBLE```
+## 🤝 Acknowledgements
+THANKS TO EVERYONE  THAT MADE THIS PROJECT POSSIBLE
