@@ -5,7 +5,7 @@ smd({
             pattern: "time",
             desc: "Show Live Time Of Places",
             category: "tools",
-
+            react:"⏰", 
             filename: __filename,
             use: '<group link.>',
         },
