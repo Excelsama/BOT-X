@@ -30,9 +30,9 @@ let contextInfo = {...(await message.bot.contextInfo() )}
 let timenow =`
 ╭────────────────╮
 │    *${wish}* 
-│     *ᴛɪᴍᴇ* ⌚ ${time} 
-│     *Date* 🎲   ${date} 
-│   ${Config.caption}
+│ *⏰ᴛɪᴍᴇ* : ${time} 
+│ *📅ᴅᴀᴛᴇ*: ${date} 
+│ ${Config.caption}
 ╰────────────────╯
 `
 await message.send(timenow, {contextInfo : contextInfo },"asta",  q )
