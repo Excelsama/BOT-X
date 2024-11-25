@@ -28,12 +28,12 @@ const hrs = parseInt(hours, 10);
 const q =await message.bot.fakeMessage("order") 
 let contextInfo = {...(await message.bot.contextInfo() )}
 let timenow =`
-╭────────────────╮
+╭──────────────╮
 │    *${wish}* 
 │ *⏰ᴛɪᴍᴇ* : ${time} 
 │ *📅ᴅᴀᴛᴇ*: ${date} 
 │ ${Config.caption}
-╰────────────────╯
+╰──────────────╯
 `
 await message.send(timenow, {contextInfo : contextInfo },"asta",  q )
         }catch(e){ await message.error(`${e}\n\ncommand: live`,e,false)}
