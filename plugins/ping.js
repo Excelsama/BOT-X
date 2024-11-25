@@ -14,8 +14,9 @@ let {
  smd({
    cmdname: "ping",
    alias: ["ping", "statusbot"],
-   type: "misc",
-   info: "get randome poetry lines"
+   type: "bot", 
+   react:"📡", 
+   info: "get bot ping"
  }, async _0xdfc3ca => {
    try {
      const _0x37ca41 = process.memoryUsage();
