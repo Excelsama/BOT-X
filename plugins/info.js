@@ -27,7 +27,7 @@ smd(
  *BOT-X is Alive!*
 
 *Latency:* ${latency}ms
-*Speed: 20000 ms
+*Speed:* 20000 ms
 
 *=== |📡| BOT-X |📡| ===*
     `;
