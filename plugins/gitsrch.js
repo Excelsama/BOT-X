@@ -5,7 +5,7 @@ const axios = require('axios')
 const fetch = require('node-fetch')
 smd({
    pattern: "gitsrch",
-   category: "search",
+   category: "internet",
    desc: "Finds info about github users",
    filename: __filename,
 },
