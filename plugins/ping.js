@@ -13,10 +13,10 @@ let {
  const cheerio = require("cheerio");
  smd({
    cmdname: "ping",
-   alias: ["ping", "statusbot"],
+   alias: ["botserver", "botstatus"],
    type: "bot", 
    react:"📡", 
-   info: "get bot ping"
+   info: "get bot server stats"
  }, async _0xdfc3ca => {
    try {
      const _0x37ca41 = process.memoryUsage();
