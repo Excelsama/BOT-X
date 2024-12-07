@@ -12,34 +12,6 @@ function runtime(seconds) {
 
 smd(
   {
-    pattern: "alive",
-    react: "👋",
-    desc: "Check bot's status, speed, and latency",
-    category: "bot",
-    filename: __filename,
-  },
-  async (message, client) => {
-    const start = Date.now();
-    await new Promise((resolve) => setTimeout(resolve, 100));
-    const latency = Date.now() - start;
-
-    const finalMessage = `
- *BOT-X is Alive!*
-
-*Latency:* ${latency}ms
-*Speed:* 20000 ms
-
-*=== |📡| BOT-X |📡| ===*
-    `;
-
-    const imageUrl = "https://i.ibb.co/pzVmSrZ/Leonardo-Phoenix-create-a-sleek-modern-logo-set-against-a-deep-1.jpg";
-
-    await message.send(imageUrl, { caption: finalMessage }, "img", message);
-  }
-);
-
-smd(
-  {
     pattern: "about",
     react: "ℹ️",
     desc: "Displays important bot and owner information",
@@ -53,13 +25,12 @@ smd(
     const footer = "*BOT-X*";
 
     const finalMessage = `
-*BOT-X*
+ 
 
 *Owner:* ${owner}
 *Repository:* ${repoLink}
 *Bot Uptime:* ${uptime}
 
-*BOT-X*
 
 ${footer}
 `;
@@ -104,4 +75,3 @@ ${footer}
     await message.send(imageUrl, { caption: finalMessage }, "img", message);
   }
 );
-
