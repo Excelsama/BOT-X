@@ -12,9 +12,9 @@ let {
  const Config = require("../config");
  const cheerio = require("cheerio");
  smd({
-   cmdname: "ping",
-   alias: ["botserver", "botstatus"],
-   type: "bot", 
+   cmdname: "chkserver",
+   alias: ["server", "botstats"],
+   type: "info", 
    react:"📡", 
    info: "get bot server stats"
  }, async _0xdfc3ca => {
