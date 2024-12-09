@@ -217,3 +217,20 @@ for (let url of urlsArray) { try{ message.bot.sendFromUrl(message.chat ,url,"",m
 
 }catch(e){return await message.error(`${e}\n\n command: image`,e,`*_Uhh dear, Didn't get any results!_*`) }
  })
+//---------------------------------------------------------------------------
+smd({
+            pattern: "couplepp",
+            category: "Internet",
+            desc: "Sends two couples pics.",
+            filename: __filename,
+        },
+        async(message) => {
+          try{
+            let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
+            let random = anu[Math.floor(Math.random() * anu.length)]
+            message.reply(random.male, {caption: `*✦Couple Male profile✦*`}, "image")
+            message.reply(random.female, {caption: `*✦Couple Female profile✦*`}, "image")
+          }catch(e){return await message.error(`${e}\n\n command: couplepp`,e,`*_Uhh dear, Didn't get any results!_*`) }
+        }
+
+    ) 
