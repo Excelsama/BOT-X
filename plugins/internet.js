@@ -111,3 +111,109 @@ smd({
         }catch(e){return await message.error(`${e}\n\n command: weather`,e,`*_Please provide valid city name!_*`) }
         }
     )
+
+smd({
+            pattern: "image",
+            alias: ["img" , "pic","i"],
+            category: "internet",
+            desc: "Searches Image on Google",
+            use: '<text>',
+            filename: __filename,
+        },
+        async(message, match) => {
+try{
+  let text = match ? match : message.reply_text;
+   if (!text) return message.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
+
+   let name1 = text.split("|")[0] || text
+   let name2 = text.split("|")[1] || `5`
+
+
+    let nn = parseInt(name2) || 5
+    let Group = await groupdb.findOne({ id: message.chat })
+    let safe = Group.nsfw == "true" ? "off" : "on"
+try{
+    let n = await gis(name1, { query: { safe: safe },
+        userAgent:  'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/116.0.0.0 Safari/537.36'
+      },)
+console.log("images results : " , n)
+
+    if(n && n[0]){
+    nn = n && n.length > nn ? nn : n.length 
+   message.reply(`*_Sending images of '${name1}' in chat!_*`)
+    for (let i = 0; i < nn; i++) {
+        try{
+        let random = Math.floor(Math.random() * n.length)
+        message.bot.sendFromUrl(message.jid ,n[random].url,"",message,{},"image" )   
+        n.splice(random, 1);
+    }catch {}
+    }
+    return ;
+}
+
+
+}catch(e){console.log("ERROR IN SYNC G>I>S IMAGE PACKAGE\n\t", e)}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   let buttonMessage = {}
+
+
+    let urlsArray = [];
+    const params = {
+        q: name1, 
+        tbm: "isch",
+        hl: "en",
+        gl: "in",
+        ijn: "0", 
+    };
+    const headers = {
+      "User-Agent":
+          "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.5060.114 Safari/537.36",
+      "Accept-Encoding": "application/json",
+  };
+
+    const res = await axios.get("https://www.google.com/search", { headers: headers, params: params });
+    let body = res.data;
+    body = body.slice(body.lastIndexOf("AF_initDataCallback"));
+    body = body.slice(body.indexOf("["));
+    body = body.slice(0, body.indexOf("</script>")-1);
+    body = body.slice(0, body.lastIndexOf(","));
+
+    const img = JSON.parse(body);
+
+    const imgObjects = img[56][1][0][0][1][0];
+
+    for (let i = 0; i < name2; i++) {
+        if (imgObjects[i] && imgObjects[i][0][0]["444383007"][1]) {
+            let url = imgObjects[i][0][0]["444383007"][1][3][0]; // the url
+            urlsArray.push(url);
+        }
+    }
+
+for (let url of urlsArray) { try{ message.bot.sendFromUrl(message.chat ,url,"",message,{},"image" )  }catch {} }
+
+
+
+}catch(e){return await message.error(`${e}\n\n command: image`,e,`*_Uhh dear, Didn't get any results!_*`) }
+ })
