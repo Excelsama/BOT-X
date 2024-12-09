@@ -10,7 +10,7 @@ const fetch = require('node-fetch')
    smd({
            pattern: "shazam",
            alias :["shazam"],
-           category: "Internet",
+           category: "internet",
            react:"🎶", 
            desc: "Finds info about song",
            filename: __filename,
@@ -31,7 +31,7 @@ const fetch = require('node-fetch')
 smd({
    pattern: "coffee",
    alias:["tea","tired"],
-   category: "Internet",
+   category: "internet",
   react : "☕",
    desc: "send randome coffe img",
    filename: __filename,
@@ -220,7 +220,7 @@ for (let url of urlsArray) { try{ message.bot.sendFromUrl(message.chat ,url,"",m
 //---------------------------------------------------------------------------
 smd({
             pattern: "couplepp",
-            category: "Internet",
+            category: "internet",
             desc: "Sends two couples pics.",
             filename: __filename,
         },
