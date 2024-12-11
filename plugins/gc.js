@@ -1168,7 +1168,7 @@ smd({
   'pattern': "del",
   'alias': ['bin', 'dlt'],
   'desc': "Deletes message of any user",
-  'category': "group",
+  'category': "owner",
   'filename': __filename,
   'use': "<quote/reply message.>"
 }, async _0x320d81 => {
@@ -1200,7 +1200,7 @@ cmd({
   'pattern': 'broadcast',
   'desc': "Bot makes a broadcast in all groups",
   'fromMe': true,
-  'category': "group",
+  'category': "owner",
   'filename': __filename,
   'use': "<text for broadcast.>"
 }, async (_0x553d05, _0x5d14a3) => {
