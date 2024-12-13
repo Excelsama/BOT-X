@@ -1,4 +1,4 @@
-{
+ {
   "name": "BOT-X",
   "version": "2.0.0",
   "description": "A BOT",
@@ -8,10 +8,7 @@
     "run": "pm2 start . --deep-monitoring --attach --name BOT-X || node .",
     "alya": "pm2 start . --deep-monitoring --attach --name BOT-X || node .",
     "start": "pm2 start . --attach --name BOT-X",
-    "stop": "pm2 stop BOT-X",
-    "heroku-postbuild": "git clone https://github.com/Excelsama/BOT-X temp && mv temp/.git .git && rm -rf temp && npx puppeteer@latest install  --y",
-    "fis-heroku-postbuild": "git clone https://github.com/Excelsama/BOT-X.git temp1 && rsync -av temp1/* ./ && rsync -av temp1/.* ./ && rm -rf temp1 && npm i && npx puppeteer@latest install",
-    "postinstall": "npx puppeteer@latest install --y"
+    "stop": "pm2 stop BOT-X"
   },
   "author": "",
   "license": "proprietary license",
@@ -56,7 +53,6 @@
     "path": "^0.12.7",
     "pg": "^8.11.3",
     "pm2": "^5.2.0",
-    "puppeteer": "latest",
     "qrcode": "latest",
     "secktor-pack": "latest",
     "simple-git": "^3.15.1",
