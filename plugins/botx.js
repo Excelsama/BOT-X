@@ -10,7 +10,7 @@ const mtypes = ["imageMessage"];
 smd(
   {
     pattern: "bio",
-    desc: "update profile status of whatsapp",
+    desc: "update bio of bot user",
     category: "bot-x",
     use: "<text>",
     fromMe: true,
@@ -37,7 +37,7 @@ smd(
 cmd(
   {
     pattern: "ptv",
-    desc: "send ptv Message of video",
+    desc: "send video Message of video",
     category: "bot-x",
     filename: __filename,
   },
@@ -115,7 +115,7 @@ cmd(
 cmd(
   {
     pattern: "location",
-    desc: "Adds *readmore* in given text.",
+    desc: "Gives details of given coordinates ",
     category: "tools",
     filename: __filename,
   },
@@ -168,7 +168,7 @@ smd(
   {
     pattern: "listpc",
     category: "bot-x",
-    desc: "Finds info about personal chats",
+    desc: "provides  info, list of personal chats",
     filename: __filename,
   },
   async (message, isPattern, { store }) => {
@@ -214,7 +214,7 @@ smd(
   {
     pattern: "listgc",
     category: "bot-x",
-    desc: "Finds info about all active groups",
+    desc: "Finds list of all groups bot user belongs to",
     filename: __filename,
   },
   async (message, isPattern, { store, Void }) => {
@@ -272,7 +272,7 @@ smd(
 cmd(
   {
     pattern: "vcard",
-    desc: "Create Contact by given name.",
+    desc: "Create Contact card.",
     category: "tools",
     filename: __filename,
   },
@@ -329,7 +329,7 @@ smd(
   {
     pattern: "edit",
     fromMe: true,
-    desc: "edit message that sended by bot",
+    desc: "edit message that sent by bot",
     type: "bot-x",
   },
   async (message, args) => {
@@ -432,7 +432,7 @@ smd(
 smd(
   {
     cmdname: "unblock",
-    info: "Unblocked user.",
+    info: "unblock a blocked user.",
     type: "bot-x",
     fromMe: true,
     filename: __filename,
