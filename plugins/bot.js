@@ -416,7 +416,7 @@ astro_patch.cmd(
 
     category: "user",
 
-    react: "🥀",
+    react: "📃",
 
   },
 
@@ -427,20 +427,8 @@ astro_patch.cmd(
       const { commands } = require("../lib");
 
       let listMessage = `\n  
-
-╭━━〘 * ${Config.botname} * 〙    
-
-┃ 🎗 Prefix: ${Config.HANDLERS}
-
-┃ 🎗 Owner: ${Config.ownername}
-
-┃ 🎗 Commands: ${commands.length}
-
-┃ 🎗 Uptime: ${runtime(process.uptime())}
-
-┃ 🎗 Mem: ${formatp(os.totalmem() - os.freemem())}
-
-╰━━━━━━━━━━━━━━⊷\n`;
+ʙᴏᴛ-x ᴄᴏᴍᴍᴀɴᴅ ʜᴇʟᴘ ʟɪsᴛ
+\n`;
 
       for (let i = 0; i < commands.length; i++) {
 
