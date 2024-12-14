@@ -8,7 +8,7 @@ const fetch = require('node-fetch')
     
 smd({
          pattern: "npm",
-         desc: "download mp4 from url.",
+         desc: "provides pkg details",
          category: "dev",
          use: '<package name>',
          filename: __filename
