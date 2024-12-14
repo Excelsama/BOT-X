@@ -38,7 +38,7 @@ smd(
 
   {
 
-    pattern: "botlist",
+    pattern: "infobot",
 
     type: "special list",
 
