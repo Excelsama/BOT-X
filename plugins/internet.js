@@ -123,7 +123,8 @@ smd({
         async(message, match) => {
 try{
   let text = match ? match : message.reply_text;
-   if (!text) return message.reply(`Provide me a query!\n*Ex : .image luffy |10*`)
+   if (!text) return message.reply(`Provide me a query!\n*Ex : .image Xcelsama |9*
+Limit is 9 imgs`)
 
    let name1 = text.split("|")[0] || text
    let name2 = text.split("|")[1] || `5`
