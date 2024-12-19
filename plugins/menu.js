@@ -109,7 +109,7 @@ astro_patch.smd(
         Config.menu.trim().startsWith("2") ||
         Config.menu.toLowerCase().includes("menu2")
       ) {
-        menuThemeHeader = "╭────《 *" + Config.botname + "*》────⪩";
+        menuThemeHeader = "╭────《 love*" + Config.botname + "*》────⪩";
         menuThemeCommandPrefix = "𖣎│▸";
         menuThemeFooter = "╰──────────⪩";
         menuThemeCategoryHeader = "┌〈";
