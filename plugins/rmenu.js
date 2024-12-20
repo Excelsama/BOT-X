@@ -109,7 +109,7 @@ astro_patch.smd(
         Config.menu.trim().startsWith("2") ||
         Config.menu.toLowerCase().includes("menu2")
       ) {
-        menuThemeHeader = "╭────《 love*" + Config.botname + "*》────⪩";
+        menuThemeHeader = "╭────《*" + Config.botname + "*》────⪩";
         menuThemeCommandPrefix = "𖣎│▸";
         menuThemeFooter = "╰──────────⪩";
         menuThemeCategoryHeader = "┌〈";
@@ -178,7 +178,7 @@ astro_patch.smd(
       };
       return await message.sendUi(message.chat, messageOptions, message);
     } catch (error) {
-      await message.error(error + "\nCommand: menu", error);
+      await message.error(error + "\nCommand: rmenu", error);
     }
   },
 );
