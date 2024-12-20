@@ -107,6 +107,6 @@ astro_patch.smd({
         );
 
     } catch (error) {
-        await context.error(error + "\nCommand: lmenu", error);
+        await context.error(error + "\nCommand: menu", error);
     }
 });
