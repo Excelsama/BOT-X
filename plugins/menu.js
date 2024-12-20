@@ -34,7 +34,7 @@ const database_info = (() => {
 })();
 
 astro_patch.smd({
-    cmdname: "lmenu",
+    cmdname: "menu",
     react: '🍁',
     desc: "To show all available commands.",
     type: 'user',
