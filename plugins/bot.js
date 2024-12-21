@@ -18,7 +18,7 @@ let {
 
   prefix,
 
-  smd,
+  cmd,
 
   commands,
 
@@ -34,7 +34,7 @@ const { exec } = require("child_process");
 
 const translatte = require("translatte");
 
-smd(
+cmd(
 
   {
 
@@ -84,7 +84,7 @@ smd(
 
 // Command: Set Custom Command
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -222,7 +222,7 @@ astro_patch.cmd(
 
 // Command: Delete Custom Command
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -324,7 +324,7 @@ astro_patch.cmd(
 
 // Command: Ping
 
-astro_patch.smd(
+cmd(
 
   {
 
@@ -368,7 +368,7 @@ astro_patch.smd(
 
 // Command: Uptime
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -406,7 +406,7 @@ astro_patch.cmd(
 
 // Command: List Menu
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -461,7 +461,7 @@ astro_patch.cmd(
 );
 
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -553,7 +553,7 @@ const readDirectory = (directoryPath) => {
 
 };
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -707,7 +707,7 @@ astro_patch.cmd(
 
 );
 
-astro_patch.cmd(
+cmd(
 
   {
 
@@ -761,7 +761,7 @@ astro_patch.cmd(
 
 );
 
-astro_patch.cmd(
+cmd(
 
   {
 
