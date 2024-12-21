@@ -18,7 +18,7 @@ let {
 
   prefix,
 
-  cmd,
+  smd,
 
   commands,
 
@@ -34,11 +34,11 @@ const { exec } = require("child_process");
 
 const translatte = require("translatte");
 
-cmd(
+smd(
 
   {
 
-    pattern: "infobot",
+    pattern: "botlist",
 
     type: "special list",
 
@@ -84,7 +84,7 @@ cmd(
 
 // Command: Set Custom Command
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -222,7 +222,7 @@ cmd(
 
 // Command: Delete Custom Command
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -324,7 +324,7 @@ cmd(
 
 // Command: Ping
 
-cmd(
+astro_patch.smd(
 
   {
 
@@ -368,7 +368,7 @@ cmd(
 
 // Command: Uptime
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -406,7 +406,7 @@ cmd(
 
 // Command: List Menu
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -416,7 +416,7 @@ cmd(
 
     category: "user",
 
-    react: "📃",
+    react: "🥀",
 
   },
 
@@ -427,8 +427,20 @@ cmd(
       const { commands } = require("../lib");
 
       let listMessage = `\n  
-ʙᴏᴛ-x ᴄᴏᴍᴍᴀɴᴅ ʜᴇʟᴘ ʟɪsᴛ
-\n`;
+
+╭━━〘 * ${Config.botname} * 〙    
+
+┃ 🎗 Prefix: ${Config.HANDLERS}
+
+┃ 🎗 Owner: ${Config.ownername}
+
+┃ 🎗 Commands: ${commands.length}
+
+┃ 🎗 Uptime: ${runtime(process.uptime())}
+
+┃ 🎗 Mem: ${formatp(os.totalmem() - os.freemem())}
+
+╰━━━━━━━━━━━━━━⊷\n`;
 
       for (let i = 0; i < commands.length; i++) {
 
@@ -461,7 +473,7 @@ cmd(
 );
 
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -553,7 +565,7 @@ const readDirectory = (directoryPath) => {
 
 };
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -707,7 +719,7 @@ cmd(
 
 );
 
-cmd(
+astro_patch.cmd(
 
   {
 
@@ -761,7 +773,7 @@ cmd(
 
 );
 
-cmd(
+astro_patch.cmd(
 
   {
 
