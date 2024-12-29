@@ -968,7 +968,7 @@ smd({
  smd({
    pattern: "playlist",
    desc: _0xf3b3b9(229),
-   category: _0xf3b3b9(253),
+   category: internet,
    filename: __filename,
    use: _0xf3b3b9(230)
  }, async (_0x1283e0, _0x45d2ef, {
