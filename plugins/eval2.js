@@ -1,3 +1,38 @@
+const os = require("os");
+
+const fs = require("fs");
+
+const Config = require("../config");
+
+let {
+
+  fancytext,
+
+  tlang,
+
+  tiny,
+
+  runtime,
+
+  formatp,
+
+  prefix,
+
+  smd,
+
+  commands,
+
+} = require("../lib");
+
+const long = String.fromCharCode(8206);
+
+const readmore = long.repeat(4001);
+
+const astro_patch = require("../lib/plugins");
+
+const { exec } = require("child_process");
+
+const translatte = require("translatte");
 astro_patch.cmd(
 
   {
@@ -63,9 +98,9 @@ astro_patch.cmd(
 
   {
 
-    pattern: "eval",
+    pattern: "val",
 
-    alias: ["$"],
+    alias: ["*"],
 
     category: "tools",
 
