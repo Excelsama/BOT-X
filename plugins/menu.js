@@ -29,6 +29,7 @@ let {
 } = require("../lib");
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);
+const astro {}, 
 const astro.smd = require('../lib/plugins');
 const {
   Sticker,
