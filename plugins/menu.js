@@ -1,112 +1,161 @@
-
-const os = require("os");
-const Config = require("../config");
-let { fancytext, tiny, runtime, formatp, prefix } = require("../lib");
+const os = require('os');
+const fs = require("fs");
+const Config = require('../config');
+let {
+  fancytext,
+  tlang,
+  tiny,
+  bot_,
+  alive,
+  runtime,
+  formatp,
+  smsg,
+  getAdmin,
+  send,
+  react,
+  botpic,
+  sleep,
+  getBuffer,
+  prefix,
+  sck1,
+  smd,
+  sck,
+  getTime,
+  formatDate,
+  groupdb,
+  smdJson,
+  smdBuffer,
+  isAdmin
+} = require("../lib");
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);
-const astro_patch = require("../lib/plugins");
-const trend_usage = (() => {
-    const trendNumber = ((min, max) => {
-        const random = () => Math.random();
-        const floor = (x) => Math.floor(x);
-        const multiply = (a, b) => a * b;
-        const add = (a, b) => a + b;
-        const subtract = (a, b) => a - b;
-        const randomValue = multiply(random(), subtract(max, min + 1));
-        const result = add(floor(randomValue), min);
-        return result;
-    })(1, 99);
-    return trendNumber;
-})();
+const smd = require('../lib/plugins');
+const {
+  Sticker,
+  createSticker,
+  StickerTypes
+} = require("wa-sticker-formatter");
+const util = require("util");
+const {
+  commands
+} = require('../lib');
+const {
+  exec
+} = require("child_process");
+const translatte = require("translatte");
+const cron = require('node-cron');
+var cronStart = false;
 
-const database_info = (() => {
-    const dbNumber = ((min, max) => {
-        const random = () => Math.random();
-        const floor = (x) => Math.floor(x);
-        const multiply = (a, b) => a * b;
-        const add = (a, b) => a + b;
-        const subtract = (a, b) => a - b;
-        const randomValue = multiply(random(), subtract(max, min + 1));
-        const result = add(floor(randomValue), min);
-        return result;
-    })(1, 499);
-    return dbNumber;
-})();
-
-astro_patch.smd({
-    cmdname: "menu",
-    react: '🍁',
-    desc: "To show all available commands.",
-    type: 'user',
-    filename: __filename
-}, async (context, message) => {
-    try {
-        const { commands } = require("../lib");
-        const currentTime = new Date();
-        const hours = currentTime.getHours();
-        const minutes = currentTime.getMinutes();
-        const formattedTime = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
-        const currentDate = currentTime.toLocaleDateString();
-        let greeting = "";
-
-        if (hours >= 5 && hours < 12) {
-            greeting = "Good day!";
-        } else if (hours >= 12 && hours < 18) {
-            greeting = "Good day!";
-        } else if (hours >= 18 && hours < 22) {
-            greeting = "Good Evening!";
-        } else {
-            greeting = "Good evening!";
+/*
+let "USER_IMAGES" = {
+      "description": "Put IMAGES/VIDEOS URL, Make Sure Url have extention like .mp4,.jpg,.png etc",
+      "value": "https://telegra.ph/file/d90855d13352c8aae3981.mp4",
+      "required" :false
+    },
+*/
+smd({
+  'cmdname': "menu",
+  'desc': "Help list",
+  'type': "general",
+  'filename': __filename
+}, async (_0xd2266a, _0x54954a) => {
+  try {
+    const {
+      commands: _0x4f1da9
+    } = require("../lib");
+    if (_0x54954a.split(" ")[0x0]) {
+      let _0x35206d = [];
+      const _0xd17d83 = _0x4f1da9.find(_0x3cf852 => _0x3cf852.pattern === _0x54954a.split(" ")[0x0].toLowerCase());
+      if (_0xd17d83) {
+        _0x35206d.push("*🍁Command:* " + _0xd17d83.pattern);
+        if (_0xd17d83.category) {
+          _0x35206d.push("*🧩Category:* " + _0xd17d83.category);
         }
-
-        const commandCategories = {};
-        commands.forEach(cmd => {
-            if (!cmd.dontAddCommandList && cmd.pattern) {
-                if (!commandCategories[cmd.category]) {
-                    commandCategories[cmd.category] = [];
-                }
-                commandCategories[cmd.category].push(cmd.pattern);
-            }
-        });
-
-        let menuThemeHeader = "╭────《 *" + Config.botname + "*》────⪩";
-        let menuThemeFooter = "╰──────────⪩";
-        let menuThemeCategoryHeader = "┌〈";
-        let menuThemeCategoryFooter = "》──────⪩";
-        let menuThemeCommandPrefix = "𖣎│▸ ";
-        let menuThemeCommandFooter = "╰───────────⪩";
-
-        let menuContent = `${menuThemeHeader}\n`;
-        menuContent += `𖣎│▸ *ᴏᴡɴᴇʀ:* ${Config.ownername}\n`;
-        menuContent += `𖣎│▸ *ᴜᴘᴛɪᴍᴇ:* ${runtime(process.uptime())}\n`;
-        menuContent += `𖣎│▸ *ʀᴀᴍ ᴜsᴀɢᴇ:* ${formatp(os.totalmem() - os.freemem())}\n`;
-        menuContent +=  `${menuThemeCommandPrefix}*ᴛɪᴍᴇ:* ${formattedTime}\n`;
-        menuContent += `𖣎│▸ *ᴅᴀᴛᴇ:* ${currentDate}\n`;
-        menuContent += `𖣎│▸ *ᴛᴏᴛᴀʟ ᴄᴍᴅ:* ${commands.length}\n`;
-        menuContent += `${menuThemeCommandPrefix}*ᴜsᴇʀs:* ${trend_usage}\n`;
-        menuContent += `${menuThemeCommandPrefix}*ᴅᴀᴛᴀʙᴀsᴇ:* ${database_info}\n`;
-        menuContent += `${menuThemeFooter}\n\n`;
-
-        menuContent += readmore + "\n\n";
-
-        for (const category in commandCategories) {
-            menuContent += `${menuThemeCategoryHeader} ${tiny(category)} ${menuThemeCategoryFooter}\n`;
-            commandCategories[category].forEach(cmd => {
-                menuContent += `${menuThemeCommandPrefix} ${fancytext(cmd, 1)}\n`;
-            });
-            menuContent += `${menuThemeCommandFooter}\n${readmore}\n\n`;
+        if (_0xd17d83.alias && _0xd17d83.alias[0x0]) {
+          _0x35206d.push("*🧩Alias:* " + _0xd17d83.alias.join(", "));
         }
-
-        const finalMessage = menuContent + `©ʙᴏᴛ-x`;
-
-        await context.send(
-            "https://i.ibb.co/jTJDVYj/Leonardo-Phoenix-A-vibrant-animestyle-illustration-of-a-young-2.jpg", 
-            { caption: finalMessage },
-            "img",
-            message
-        );
-
-    } catch (error) {
-        await context.error(error + "\nCommand: menu", error);
+        if (_0xd17d83.desc) {
+          _0x35206d.push("*🧩Description:* " + _0xd17d83.desc);
+        }
+        if (_0xd17d83.use) {
+          _0x35206d.push("*〽️Usa:*\n ```" + prefix + _0xd17d83.pattern + " " + _0xd17d83.use + "```");
+        }
+        if (_0xd17d83.usage) {
+          _0x35206d.push("*〽️Usage:*\n ```" + _0xd17d83.usage + "```");
+        }
+        await _0xd2266a.reply(_0x35206d.join("\n"));
+      }
     }
+    var _0x2a8461;
+    var _0x2c3e5e;
+    var _0x44b88b;
+    var _0x10e1a7;
+    var _0x8fdfd;
+    var _0x1a5728;
+    var _0x50e224;
+    let _0x43d142 = 0x0;
+    if (Config.menu === '') {
+      _0x43d142 = Math.floor(Math.random() * 0x4) + 0x1;
+    }
+    if (_0x43d142 == 0x1 || Config.menu.trim().startsWith('1') || Config.menu.toLowerCase().includes('aztec')) {
+      _0x2a8461 = "┏━━⟪ *" + Config.botname + "* ⟫━━⦿";
+      _0x2c3e5e = "┃ ✗";
+      _0x44b88b = "┗━━━━━━━━━━━━━━━⦿";
+      _0x10e1a7 = '┌──『';
+      _0x8fdfd = "』──❖\n";
+      _0x1a5728 = " | ";
+      _0x50e224 = "\n└──────────────◉";
+    } else if (_0x43d142 == 0x2 || Config.menu.trim().startsWith('2') || Config.menu.toLowerCase().includes("a17")) {
+      _0x2a8461 = "┌───═[ *" + Config.botname + "* ]═──▸\n│╭────────────···▸\n┴│▸";
+      _0x2c3e5e = "⬡│▸";
+      _0x44b88b = "┬│▸\n│╰─────────────···▸\n└───────────────···▸";
+      _0x10e1a7 = '┌───〈';
+      _0x8fdfd = "〉───◆\n│╭─────────────···▸\n┴│▸";
+      _0x1a5728 = "⬡│▸ ";
+      _0x50e224 = "┬│▸\n│╰────────────···▸▸\n└───────────────···▸";
+    } else {
+      _0x2a8461 = "╭────《  " + Config.botname + "  》────⊷\n│ ╭──────✧❁✧──────◆";
+      _0x2c3e5e = "│ │";
+      _0x44b88b = "│ ╰──────✧❁✧──────◆\n╰══════════════════⊷";
+      _0x10e1a7 = '╭────❏';
+      _0x8fdfd = '❏';
+      _0x1a5728 = '│';
+      _0x50e224 = "╰━━━━━━━━━━━━━━──⊷";
+    }
+    const _0x376e27 = {};
+    _0x4f1da9.map(async (_0x3b0442, _0x3e603e) => {
+      if (_0x3b0442.dontAddCommandList === false && _0x3b0442.pattern !== undefined) {
+        if (!_0x376e27[_0x3b0442.category]) {
+          _0x376e27[_0x3b0442.category] = [];
+        }
+        _0x376e27[_0x3b0442.category].push(_0x3b0442.pattern);
+      }
+    });
+    const _0x1b2e30 = _0xd2266a.time;
+    const _0x35bd69 = _0xd2266a.date;
+    let _0x192602 = _0x2a8461 + "\n" + _0x2c3e5e + " Theme:- " + tlang().title + "\n" + _0x2c3e5e + " Owner:- " + Config.ownername + "\n" + _0x2c3e5e + " Plugins:- " + _0x4f1da9.length + "\n" + _0x2c3e5e + " Uptime:- " + runtime(process.uptime()) + "\n" + _0x2c3e5e + " Mem:- " + formatp(os.totalmem() - os.freemem()) + '/' + formatp(os.totalmem()) + "\n" + _0x2c3e5e + " Time:- " + _0x1b2e30 + "\n" + _0x2c3e5e + " Date:- " + _0x35bd69 + "\n" + _0x44b88b + "\n\n";
+    for (const _0x2745af in _0x376e27) {
+      _0x192602 += _0x10e1a7 + " *" + tiny(_0x2745af) + "* " + _0x8fdfd + "\n";
+      if (_0x54954a.toLowerCase() == _0x2745af.toLowerCase()) {
+        _0x192602 = _0x10e1a7 + " *" + tiny(_0x2745af) + "* " + _0x8fdfd + "\n";
+        for (const _0x375619 of _0x376e27[_0x2745af]) {
+          _0x192602 += _0x1a5728 + " " + fancytext(_0x375619, 0x1) + "\n";
+        }
+        _0x192602 += _0x50e224 + "\n";
+        break;
+      } else {
+        for (const _0x3d11d4 of _0x376e27[_0x2745af]) {
+          _0x192602 += _0x1a5728 + " " + fancytext(_0x3d11d4, 0x1) + "\n";
+        }
+        _0x192602 += _0x50e224 + "\n";
+      }
+    }
+    _0x192602 += Config.caption;
+    let _0x2ca50e = {
+      'caption': _0x192602
+    };
+    return await _0xd2266a.sendUi(_0xd2266a.chat, _0x2ca50e, _0xd2266a);
+  } catch (_0x323e96) {
+    await _0xd2266a.error(_0x323e96 + "\nCommand:menu", _0x323e96);
+  }
 });
