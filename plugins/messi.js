@@ -11,11 +11,11 @@ smd(
     try {
       await m.send("Fetching a Messi image, please wait... ⚽");
 
-      const apiUrl = `https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/Messi.json`;
-      const data = await fetchJson(apiUrl);
+      const url = `https://raw.githubusercontent.com/Guru322/api/Guru/BOT-JSON/Messi.json`;
+      const data = await fetchJson(url);
 
       if (!Array.isArray(data) || data.length === 0) {
-        return await m.send("No Messi images found.");
+        return await m.send("No Messi images found in the file.");
       }
 
       const randomUrl = data[Math.floor(Math.random() * data.length)];
