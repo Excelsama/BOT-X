@@ -7,7 +7,7 @@ const {
 
 let audios = ["https://files.catbox.moe/ahf9me.mp3", "https://files.catbox.moe/cp9zab.mp3", "https://files.catbox.moe/eywp66.mp3", "https://files.catbox.moe/ahf9me.mp3", "https://files.catbox.moe/cp9zab.mp3"];
 smd({
-  pattern: "alive ?(.*)",
+  pattern: "alive",
   fromMe: isPrivate,
   desc: "Thanks Xcelsama",
   type: "user"
