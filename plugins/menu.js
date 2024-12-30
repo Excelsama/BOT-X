@@ -29,7 +29,7 @@ let {
 } = require("../lib");
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);
-const smd = require('../lib/plugins');
+const astro.smd = require('../lib/plugins');
 const {
   Sticker,
   createSticker,
@@ -53,7 +53,7 @@ let "USER_IMAGES" = {
       "required" :false
     },
 */
-smd({
+astro.smd({
   'cmdname': "menu",
   'desc': "Help list",
   'type': "general",
