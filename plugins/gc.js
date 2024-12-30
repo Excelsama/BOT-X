@@ -764,7 +764,7 @@ cmd({
   }
 });
 smd({
-  'pattern': 'group',
+  'pattern': 'infogc',
   'desc': "mute and unmute group.",
   'category': "gc",
   'filename': __filename
