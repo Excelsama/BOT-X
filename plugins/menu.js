@@ -1,59 +1,26 @@
-const os = require('os');
-const fs = require("fs");
-const Config = require('../config');
-let {
-  fancytext,
-  tlang,
-  tiny,
-  bot_,
-  alive,
-  runtime,
-  formatp,
-  smsg,
-  getAdmin,
-  send,
-  react,
-  botpic,
-  sleep,
-  getBuffer,
-  prefix,
-  sck1,
-  smd,
-  sck,
-  getTime,
-  formatDate,
-  groupdb,
-  smdJson,
-  smdBuffer,
-  isAdmin
-} = require("../lib");
-const long = String.fromCharCode(8206);
-const readmore = long.repeat(4001);
-const xcel = require('../lib/plugins');
-const {
-  Sticker,
-  createSticker,
-  StickerTypes
-} = require("wa-sticker-formatter");
-const util = require("util");
-const {
-  commands
-} = require('../lib');
-const {
-  exec
-} = require("child_process");
-const translatte = require("translatte");
-const cron = require('node-cron');
-var cronStart = false;
-
-/*
-let "USER_IMAGES" = {
-      "description": "Put IMAGES/VIDEOS URL, Make Sure Url have extention like .mp4,.jpg,.png etc",
-      "value": "https://telegra.ph/file/d90855d13352c8aae3981.mp4",
-      "required" :false
-    },
-*/
-xcel.smd({
+const os = require('os')
+  let menus = false
+  const moment = require("moment-timezone")
+  const fs = require("fs")
+  const Config = require('../config')
+  let { fancytext, tlang, tiny,bot_,alive, runtime, formatp, smsg ,getAdmin , send , react ,botpic,sleep, getBuffer ,prefix, sck1,smd,sck ,getTime ,formatDate  , groupdb,smdJson,smdBuffer, isAdmin  } = require("../lib");
+  const long = String.fromCharCode(8206)
+  const readmore = long.repeat(4001)
+  const xcel = require('../lib/plugins')
+  const { Sticker, createSticker, StickerTypes } = require("wa-sticker-formatter");
+  const axios = require('axios')
+  const fetch = require("node-fetch");
+  const util = require("util");
+  const events = sᴜʜᴀɪʟ_ᴍᴅ;
+  const { commands } = require('../lib');
+  const { exec } = require("child_process")
+  const translatte = require("translatte");
+  const cheerio = require('cheerio');
+  const path = require('path');
+  const cron = require('node-cron');
+  var cronStart = false
+  
+xcel.cmd({
   'cmdname': "menu",
   'desc': "Help list",
   'type': "general",
@@ -106,13 +73,13 @@ xcel.smd({
       _0x1a5728 = " | ";
       _0x50e224 = "\n└──────────────◉";
     } else if (_0x43d142 == 0x2 || Config.menu.trim().startsWith('2') || Config.menu.toLowerCase().includes("a17")) {
-      _0x2a8461 = "┌───═[ *" + Config.botname + "* ]═──▸\n│╭────────────⪩";
-      _0x2c3e5e = "𖣎│▸";
-      _0x44b88b = "│▸\n│😅╰─────────────⪩\n└───────────────···▸";
+      _0x2a8461 = "┌───═[ *" + Config.botname + "* ]═──▸\n│╭────────────···▸\n┴│▸";
+      _0x2c3e5e = "⬡│▸";
+      _0x44b88b = "┬│▸\n│╰─────────────···▸\n└───────────────···▸";
       _0x10e1a7 = '┌───〈';
-      _0x8fdfd = "〉───◆\n│╭─────────────⪩";
-      _0x1a5728 = "𖣎│▸ ";
-      _0x50e224 = "│▸│😄╰────────────⪩\n└───────────────⪩";
+      _0x8fdfd = "〉───◆\n│╭─────────────···▸\n┴│▸";
+      _0x1a5728 = "⬡│▸ ";
+      _0x50e224 = "┬│▸\n│╰────────────···▸▸\n└───────────────···▸";
     } else {
       _0x2a8461 = "╭────《  " + Config.botname + "  》────⊷\n│ ╭──────✧❁✧──────◆";
       _0x2c3e5e = "│ │";
