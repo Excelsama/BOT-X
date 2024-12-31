@@ -108,13 +108,13 @@ astro_patch.smd(
         Config.menu.trim().startsWith("2") ||
         Config.menu.toLowerCase().includes("menu2")
       ) {
-        menuThemeHeader = "╭────《 *" + Config.botname + "*》────⪩";
-        menuThemeCommandPrefix = "𖣎│▸";
-        menuThemeFooter = "╰━━━━━━━━━━━──⪩";
+        menuThemeHeader = "┌═[ *" + Config.botname + "* ]";
+        menuThemeCommandPrefix = "¤│▸";
+        menuThemeFooter = "╰════════════···▸";
         menuThemeCategoryHeader = "┌〈";
         menuThemeCategoryFooter = "〉";
-        menuThemeCommandPrefix = "𖣎│▸ ";
-        menuThemeCommandFooter = "╰━━━━━━━━━━━──⪩";
+        menuThemeCommandPrefix = "¤│▸ ";
+        menuThemeCommandFooter = "\n│╰══════════···▸▸";
       } else {
         menuThemeHeader = "╭〘  " + Config.botname + "  〙";
         menuThemeCommandPrefix = "│ │";
@@ -148,9 +148,11 @@ astro_patch.smd(
   ${menuThemeCommandPrefix} *ᴛɪᴍᴇ:* ${currentTime}
   ${menuThemeCommandPrefix} *ᴅᴀᴛᴇ:* ${currentDate}
   ${menuThemeCommandPrefix} *ᴄᴏᴍᴍᴀɴᴅs:* ${commands.length}
-  ${menuThemeCommandPrefix} *ᴜsᴇʀs:* ${trend_usage}
+  ${menuThemeCommandPrefix} *ᴜsᴀɢᴇ ᴛʀᴇɴᴅ:* ${trend_usage}
   ${menuThemeCommandPrefix} *ᴅᴀᴛᴀʙᴀsᴇ:* ${database_info}
   ${menuThemeFooter}\n                         
+  ▄▀█ █▀ ▀█▀ ▄▀█
+  █▀█ ▄█ ░█░ █▀█
   \n${readmore}\n`;
 
       for (const category in categorizedCommands) {
