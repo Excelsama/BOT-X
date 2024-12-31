@@ -46,13 +46,13 @@ const translatte = require("translatte");
 const cron = require('node-cron');
 var cronStart = false;
 
-
+/*
 let "USER_IMAGES" = {
       "description": "Put IMAGES/VIDEOS URL, Make Sure Url have extention like .mp4,.jpg,.png etc",
       "value": "https://telegra.ph/file/d90855d13352c8aae3981.mp4",
       "required" :false
     },
-
+*/
 xcel.smd({
   'cmdname': "menu",
   'desc': "Help list",
