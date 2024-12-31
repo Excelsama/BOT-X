@@ -45,7 +45,7 @@ global.SESSION_ID =
   process.env.SESSION_ID ||
   " " // session id here
 module.exports = {
-  menu: process.env.MENU || "1",
+  menu: process.env.MENU || "3",
   HANDLERS: process.env.PREFIX || "*",
   BRANCH: process.env.BRANCH || "main",
   VERSION: process.env.VERSION || "1.0.0",
