@@ -1,5 +1,5 @@
  const os = require('os')
-  let menus = false
+  let meⁿⁿⁿⁿⁿⁿnus = false
   const moment = require("moment-timezone")
   const fs = require("fs")
   let { fancytext, tlang, tiny, runtime, formatp, botpic, getBuffer ,prefix, sck1,name, Module_Exports, fancy18 } = require("../lib");
@@ -55,7 +55,7 @@
   };
 
   sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "menu",
+    kingcmd: "tmenu",
     shortcut: ["list"],
     infocmd: "All Commands lists",
     kingclass: "general"
@@ -128,7 +128,7 @@
   });
 
 sɪɢᴍᴀ_ᴍᴅ.Module_Exports({
-    kingcmd: "file",
+    kingcmd: "tfile",
     infocmd: "to get extact name where that command is in repo.\nSo user can edit that.",
     kingclass: "general",
 
