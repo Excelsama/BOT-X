@@ -3,7 +3,7 @@ const Config = require("../config");
 let { fancytext, tiny, runtime, formatp, prefix} = require("../lib");
 const long = String.fromCharCode(8206);
 const readmore = long.repeat(4001);
-const astro_patch = require("../lib/plugins");
+const xcel = require("../lib/plugins");
 const trend_usage = (() => {
     const trendNumber = ((min, max) => {
       const random = () => Math.random();
@@ -32,11 +32,11 @@ const trend_usage = (() => {
     return dbNumber;
   })();
 
-astro_patch.smd(
+xcel.smd(
   {
     cmdname: "menu",
-    desc: "Help list",
-    react: "📃",
+    desc: "Command list",
+    react: "✔️",
     desc: "To show all avaiable commands.",
     type: "user",
     filename: __filename,
