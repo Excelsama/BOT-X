@@ -114,7 +114,7 @@ astro_patch.smd(
         menuThemeCategoryHeader = "┌〈";
         menuThemeCategoryFooter = "〉";
         menuThemeCommandPrefix = "¤│▸ ";
-        menuThemeCommandFooter = "\n│╰══════════···▸▸";
+        menuThemeCommandFooter = "╰══════════···▸▸";
       } else {
         menuThemeHeader = "╭〘  " + Config.botname + "  〙";
         menuThemeCommandPrefix = "│ │";
