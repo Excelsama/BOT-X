@@ -1,11 +1,11 @@
 const {
-  command,
+  smd,
   isPrivate,
   getBuffer
 } = require("../lib/");
 const axios = require('axios');
 const FormData = require("form-data");
-command(
+smd(
   {
     pattern: "glossy",
     fromMe: true,
@@ -66,7 +66,7 @@ command(
 
 
 
-command(
+smd(
   {
     pattern: "write",
     fromMe: true,
@@ -127,7 +127,7 @@ command(
 
 
 
-command(
+smd(
   {
     pattern: "glitch",
     fromMe: true,
@@ -189,7 +189,7 @@ command(
 
 
 //https://api.giftedtech.my.id/api/ephoto360/glitchtext?apikey=gifted&text=Gifted%20Tech
-command(
+smd(
   {
     pattern: "glow",
     fromMe: true,
@@ -248,7 +248,7 @@ command(
   }
 );
 
-command(
+smd(
   {
     pattern: "topo",
     fromMe: true,
@@ -310,7 +310,7 @@ command(
 
 
 
-command(
+smd(
   {
     pattern: "pixel",
     fromMe: true,
@@ -370,7 +370,7 @@ command(
 );
 
 
-command(
+smd(
   {
     pattern: "nigger",
     fromMe: true,
@@ -430,7 +430,7 @@ command(
 );
 
 
-command(
+smd(
   {
     pattern: "neon",
     fromMe: true,
