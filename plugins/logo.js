@@ -1,333 +1,490 @@
-let { smd, textToLogoGenerator, prefix } = require("../lib");
-
-smd(
+const {
+  command,
+  isPrivate,
+  getBuffer
+} = require("../lib/");
+const axios = require('axios');
+const FormData = require("form-data");
+command(
   {
-    cmdname: "glow",
+    pattern: "glossy",
+    fromMe: true,
+    desc: "Generate an image from text",
     type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
   },
-  async (message, match, { cmdName }) => {
+  async (message, query) => {
     try {
-      if (!match)
-        return message.reply(`*_Example : ${prefix + cmdName} Asta_*`);
-      await require("../lib").textToLogoGenerator(
-        message,
-        "hieu-ung-chu/tao-hieu-ung-chu-mam-anh-sang-74",
-        match,
-        "ser",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-//-----------------------------------------------------------------------------------
-smd(
-  {
-    cmdname: "glitch",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      if (!match)
-        return message.reply(`*_Example : ${prefix + cmdName} Asta_*`);
-      return await textToLogoGenerator(
-        message,
-        "tao-hieu-ung-chu-digital-glitch-truc-tuyen-941",
-        match,
-        "suhail",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-//-----------------------------------------------------------------------------------
-smd(
-  {
-    cmdname: "pixel",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      if (!match)
-        return message.reply(`*_Example : ${prefix + cmdName} Asta_*`);
-      return await textToLogoGenerator(
-        message,
-        "tao-hieu-ung-chu-pixel-glitch-truc-tuyen-940",
-        match,
-        "suhail",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-
-//--------------------------------------------------------------------------------------
-smd(
-  {
-    cmdname: "grafiti",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      if (!match)
-        return message.reply(`*_Example : ${prefix + cmdName} Asta_*`);
-      return await textToLogoGenerator(
-        message,
-        "tao-hieu-ung-chu-graffiti-duong-pho-an-tuong-online-795",
-        match,
-        "suhail",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-
-//-------------------------------------------------------------------------------
-smd(
-  {
-    cmdname: "grafiti2",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      if (!match)
-        return message.reply(`*_Example : ${prefix + cmdName} Asta_*`);
-      return await textToLogoGenerator(
-        message,
-        "hieu-ung-chu/chu-graffiti-online-mau-8-182",
-        match,
-        "suhail",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-
-//-------------------------------------------------------------------------------
-
-//-----------------------------------------------------------------------------------
-smd(
-  {
-    cmdname: "grafiti3",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      //if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
+      // Ensure the user provides text for the image
+      if (!query) {
         return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
         );
-      return await textToLogoGenerator(
-        message,
-        "tao-hieu-ung-chu-graffiti-sieu-ngau-online-794",
-        text1,
-        text2
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-//================================================================================================
-smd(
-  {
-    cmdname: "grafiti4",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      //if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text1)
-        return await message.reply(`*_Example : ${prefix + cmdName} text1_*`);
-      return await textToLogoGenerator(
-        message,
-        "hieu-ung-chu/tao-cover-graffiti-online-181",
-        text1,
-        text2 || "ser",
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-//================================================================================================
+      }
 
-//-----------------------------------------------------------------------------------
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/glossysilver?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
 
-smd(
-  {
-    cmdname: "gradient",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      // if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
-        return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
-        );
-      await textToLogoGenerator(
-        message,
-        "tao-logo-gradient-3d-truc-tuyen-501",
-        text1,
-        text2,
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
-    }
-  }
-);
-//-----------------------------------------------------------------------------------
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
 
-smd(
-  {
-    cmdname: "wtone",
-    type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
-  },
-  async (message, match, { cmdName }) => {
-    try {
-      // if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
-        return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
-        );
-      await textToLogoGenerator(
-        message,
-        "tao-logo-chu-truc-tuyen-499",
-        text1,
-        text2,
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
 
-//-----------------------------------------------------------------------------------
-//---------------------------------------------------------------------------
-smd(
+
+
+command(
   {
-    cmdname: "phub",
+    pattern: "write",
+    fromMe: true,
+    desc: "Generate an image from text",
     type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
   },
-  async (message, match, { cmdName }) => {
+  async (message, query) => {
     try {
-      // if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
+      // Ensure the user provides text for the image
+      if (!query) {
         return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
         );
-      await textToLogoGenerator(
-        message,
-        "tao-logo-phong-cach-pornhub-612",
-        text1,
-        text2,
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
+      }
+//https://api.giftedtech.my.id/api/ephoto360/writetext?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/writetext?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
 
-//-----------------------------------------------------------------------------------
-smd(
+
+
+command(
   {
-    cmdname: "avenger",
+    pattern: "glitch",
+    fromMe: true,
+    desc: "Generate an image from text",
     type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
   },
-  async (message, match, { cmdName }) => {
+  async (message, query) => {
     try {
-      //if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
+      // Ensure the user provides text for the image
+      if (!query) {
         return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
         );
-      return await textToLogoGenerator(
-        message,
-        "tao-logo-3d-phong-cach-avengers-445",
-        text1,
-        text2,
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/glitchtext?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
-//-----------------------------------------------------------------------------------
-smd(
+
+
+
+//https://api.giftedtech.my.id/api/ephoto360/glitchtext?apikey=gifted&text=Gifted%20Tech
+command(
   {
-    cmdname: "marvel",
+    pattern: "glow",
+    fromMe: true,
+    desc: "Generate an image from text",
     type: "logo",
-    info: "Some text to image feature with various styles.",
-    filename: __filename,
   },
-  async (message, match, { cmdName }) => {
+  async (message, query) => {
     try {
-      ///if (!text) return message.reply(`*_Example : ${prefix+cmdName} text1;text2_*`);
-      let text1 = match ? match.split(";")[0] : "";
-      let text2 = match ? match.split(";")[1] : "";
-      if (!text2 || !text1)
+      // Ensure the user provides text for the image
+      if (!query) {
         return await message.reply(
-          `*_Example : ${prefix + cmdName} text1;text2_*`
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
         );
-      return await textToLogoGenerator(
-        message,
-        "tao-logo-phong-cach-marvel-419",
-        text1,
-        text2,
-        "1"
-      );
-    } catch (e) {
-      return await message.error(`${e}\n\ncmdName: ${cmdName}`, e);
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/advancedglow?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
+    }
+  }
+);
+
+command(
+  {
+    pattern: "topo",
+    fromMe: true,
+    desc: "Generate an image from text",
+    type: "logo",
+  },
+  async (message, query) => {
+    try {
+      // Ensure the user provides text for the image
+      if (!query) {
+        return await message.reply(
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
+        );
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/typographytext?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
+    }
+  }
+);
+
+
+
+
+command(
+  {
+    pattern: "pixel",
+    fromMe: true,
+    desc: "Generate an image from text",
+    type: "logo",
+  },
+  async (message, query) => {
+    try {
+      // Ensure the user provides text for the image
+      if (!query) {
+        return await message.reply(
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
+        );
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/pixelglitch?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
+    }
+  }
+);
+
+
+command(
+  {
+    pattern: "nigger",
+    fromMe: true,
+    desc: "Generate an image from text",
+    type: "logo",
+  },
+  async (message, query) => {
+    try {
+      // Ensure the user provides text for the image
+      if (!query) {
+        return await message.reply(
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
+        );
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/nigerianflag?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
+    }
+  }
+);
+
+
+command(
+  {
+    pattern: "neon",
+    fromMe: true,
+    desc: "Generate an image from text",
+    type: "logo",
+  },
+  async (message, query) => {
+    try {
+      // Ensure the user provides text for the image
+      if (!query) {
+        return await message.reply(
+          `*Nikka Logo Maker*\n\n` +
+          `❗ Please provide text for the image.\n` +
+          `Example: ${prefix}glossy HAKI XER`
+        );
+      }
+//https://api.giftedtech.my.id/api/ephoto360/blackpinklogo?apikey=gifted&text=Gifted%20Tech
+      // Build the API URL with the provided text
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/makingneon?apikey=gifted&text=${encodeURIComponent(
+        query
+      )}`;
+
+      // Call the API and fetch the response
+      const response = await fetch(apiUrl);
+      const result = await response.json();
+
+      // Check if the API call was successful
+      if (!result.success || !result.result || !result.result.image_url) {
+        return await message.reply("Failed to generate the image. Please try again later.");
+      }
+
+      // Extract the image URL
+      const imageUrl = result.result.image_url;
+
+      // Send the generated image back to the user
+      await message.client.sendMessage(message.jid, {
+        image: { url: imageUrl },
+        caption: `\n> Logo generated successfully.`,
+        contextInfo: {
+          externalAdReply: {
+            title: "Hi Pookie",
+            body: "Powered by Haki",
+            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
+            mediaUrl: "",
+            mediaType: 1,
+            showAdAttribution: true,
+            renderLargerThumbnail: false,
+            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
+          },
+        },
+      });
+    } catch (error) {
+      console.error("Image Generator Error:", error);
+      await message.reply(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
