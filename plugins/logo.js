@@ -16,7 +16,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -34,14 +34,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -59,7 +59,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -77,7 +77,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -102,7 +102,7 @@ smd(
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -120,7 +120,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -138,7 +138,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -156,14 +156,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -200,7 +200,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -218,14 +218,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -243,7 +243,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -259,7 +259,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -277,14 +277,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -302,7 +302,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -321,7 +321,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -339,14 +339,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -364,7 +364,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await mm.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -381,7 +381,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -399,14 +399,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -424,7 +424,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
@@ -441,7 +441,7 @@ smd(
     try {
       // Ensure the user provides text for the image
       if (!query) {
-        return await message.reply(
+        return await m.send(
           `*Nikka Logo Maker*\n\n` +
           `❗ Please provide text for the image.\n` +
           `Example: ${prefix}glossy HAKI XER`
@@ -459,14 +459,14 @@ smd(
 
       // Check if the API call was successful
       if (!result.success || !result.result || !result.result.image_url) {
-        return await message.reply("Failed to generate the image. Please try again later.");
+        return await m.send("Failed to generate the image. Please try again later.");
       }
 
       // Extract the image URL
       const imageUrl = result.result.image_url;
 
       // Send the generated image back to the user
-      await message.client.sendMessage(message.jid, {
+      await context.send(message.jid, {
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -484,7 +484,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await m.send(`An error occurred while generating the image: ${error.message}`);
     }
   }
 );
