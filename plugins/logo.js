@@ -22,7 +22,7 @@ smd(
         );
       }
 
-      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/glossysilver?apikey=gifted&text=${encodeURIComponent(query)}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/galaxystyle?apikey=gifted&text=${encodeURIComponent(query)}`;
 
       const response = await axios.get(apiUrl);
       const result = response.data;
