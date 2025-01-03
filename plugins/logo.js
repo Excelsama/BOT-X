@@ -33,18 +33,6 @@ smd(
       await message.send({
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
-        contextInfo: {
-          externalAdReply: {
-            title: "Hi Pookie",
-            body: "Powered EXCEL",
-            sourceUrl: "https://whatsapp.com/channel/0029VaoLotu42DchJmXKBN3L",
-            mediaUrl: "",
-            mediaType: 1,
-            showAdAttribution: true,
-            renderLargerThumbnail: false,
-            thumbnailUrl: "https://files.catbox.moe/mnp025.jpg", // Replace with a relevant thumbnail
-          },
-        },
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
