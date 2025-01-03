@@ -1,6 +1,6 @@
-const { isPrivate, getBuffer } = require("../lib/plugins");
 const axios = require("axios");
-const { prefix } = require("../lib");
+const { cmd } = require("../lib/plugins");
+const { smd } = require("../lib");
 
 smd(
   {
