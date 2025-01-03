@@ -5,6 +5,7 @@ const {
 } = require("../lib/plugins");
 const axios = require('axios');
 const FormData = require("form-data");
+
 xcel.smd(
   {
     pattern: "glossy",
@@ -22,17 +23,16 @@ xcel.smd(
         );
       }
 
-      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/glossysilver?apikey=gifted&text=${encodeURIComponent(
-        query
-      )}`;
+      const apiUrl = `https://api.giftedtech.my.id/api/ephoto360/glossysilver?apikey=gifted&text=${encodeURIComponent(query)}`;
 
-      const response = await fetch(apiUrl);
-      const result = await response.json();
+      const response = await axios.get(apiUrl);
+      const result = response.data;
+
       if (!result.success || !result.result || !result.result.image_url) {
         return await message.reply("Failed to generate the image. Please try again later.");
       }
       const imageUrl = result.result.image_url;
-      await context.send(message.jid, {
+      await message.send({
         image: { url: imageUrl },
         caption: `\n> Logo generated successfully.`,
         contextInfo: {
@@ -54,5 +54,3 @@ xcel.smd(
     }
   }
 );
-
-
