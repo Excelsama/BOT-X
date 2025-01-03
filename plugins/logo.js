@@ -5,6 +5,8 @@ const { smd } = require("../lib");
 smd(
   {
     pattern: "glossy",
+    react : "😊",
+    alias: ["botx","glossy"],
     fromMe: true,
     desc: "Generate an image from text",
     type: "logo",
@@ -46,7 +48,7 @@ smd(
       });
     } catch (error) {
       console.error("Image Generator Error:", error);
-      await message.reply(`An error occurred while generating the image: ${error.message}`);
+      await message.error("An error occurred while generating the image:" ,error);
     }
   }
 );
