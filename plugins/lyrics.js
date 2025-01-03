@@ -14,10 +14,9 @@ smd(
         return await m.send("Please provide a song title, e.g., `.lyrics Spectre Alan Walker`.");
       }
 
-      await m.send("Fetching Chords, please wait... 🎵");
+      await m.send("Fetching Lyrics, please wait... 🎵");
 
-      const apiUrl = `https://api.giftedtech.my.id/api/search/chord?apikey=gifted&query=${encodeURIComponent(query)}`;
-      const response = await fetchJson(apiUrl);
+      const response = await getJson(`https://api.giftedtech.my.id/api/search/chord?apikey=gifted&query=${encodeURIComponent(match)}`);
 
       if (!response.ok) {
         return await m.send(`Error: ${response.status} ${response.statusText}`);
@@ -25,12 +24,12 @@ smd(
 
       const data = await response.json();
 
-      if (!data.success || !data.result || !data.result.Chords) {
-        return await m.send(`No chords found for "${query}".`);
+      if (!data.success || !data.result || !data.result.Lyrics) {
+        return await m.send(`No lyrics found for "${query}".`);
       }
 
-      const { Artist, Title, Chords } = data.result;
-      const message = `*Chords for "${Title}" by ${Artist}:*\n\n${Chords}`;
+      const { Artist, Title, Lyrics } = data.result;
+      const message = `*Lyrics for "${Title}" by ${Artist}:*\n\n${Lyrics}`;
 
       await m.send(message);
     } catch (e) {
