@@ -1,9 +1,6 @@
-const {
-  xcel,
-  isPrivate,
-  getBuffer,
-} = require("../lib/plugins");
+const { xcel, isPrivate, getBuffer } = require("../lib/plugins");
 const axios = require("axios");
+const { prefix } = require("../lib");
 
 xcel.smd(
   {
