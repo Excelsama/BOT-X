@@ -1,8 +1,8 @@
-const { xcel, isPrivate, getBuffer } = require("../lib/plugins");
+const { isPrivate, getBuffer } = require("../lib/plugins");
 const axios = require("axios");
 const { prefix } = require("../lib");
 
-xcel.smd(
+smd(
   {
     pattern: "glossy",
     fromMe: true,
