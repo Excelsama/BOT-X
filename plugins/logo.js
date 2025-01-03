@@ -9,6 +9,7 @@ smd(
     alias: ["botx","glossy"],
     fromMe: true,
     desc: "Generate an image from text",
+    filename: __filename,
     type: "logo",
   },
   async (message, query) => {
