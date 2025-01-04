@@ -20,13 +20,13 @@ smd(
       const response = await fetch(apiUrl);
 
       if (!response.ok) {
-        return await m.send.status} ${response.statusText}`);
+        return await m.send(`Error: ${response.status} ${response.statusText}`);
       }
 
       const data = await response.json();
 
       if (!data.result) {
-        return await m.send(`No valid response received. Please try again later.`);
+        return await m.send("No valid response received. Please try again later.");
       }
 
       const message = data.result;
