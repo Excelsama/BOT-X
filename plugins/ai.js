@@ -1,39 +1,44 @@
-const { fetchJson, smd, send } = require("../lib");
+const axios = require("axios");
+const { cmd } = require("../lib/plugins");
+const { smd } = require("../lib");
 
 smd(
   {
     pattern: "gpt3",
-    desc: "blackbox AI chat",
-    category: "internet",
+    react: "😊",
+    alias: ["botx", "gpt3"],
+    fromMe: true,
+    desc: "Blackbox AI chat",
     filename: __filename,
+    type: "ai",
   },
-  async (m) => {
+  async (message, query) => {
     try {
-      const query = m.text.split(" ").slice(1).join(" ");
       if (!query) {
-        return await m.send("I need a search query.");
+        return await message.reply(
+          `*GPT-3 Chatbot*\n\n` +
+          `❗ Please provide a search query.\n` +
+          `Example: ${prefix}gpt3 What is the capital of France?`
+        );
       }
 
-      await m.send("Fetching response, please wait...");
+      await message.reply("Fetching response, please wait...");
 
       const apiUrl = `https://api.nexoracle.com/ai/chatgpt-v4?apikey=elDrYH7GsuIeBkyw1&prompt=${encodeURIComponent(query)}`;
-      const response = await fetch(apiUrl);
 
-      if (!response.ok) {
-        return await m.send(`Error: ${response.status} ${response.statusText}`);
+      const response = await axios.get(apiUrl);
+      const result = response.data;
+      console.log(result);
+
+      if (!result.result) {
+        return await message.reply("No valid response received. Please try again later.");
       }
 
-      const data = await response.json();
-
-      if (!data.result) {
-        return await m.send("No valid response received. Please try again later.");
-      }
-
-      const message = data.result;
-
-      await m.send(message);
-    } catch (e) {
-      await m.error(`An error occurred: ${e.message}`);
+      const responseMessage = result.result;
+      await message.send(responseMessage);
+    } catch (error) {
+      console.error("GPT-3 Chat Error:", error);
+      await message.error("An error occurred while processing your request:", error.message);
     }
   }
 );
