@@ -82,35 +82,7 @@ smd({
         }catch(e){return await message.error(`${e}\n\n command: ${cmdName}`,e,`*_Uhh dear, Didn't get any results!_*`) }
         }
     )
-    //---------------------------------------------------------------------------
-smd({
-            pattern: "weather",
-            category: "info",
-            desc: "Sends weather info about asked place.",
-            use: '<location>',
-            filename: __filename,
-        },
-        async(message, text) => {
-          try{
-            if (!text) return message.reply(`*_Give me city name, ${message.isCreator ? "Buddy" : "Idiot"}!!_*`);
-            let {data} = await axios.get( `https://api.openweathermap.org/data/2.5/weather?q=${text}&units=metric&appid=060a6bcfa19809c2cd4d97a212b19273&language=en`);
-            if(!data || data.cod === '404') return await message.reply(`*_Please provide valid city name!_*`)
-            let textw = `*🌟Weather of  ${text}*\n\n`;
-            textw += `*💐Weather:-* ${data.weather[0].main}\n`;
-            textw += `*🌚Description:-* ${data.weather[0].description}\n`;
-            textw += `*☁Avg Temp:-* ${data.main.temp}\n`;
-            textw += `*💨Feels Like:-* ${data.main.feels_like}\n`;
-            textw += `🌪*Pressure:-* ${data.main.pressure}\n`;
-            textw += `*🌧Humidity:-* ${data.main.humidity}\n`;
-            textw += `*❄Latitude:-* ${data.coord.lat}\n`;
-            textw += `*☔Longitude:-* ${data.coord.lon}\n`;
-            textw += `*🌍Country:-* ${data.sys.country}\n\n`;
-            textw +=Config.caption ;
-            message.bot.sendUi(message.jid, { caption: textw, },{quoted : message} ,"text",'true' );
-
-        }catch(e){return await message.error(`${e}\n\n command: weather`,e,`*_Please provide valid city name!_*`) }
-        }
-    )
+    
 
 smd({
             pattern: "image",
