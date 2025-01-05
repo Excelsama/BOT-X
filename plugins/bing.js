@@ -21,14 +21,14 @@ smd(
       }
 
       const apiUrl = `https://nikka-api.us.kg/ai/bing?apiKey=nikka&q=${encodeURIComponent(text)}`;
-      const { data } = await axios.get(apiUrl);
+      const result = await axios.get(apiUrl);
 
-      if (!data) {
+      if (!result.data) {
         return await message.reply(`*_Something went wrong. Please try again later._*`);
       }
 
       let responseText = `*🧠 Bing AI Response for "${text}":*\n\n`;
-      responseText += data.result; // Adjust based on actual API response structure
+      responseText += result.data.data.data; // Adjust based on actual API response structure
       responseText += `\n\n${Config.caption}`;
 
       message.bot.sendUi(
