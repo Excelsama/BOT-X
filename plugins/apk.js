@@ -1,40 +1,45 @@
-const { fetchJson, smd, send } = require("../lib");
+
+const axios = require("axios");
+const { cmd } = require("../lib/plugins");
+const { smd } = require("../lib");
 
 smd(
   {
     pattern: "apk",
-    desc: "Search and download APK files based on the user's query.",
-    category: "internet",
+    react: "😊",
+    alias: ["botx", "apk"],
+    fromMe: true,
+    desc: "Download APK based on the user's query.",
     filename: __filename,
+    type: "downloader",
   },
-  async (m) => {
+  async (message, query) => {
     try {
-      const query = m.text.split(" ").slice(1).join(" ");
       if (!query) {
-        return await m.send("Please provide an APK name, e.g., `.apk WhatsApp`.");
+        return await message.reply(
+          `*APK Downloader*\n\n` +
+          `❗ Please provide an APK query.\n` +
+          `Example: ${prefix}apk WhatsApp`
+        );
       }
 
-      await m.send("Fetching APK, please wait... 📦");
+      await message.reply("Fetching APK, please wait...");
 
       const apiUrl = `https://api.nexoracle.com/downloader/apk?apikey=free_key@maher_apis&q=${encodeURIComponent(query)}`;
-      const response = await fetch(apiUrl);
 
-      if (!response.ok) {
-        return await m.send(`Error: ${response.status} ${response.statusText}`);
+      const response = await axios.get(apiUrl);
+      const result = response.data;
+      console.log(result);
+
+      if (!result.result) {
+        return await message.reply("No valid response received. Please try again later.");
       }
 
-      const data = await response.json();
-
-      if (!data.success || !data.result || !data.result.link) {
-        return await m.send(`No APK found for "${query}".`);
-      }
-
-      const { title, description, link } = data.result;
-      const message = `*APK Details for "${title}":*\n\n📄 *Description:* ${description}\n\n📥 *Download Link:* ${link}`;
-
-      await m.send(message);
-    } catch (e) {
-      await m.error(`An error occurred: ${e.message}`);
+      const responseMessage = result.result;
+      await message.send(responseMessage);
+    } catch (error) {
+      console.error("APK Downloader Error:", error);
+      await message.error("An error occurred while processing your request:", error.message);
     }
   }
 );
