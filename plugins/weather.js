@@ -41,24 +41,24 @@ smd(
       const sunset = new Date(data.result.sys.sunset * 1000).toLocaleTimeString();
       const timezoneOffset = data.result.timezone / 3600;
 
-      let textw = `*🌟Weather of ${text}*\n\n`;
-      textw += `*Weather:* ${data.result.weather[0].main}\n`;
-      textw += `*Description:* ${data.result.weather[0].description}\n`;
-      textw += `*Avg Temp:* ${data.result.main.temp}°C\n`;
-      textw += `*Feels Like:* ${data.result.main.feels_like}°C\n`;
-      textw += `*Pressure:* ${data.result.main.pressure} hPa\n`;
-      textw += `*Humidity:* ${data.result.main.humidity}%\n`;
-      textw += `*Wind Speed:* ${data.result.wind.speed} m/s\n`;
-      textw += `*Latitude:* ${data.result.coord.lat}\n`;
-      textw += `*Longitude:* ${data.result.coord.lon}\n`;
+      let textw = `*💫Weather of ${text}*\n\n`;
+      textw += `*🌥Weather:* ${data.result.weather[0].main}\n`;
+      textw += `*🌨Description:* ${data.result.weather[0].description}\n`;
+      textw += `*🌩Avg Temp:* ${data.result.main.temp}°C\n`;
+      textw += `*🌪Feels Like:* ${data.result.main.feels_like}°C\n`;
+      textw += `*⛅️Pressure:* ${data.result.main.pressure} hPa\n`;
+      textw += `*🌨Humidity:* ${data.result.main.humidity}%\n`;
+      textw += `*🌪Wind Speed:* ${data.result.wind.speed} m/s\n`;
+      textw += `*☂️Latitude:* ${data.result.coord.lat}\n`;
+      textw += `*☔️Longitude:* ${data.result.coord.lon}\n`;
       
-      textw += `*City ID:* ${data.result.id}\n`;
-      textw += `*Sunrise:* ${sunrise}\n`;
-      textw += `*Sunset:* ${sunset}\n`;
-      textw += `*Timezone Offset:* UTC${timezoneOffset >= 0 ? `+${timezoneOffset}` : timezoneOffset}\n`;
-      textw += `*Sea Level Pressure:* ${data.result.main.sea_level} hPa\n`;
-      textw += `*Ground Level Pressure:* ${data.result.main.grnd_level} hPa\n\n`;
-textw += `*Country:* ${data.result.sys.country}\n`;
+      textw += `*🧷City ID:* ${data.result.id}\n`;
+      textw += `*🌗Sunrise:* ${sunrise}\n`;
+      textw += `*🌘Sunset:* ${sunset}\n`;
+      textw += `*🌌Timezone Offset:* UTC${timezoneOffset >= 0 ? `+${timezoneOffset}` : timezoneOffset}\n`;
+      textw += `*🚢Sea Level Pressure:* ${data.result.main.sea_level} hPa\n`;
+      textw += `*⛱️Ground Level Pressure:* ${data.result.main.grnd_level} hPa\n\n`;
+textw += `*🌍Country:* ${data.result.sys.country}\n`;
       textw += Config.caption;
 
       message.bot.sendUi(
