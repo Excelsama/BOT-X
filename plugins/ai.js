@@ -24,7 +24,7 @@ smd(
 
       await message.reply("Fetching response, please wait...");
 
-      const apiUrl = `https://api.nexoracle.com/ai/chatgpt-v4?apikey=elDrYH7GsuIeBkyw1&prompt=${encodeURIComponent(query)}`;
+      const apiUrl = `https://nikka-api.us.kg/ai/moshai?q=${query}&apiKey=nikka`;
 
       const response = await axios.get(apiUrl);
       const result = response.data;
