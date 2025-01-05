@@ -15,8 +15,8 @@ const { shazam } = require("../lib");
 
 smd(
   {
-    pattern: "xeather",
-    category: "search",
+    pattern: "weather",
+    category: "internet",
     desc: "Sends weather info about asked place.",
     use: "<location>",
     filename: __filename,
