@@ -40,7 +40,7 @@ smd(
       );
     } catch (e) {
       return await message.error(
-        `${e}\n\n command: bingai`,
+        `${e}\n\n command: bing`,
         e,
         `*_An error occurred while processing your request._*`
       );
