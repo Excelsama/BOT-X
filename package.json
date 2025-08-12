@@ -54,7 +54,7 @@
     "qrcode": "latest",
     "secktor-pack": "latest",
     "sequelize": "^6.23.0",
-    "sharp": "^0.34.3",
+    "sharp": "^0.33.5",
     "simple-git": "^3.15.1",
     "translatte": "^3.0.1",
     "util": "^0.12.4",
