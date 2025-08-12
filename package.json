@@ -1,4 +1,4 @@
- {
+{
   "name": "BOT-X",
   "version": "2.0.0",
   "description": "A BOT",
@@ -21,7 +21,6 @@
     "aptoide-scraper": "^1.0.1",
     "async-g-i-s": "^1.4.0",
     "axios": "^0.24.0",
-    "canvas": "^2.11.2",
     "cheerio": "^1.0.0-rc.10",
     "child_process": "^1.0.2",
     "crypto-js": "latest",
@@ -35,7 +34,6 @@
     "form-data": "^4.0.0",
     "fs-extra": "^10.1.0",
     "google-it": "^1.6.4",
-    "sequelize": "^6.23.0",
     "google-tts-api": "^2.0.2",
     "heroku-client": "3.1.0",
     "human-readable": "^0.2.1",
@@ -55,6 +53,7 @@
     "pm2": "^5.2.0",
     "qrcode": "latest",
     "secktor-pack": "latest",
+    "sequelize": "^6.23.0",
     "simple-git": "^3.15.1",
     "translatte": "^3.0.1",
     "util": "^0.12.4",
@@ -78,4 +77,4 @@
     "url": "https://github.com/Excelsama/BOT-X/issues"
   },
   "homepage": "https://github.com/Excelsama/BOT-X#readme"
- }
+}
